@@ -1,0 +1,9 @@
+input.datepicker{
+  width: 100%;
+}
+.datepicker{
+  z-index:100 !important;
+}
+.note-toolbar{
+  z-index:90
+}
