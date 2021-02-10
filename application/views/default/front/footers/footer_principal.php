@@ -23,6 +23,7 @@
 			<script src="<?php echo base_url('assets/redsems'); ?>/js/owl.carousel.min.js"></script>
 			<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
 
-
+			<?php $this->load->view('default'.$dispositivo.'/scripts/scripts_formularios'); ?>
+<?php $this->load->view('default'.$dispositivo.'/scripts/scripts_front'); ?>
 		</body>
 	</html>

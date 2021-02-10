@@ -165,7 +165,6 @@ class Front_Repositorio extends CI_Controller {
 			$parametros_or['archivos.TITULO']=$busqueda;
 			$parametros_or['archivos.DESCRIPCION']=$busqueda;
 			$parametros_or['archivos.TEMA']=$busqueda;
-			$parametros_or['extra_datos.DATO_VALOR']=$busqueda;
 		}
 		// Genero los parametros AND
 		$parametros_and['archivos.ESTADO']='activo';
