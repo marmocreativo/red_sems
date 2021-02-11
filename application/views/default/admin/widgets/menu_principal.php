@@ -4,14 +4,14 @@
     <ul class="kt-menu__nav ">
       <li class="kt-menu__item " aria-haspopup="true"><a href="<?php echo base_url('admin'); ?>" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-dashboard"></i><span class="kt-menu__link-text">Escritorio</span></a></li>
       <!-- Menú -->
-      <!--
+
       <li class="kt-menu__section ">
         <h4 class="kt-menu__section-text">Menú</h4>
         <i class="kt-menu__section-icon flaticon-more-v2"></i>
       </li>
       <li class="kt-menu__item " aria-haspopup="true"><a href="<?php echo base_url('admin/menu?grupo=principal'); ?>" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-list-2"></i><span class="kt-menu__link-text">Menú Principal</span></a></li>
       <li class="kt-menu__item " aria-haspopup="true"><a href="<?php echo base_url('admin/menu?grupo=sociales'); ?>" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-list-2"></i><span class="kt-menu__link-text">Menú Redes</span></a></li>
-      -->
+      
       <!-- Publicaciones -->
       <!--
       <li class="kt-menu__section ">

@@ -31,37 +31,60 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css">
 		<!-- <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet"> -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 		</head>
 		<body>
+			<div class="gobierno" style="background-color:#0b231e!important; padding-top:10px; padding-bottom:10px;">
+				<div style="width:100%; max-width:1600px; margin:0 auto;">
+					<nav class="navbar navbar-expand-lg navbar-dark">
+								<a class="navbar-brand" href="https://www.gob.mx">
+									<img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="logo gobierno de méxico" width="128px">
+								</a>
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-parent="accordian-2">
+					    <span class="navbar-toggler-icon"></span>
+					  </button>
 
-			<nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
-						<div class="container">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces">
-									<span class="sr-only">Interruptor de Navegación</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="index.html">RED SEMS</a>
-							</div>
-							<div class="collapse navbar-collapse" id="subenlaces">
-								<ul class="nav navbar-nav navbar-right">
-									<li><a href="index.html">Inicio</a></li>
-									<li class="dropdown">
-										<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Secciones</a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#bienvenida">Bienvenida</a></li>
-											<li><a href="#ejes-modelo">El Modelo Educativo</a></li>
-											<li><a href="#recursos">Recursos</a></li>
-											<li><a href="#inter">Información</a></li>
-											<li><a href="#mas-vistos">Más Vistos</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						</nav><!-- #header -->
+					  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					    <ul class="navbar-nav ml-auto">
+							<li class="nav-item">
+					        <a class="nav-link" href="https://www.gob.mx/tramites" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Trámites
+					        </a>
+					      </li>
+							<li class="nav-item">
+					        <a class="nav-link" href="https://www.gob.mx/gobierno" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Gobierno
+					        </a>
+					      </li>
+						<li class="nav-item pt-2">
+					        <a class="text-white" href="https://www.gob.mx/busqueda?utf8=✓"><i class="fas fa-search"></i></a>
+					      </li>
+					    </ul>
+					  </div>
+					</nav>
+				</div>
+			</div>
+			<!--------------------------------------
+NAVBAR
+--------------------------------------->
+<div class="menu_principal" style="background-color:#041e18!important; padding-top:10px; padding-bottom:10px;">
+	<div  style="width:100%; max-width:1600px; margin:0 auto;">
+		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent;">
+			<a class="navbar-brand" href="<?php echo base_url(); ?>">RED SEMS</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<?php menu_principal('principal',0); ?>
+				<ul class="navbar-nav ml-auto d-flex align-items-center">
+					<?php $this->load->view($this->data['op']['plantilla'].$dispositivo.'/front/widgets/menu_usuarios'); ?>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</div>
+
+<!-- End Navbar -->

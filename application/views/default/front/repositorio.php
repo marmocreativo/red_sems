@@ -55,11 +55,7 @@ HEADER
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-10">
-				<form class="form-inline mb-2" action="<?php echo base_url('repositorio'); ?>" method="get">
-					<input type="text" class="form-control w-75 mr-2" name="busqueda" placeholder="Buscar..," value="<?php if(isset($_GET['busqueda'])){ echo $this->input->get('busqueda');} ?>">
-					<button type="submit" name="button" class="btn secondary-solid-btn "> <i class="fa fa-search"></i> </button>
-				</form>
+			<div class="col-12 col-md-8">
 				<div class="contenedor_repositorio_publico"
 				data-categoria='<?php echo $consulta['categoria']; ?>'
 				data-orden_cat='<?php echo $consulta['orden_cat']; ?>'
@@ -70,19 +66,52 @@ HEADER
 					</div>
 				</div>
 			</div>
-			<div class="col-2">
-				<div class="card bg-light text-center">
-					<div class="card-body">
-						<p class="dropdown-item">Hola <b><?php echo $_SESSION['usuario']['nombre']; ?></b></p>
-			      <div class="dropdown-divider"></div>
-			      <a class="btn secondary-solid-btn  btn-block mb-3" href="<?php echo base_url('usuarios/actualizar');?>"> <i class="far fa-id-card"></i> Mi Perfil</a>
-			      <?php if($_SESSION['usuario']['tipo_usuario']=='administrador'){ ?>
-			      <a class="btn secondary-solid-btn  btn-block mb-3" href="<?php echo base_url('admin'); ?>"> <i class="fa fa-lock"></i> Admin</a>
-			      <?php } ?>
-						<hr>
-			      <a class="btn secondary-solid-btn  btn-block mb-3" href="<?php echo base_url('login/cerrar_sesion');?>"> <i class="fa fa-sign-out-alt"></i> Cerrar Sesión</a>
+			<div class="col-12 col-md-4">
+				<div class="single-widget search-widget turquesa-fnd">
+						<h3 class="text-white">Nueva búsqueda</h3>
+						<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
+							<div class="row justify-content-center form-wrap">
+								<div class="col-12 form-cols">
+									<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
+								</div>
+								<div class="col-12 form-cols pt-10">
+									<div class="default-select" id="default-selects">
+										<select class="col-12">
+											<option value="1">Tipo de recurso</option>
+											<option value="2">Página web con texto</option>
+											<option value="3">Página web con diversos recursos</option>
+											<option value="4">Imagen</option>
+											<option value="5">Video</option>
+											<option value="1">Archivo de texto</option>
+											<option value="2">Audio</option>
+											<option value="3">Simuladores</option>
+											<option value="4">Software/Aplicación</option>
+											<option value="5">Video</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 form-cols pt-10">
+									<div class="default-select" id="default-selects2">
+										<select class="col-12">
+											<option value="1">Audiencia</option>
+											<option value="2">Directores</option>
+											<option value="3">Docentes</option>
+											<option value="4">Tutores</option>
+											<option value="5">Estudiantes</option>
+											<option value="6">Padres de Familia</option>
+											<option value="4">Responsables de Academia</option>
+											<option value="5">Responsables de Subsistemas</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 form-cols pt-10">
+										<button type="submit" class="btn btn-info btn-block">
+											<span class="lnr lnr-magnifier"></span> Buscar
+										</button>
+								</div>
+							</div>
+						</form>
 					</div>
-				</div>
 			</div>
 		</div>
   </div>

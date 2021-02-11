@@ -7,10 +7,10 @@
 								<div class="row justify-content-center">
 								  <img src="<?php echo base_url('assets/redsems'); ?>/img/logo-gde.png" class="col-6">
 							  </div>
-								<form action="search.html" class="serach-form-area">
+								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
 									<div class="row justify-content-center form-wrap">
 										<div class="col-lg-4 form-cols">
-											<input type="text" class="form-control" name="search" placeholder="Busca un recurso">
+											<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
 										</div>
 										<div class="col-lg-3 form-cols">
 											<div class="default-select" id="default-selects">

@@ -218,13 +218,13 @@ class Front_Repositorio extends CI_Controller {
 
 	}
 
-	public function archivo()
+	public function recurso()
 	{
 		// Verifico el switch de mantenimiento
 		if(verificar_mantenimiento($this->data['op']['modo_mantenimiento'])){ redirect(base_url('mantenimiento')); }
 
 		// Datos Generales
-		$this->data['archivo']  = $this->GeneralModel->detalles('archivos',['URL'=>$this->uri->segment(1, 0)]);
+		$this->data['archivo']  = $this->GeneralModel->detalles('archivos',['ID'=>$this->uri->segment(3, 0)]);
 		$this->data['extra'] = $this->GeneralModel->lista('extra_datos','',['ID_OBJETO'=>$this->data['archivo']['ID'],'TIPO_OBJETO'=>'archivo'],'','','');
 		$this->data['extra_datos'] = array(); foreach($this->data['extra'] as $m){ $this->data['extra_datos'][$m->DATO_NOMBRE]= $m->DATO_VALOR; }
 
