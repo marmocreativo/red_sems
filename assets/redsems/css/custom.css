@@ -1,7 +1,7 @@
 /* Correcciones plantilla */
 #home {
 	overflow: hidden;
-	padding-top: 70px;
+	z-index: 999;
 }
 
 body {
@@ -9,6 +9,7 @@ body {
 	background-position: center;
 	background-repeat: repeat-y;
 	background-size: contain;
+	font-family: "Montserrat";
 }
 
 .video-container video {
@@ -211,6 +212,24 @@ a:-webkit-any-link {
 
 .owl-stage-outer {
 	padding: 40px 0;
+}
+.tns-nav {
+    text-align: center;
+}
+.tns-outer > button {
+    display: none;
+}
+.tns-nav button {
+    width: 10px;
+    height: 10px;
+    background: #00000069;
+    border: none;
+    margin: 3px;
+    padding: 0;
+    border-radius: 50%;
+}
+.tns-nav-active {
+    background: #536068 !important;
 }
 .single-fcat i {
 	font-size: 40px;

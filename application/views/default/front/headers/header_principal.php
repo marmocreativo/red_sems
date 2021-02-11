@@ -24,14 +24,14 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/all.min.css">
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/nice-select.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/animate.min.css">
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css">
-		<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+		<!-- <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet"> -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
 		</head>

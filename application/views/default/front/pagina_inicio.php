@@ -5,7 +5,7 @@
 						<div class="row fullscreen d-flex align-items-center justify-content-center">
 							<div class="banner-content col-lg-12">
 								<div class="row justify-content-center">
-								  <img src="<?php echo base_url('assets/redsems'); ?>/img/logo-gde.png" class="col-lg-6">
+								  <img src="<?php echo base_url('assets/redsems'); ?>/img/logo-gde.png" class="col-6">
 							  </div>
 								<form action="search.html" class="serach-form-area">
 									<div class="row justify-content-center form-wrap">
@@ -144,7 +144,7 @@
 						    <div class="col-lg-7">
 
 						        <!--Grid row-->
-						        <div class="row pb-3">
+						        <div class="row pb-5">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/cont-icn.png" width="100%"/>
 						        </div>
@@ -157,7 +157,7 @@
 						        <!--Grid row-->
 
 						        <!--Grid row-->
-						        <div class="row pb-3">
+						        <div class="row pb-5">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/escuela-icn.png" width="100%"/>
 						        </div>
@@ -170,7 +170,7 @@
 						        <!--Grid row-->
 
 						        <!--Grid row-->
-						        <div class="row pb-3">
+						        <div class="row pb-5">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/modelo-icn.png" width="100%"/>
 						        </div>
@@ -183,7 +183,7 @@
 						        <!--Grid row-->
 
 										<!--Grid row-->
-						        <div class="row pb-3">
+						        <div class="row pb-5">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/equi-icn.png" width="100%"/>
 						        </div>
@@ -196,7 +196,7 @@
 						        <!--Grid row-->
 
 						        <!--Grid row-->
-						        <div class="row pb-3">
+						        <div class="row pb-5">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/gob-icn.png" width="100%"/>
 						        </div>
@@ -228,7 +228,6 @@
 								<p>Explora por tipo o por palabras clave</p>
 							</div>
 						</div>
-					</div>
 					<div class="owl-carousel">
 						<div>
 							<div class="single-fcat">
@@ -296,6 +295,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</section>
 			<!-- End feature-cat Area -->
 
@@ -464,8 +464,7 @@
 		<!-- Start About Area -->
 		<section class="callto-action-area section-gap" id="inter">
 			<div class="container">
-				<div class="row d-flex justify-content-center">
-					<div class="col-lg-12 sidebar">
+				<div class="row d-flex sidebar">
 						<div class="col-md-12 col-lg-4 single-slidebar">
 							<h4 class="text-white">¿Qué son los Recursos Educativos Digitales?</h4>
 							<div class="blog-list">
@@ -541,8 +540,6 @@
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Aprendizaje</p><span>17</span></a></li>
 							</ul>
 						</div>
-
-					</div>
 				</div>
 			</div>
 		</section>
