@@ -370,6 +370,26 @@ class Admin_Usuarios extends CI_Controller {
 			}
 	}
 
+	public function borrar_tipo()
+	{
+
+      // check if the institucione exists before trying to delete it
+      if(isset($_GET['tipo']))
+      {
+					// Borro la categoría
+          $this->GeneralModel->borrar('usuarios',['TIPO'=>$_GET['tipo']]);
+					// Mensaje Feedback
+					$this->session->set_flashdata('exito', 'Usuario borrado');
+					//  Redirecciono
+          //redirect(base_url('admin/usuarios?tipo='.$usuario['TIPO']));
+      } else {
+				// Mensaje Feedback
+				$this->session->set_flashdata('alerta', 'La Entrada que intentaste borrar no existe');
+				//  Redirecciono
+         //redirect(base_url('admin/usuarios'));
+			}
+	}
+
 	public function descargar_excel()
 	{
 
