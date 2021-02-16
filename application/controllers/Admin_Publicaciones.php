@@ -13,7 +13,7 @@ class Admin_Publicaciones extends CI_Controller {
 			redirect(base_url('login?url_redirect='.base_url(uri_string().'?'.$_SERVER['QUERY_STRING'])));
 		}
 		// Verifico Permiso
-		if(!verificar_permiso(['administrador'])){
+		if(!verificar_permiso(['administrador','produccion','diseno_instrucional','comunicacion'])){
 			$this->session->set_flashdata('alerta', 'No tienes permiso de entrar en esa sección');
 			redirect(base_url('usuario'));
 		}
