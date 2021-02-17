@@ -1,30 +1,3 @@
-<!------------------------------------------
-HEADER
-------------------------------------------->
-<!--header section start-->
-<section class="hero-section ptb-100 gradient-overlay1"
-				 style="background: url('<?php echo base_url('assets/'); ?>img/repositorio-crem.jpg')no-repeat center center / cover">
-		<div class="hero-bottom-shape-two" style="background: url('<?php echo base_url('assets/'); ?>img/hero-bottom-shape.svg')no-repeat bottom center"></div>
-		<div class="container">
-				<div class="row justify-content-center">
-						<div class="col-md-8 col-lg-7">
-								<div class="page-header-content text-white text-center pt-sm-5 pt-md-5 pt-lg-0">
-									<h1 class="text-white mb-0">Creative Resource Matrix</h1>
-											<h4 class="text-white mb-0"> Matriz de Recursos Creativos</h4>
-											<div class="custom-breadcrumb">
-													<ol class="breadcrumb d-inline-block bg-transparent list-inline py-0">
-															<li class="list-inline-item breadcrumb-item"><a href="http://crem.panduitlatam.com">Inicio</a></li>
-															<li class="list-inline-item breadcrumb-item active">Repositorio CREM</li>
-													</ol>
-											</div>
-								</div>
-						</div>
-				</div>
-		</div>
-</section>
-<!--header section end-->
-<!-- End Header -->
-
 <!-- Main -->
 <div class="contenido-principal">
   <div class="container">

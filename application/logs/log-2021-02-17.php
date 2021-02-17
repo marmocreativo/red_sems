@@ -240,3 +240,5 @@ AND `categorias_objetos`.`ID_CATEGORIA` = '0'
 GROUP BY `archivos`.`ID`
 ORDER BY `TITULO` ASC
 ERROR - 2021-02-17 08:14:56 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/MAMP/htdocs/red_sems/application/models/GeneralModel.php 108
+ERROR - 2021-02-17 16:23:16 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:23:16 --> 404 Page Not Found: Assets/img
