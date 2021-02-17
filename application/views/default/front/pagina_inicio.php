@@ -5,7 +5,7 @@
 						<div class="row fullscreen d-flex align-items-center justify-content-center">
 							<div class="banner-content col-lg-12">
 								<div class="row justify-content-center">
-								  <img src="<?php echo base_url('assets/redsems'); ?>/img/logo-gde.png" class="col-6">
+								  <img src="<?php echo base_url('assets/redsems'); ?>/img/code_logo.svg" class="col-6">
 							  </div>
 								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
 									<div class="row justify-content-center form-wrap">
@@ -53,14 +53,11 @@
 							</div>
 						</div>
 					</div>
-          <video playsinline autoplay muted loop class="fillWidth">
-            <source src="<?php echo base_url('assets/redsems'); ?>/bg-pintura.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-					</video>
           <!-- <div class="poster hidden">
             <img src="http://www.videojs.com/img/poster.jpg" alt="">
           </div> -->
     		</div>
-				<div class="overlay overlay-bg"></div>
+				<!-- <div class="overlay overlay-bg"></div> -->
 
 			</section>
 			<!-- End banner Area -->
@@ -72,7 +69,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 								<h4>Investiga</h4>
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/investiga.png" />
+								<img src="<?php echo base_url('assets/redsems'); ?>/img/investiga.png" width="80px"/>
 								<p>
 									Lorem ipsum dolor sit amet, consectetur adipisicing.
 								</p>
@@ -81,7 +78,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 								<h4>Busca</h4>
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/busca.png" />
+								<img src="<?php echo base_url('assets/redsems'); ?>/img/busca.png" width="80px"/>
 								<p>
 									Lorem ipsum dolor sit amet, consectetur adipisicing.
 								</p>
@@ -89,8 +86,8 @@
 						</div>
 						<div class="col-lg-4 col-md-12">
 							<div class="single-feature">
-								<h4>Consulta</h4>
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/consulta.png" />
+								<h4>Descarga</h4>
+								<img src="<?php echo base_url('assets/redsems'); ?>/img/descarga.png" width="80px"/>
 								<p>
 									Lorem ipsum dolor sit amet, consectetur adipisicing.
 								</p>

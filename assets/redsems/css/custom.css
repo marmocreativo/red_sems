@@ -2,13 +2,17 @@
 #home {
 	overflow: hidden;
 	z-index: 999;
+	background:white url("../img/code_bg.png");
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: cover;
 }
 
 body {
-	background:white url("../img/background_1.png");
+	/* background:white url("../img/background_1.png");
 	background-position: center;
 	background-repeat: repeat-y;
-	background-size: contain;
+	background-size: contain; */
 	font-family: "Montserrat";
 }
 
@@ -292,4 +296,116 @@ div.single-fcat:hover > div.circle {
 }
 p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c {
 	color: #ff7100;
+}
+
+/* Folders */
+.single-promo-card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 2px 4px 9px 3px #39475321;
+    background: #eef2f7;
+    font-size: 30px;
+}
+.single-promo-card:hover {
+    box-shadow: 2px 4px 13px 2px #191f2436;
+    background: #e3e8ee;
+    border: solid 1px #c8ced7;
+}
+.single-promo-card .card-header.p-0 {
+    display: none;
+}
+.single-promo-card .card-body {
+    padding: 15px;
+    text-align: left;
+}
+.single-promo-card .h6 {
+	font-size: 17px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	width: 100%;
+}
+.single-promo-card .h6 i{
+	background-color: #bcd3ec;
+	padding: 5px;
+	border-radius: 6px;
+	display: table;
+	margin-bottom: 8px;
+	line-height: 18px;
+}
+.single-promo-card a:hover {
+    text-decoration: none;
+    text-decoration-style: solid;
+    text-decoration-color: transparent;
+}
+
+.breadcrumb {
+	border-radius: 0;
+	border-top: solid 1px #e9e9ea;
+	border-bottom: solid 1px #e9e9ea;
+	background-color: transparent !important;
+	padding: 17px 0;
+}
+.breadcrumb-item.active {
+	background: rgba(0,123,255,1);
+	background: -moz-linear-gradient(90deg, rgba(11,93,180,1) 0%, rgba(0,123,255,1) 60%);
+	background: -webkit-linear-gradient(90deg, rgba(11,93,180,1) 0%, rgba(0,123,255,1) 60%);
+	background: linear-gradient(90deg, rgba(11,93,180,1) 0%, rgba(0,123,255,1) 60%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0b5db4",endColorstr="#007bff",GradientType=1);
+	color: white !important;
+    font-weight: bold;
+    border-color: #2774c6;
+}
+.breadcrumb-item:first-child {
+    background: white;
+    border-radius: 5px 1px 1px 5px;
+		padding: 10px 15px 10px 15px;
+}
+.breadcrumb-item {
+	padding: 10px 15px 10px 25px;
+	border: solid 1px #d8dee3;
+	position: relative;
+	background: #edf2f7;
+}
+.breadcrumb-item:first-child::before {
+	display: block;
+	/* padding-right: .5rem; */
+	/* padding-left: .5rem; */
+	/* color: #6c757d; */
+	content: "" !important;
+	background: url('../img/flecha_bread_bca.png')no-repeat center center / cover;
+	height: 46px;
+	position: absolute;
+	z-index: 9999;
+	width: 23px;
+	top: -1px;
+	right: -19px;
+}
+.breadcrumb-item::before {
+	display: block;
+	/* padding-right: .5rem; */
+	/* padding-left: .5rem; */
+	/* color: #6c757d; */
+	content: "" !important;
+	background: url('../img/flecha_bread_gris.png')no-repeat center center / cover;
+	height: 46px;
+	position: absolute;
+	z-index: 9999;
+	width: 23px;
+	top: -1px;
+	right: -19px;
+}
+
+.breadcrumb-item.active::before {
+	display: block;
+	/* padding-right: .5rem; */
+	/* padding-left: .5rem; */
+	/* color: #6c757d; */
+	content: "";
+	background: url('../img/flecha_bread_azul.png')no-repeat center center / cover;
+	height: 46px;
+	position: absolute;
+	z-index: 9999;
+	width: 23px;
+	top: -1px;
+	right: -19px;
 }
