@@ -242,3 +242,16 @@ ORDER BY `TITULO` ASC
 ERROR - 2021-02-17 08:14:56 --> Severity: error --> Exception: Call to a member function result() on bool /Applications/MAMP/htdocs/red_sems/application/models/GeneralModel.php 108
 ERROR - 2021-02-17 16:23:16 --> 404 Page Not Found: Assets/img
 ERROR - 2021-02-17 16:23:16 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:29:55 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:29:56 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:29:59 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:30:16 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:30:37 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:31:10 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:31:13 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:31:15 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:31:16 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:31:24 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:31:40 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-17 16:37:35 --> 404 Page Not Found: Repositorio/recurso
+ERROR - 2021-02-17 16:37:40 --> 404 Page Not Found: Repositorio/recurso

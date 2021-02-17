@@ -24,8 +24,9 @@
 	</div>
 	<?php foreach($archivos as $archivo){ ?>
 		<div class="col-sm-12 col-lg-6 px-1">
+			<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>">
 				<div class="single-service rec-webtxt">
-					<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>" class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/web-txt-icn.png"><?php echo $archivo->TIPO_RECURSO; ?></a>
+					<div class="generic-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/web-txt-icn.png"><?php echo $archivo->TIPO_RECURSO; ?></div>
 					<div class="cbp-vm-title">
 						<h5><?php echo $archivo->TITULO; ?></h5>
 						<div class="cbp-vm-price"><?php echo $archivo->CREADOR; ?></div>
@@ -34,6 +35,7 @@
 						<?php echo $archivo->DESCRIPCION; ?>
 					</div>
 				</div>
+			</a>
 			</div>
 	<?php } ?>
 </div>
