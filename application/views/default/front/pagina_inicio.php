@@ -16,7 +16,7 @@
 											<div class="default-select" id="default-selects">
 												<select>
 													<option value="1">Tipo de recurso</option>
-													<option value="2">Página web con texto</option>
+													<option value="2">Página web</option>
 													<option value="3">Página web con diversos recursos</option>
 													<option value="4">Imagen</option>
 													<option value="5">Video</option>
@@ -71,25 +71,25 @@
 								<h4>Investiga</h4>
 								<img src="<?php echo base_url('assets/redsems'); ?>/img/investiga.png" width="80px"/>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
+									Obtén información fidedigna para tus trabajos de investigación y actividades académicas.
 								</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4>Busca</h4>
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/busca.png" width="80px"/>
+								<h4>Descarga</h4>
+								<img src="<?php echo base_url('assets/redsems'); ?>/img/descarga.png" width="80px"/>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
+									Guarda en tu equipo o dispositivo distintos recursos que te servirán para ampliar tu conocimiento.
 								</p>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-12">
 							<div class="single-feature">
-								<h4>Descarga</h4>
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/descarga.png" width="80px"/>
+								<h4>Interactúa</h4>
+								<img src="<?php echo base_url('assets/redsems'); ?>/img/busca.png" width="80px"/>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
+									Aprende de manera lúdica con la diversidad de recursos interactivos que tenemos para ti.
 								</p>
 							</div>
 						</div>
@@ -121,7 +121,7 @@
 								<div class="menu-content pb-60 col-lg-10">
 									<div class="title text-center">
 										<h1 class="mb-10">Nueva Escuela Mexicana</h1>
-										<p>Lorem Ipsum dolor sit amet consectetur adipisicing</p>
+										<p>En Prepa en Línea-SEP estamos comprometidos con el cumplimiento de la Nueva Escuela Mexicana, por ello desarrollamos recursos educativos digitales (RED) acordes con cada uno de sus principios en los que se fomenta lo siguiente: </p>
 									</div>
 								</div>
 							</div>
@@ -141,66 +141,89 @@
 						    <div class="col-lg-7">
 
 						        <!--Grid row-->
-						        <div class="row pb-5">
+						        <div class="row pb-2">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/cont-icn.png" width="100%"/>
 						        </div>
 						        <div class="col-10">
-						            <h5 class="font-weight-bold text-left mb-3 dark-grey-text">Planteamiento Curricular</h5>
-						            <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-						            deleniti hic.</p>
+						            <p class="grey-text text-left">Aprecio por nuestra cultura, el conocimiento de nuestra historia y el apego a los valores que se enuncian en nuestra Constitución.</p>
 						        </div>
 						        </div>
 						        <!--Grid row-->
 
 						        <!--Grid row-->
-						        <div class="row pb-5">
+						        <div class="row pb-2">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/escuela-icn.png" width="100%"/>
 						        </div>
 						        <div class="col-10">
-						            <h5 class="font-weight-bold text-left mb-3 dark-grey-text">Escuela al Centro del Sistema Educativo</h5>
-						            <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-						            deleniti hic.</p>
+						            <p class="grey-text text-left">Aceptación y respeto de los derechos y deberes propios y comunes, mediante el fomento de valores cívicos.</p>
 						        </div>
 						        </div>
 						        <!--Grid row-->
 
 						        <!--Grid row-->
-						        <div class="row pb-5">
+						        <div class="row pb-2">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/modelo-icn.png" width="100%"/>
 						        </div>
 						        <div class="col-10">
-						            <h5 class="font-weight-bold text-left mb-3 dark-grey-text">Formación y Desarrollo Profesional Docente</h5>
-						            <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-						            deleniti hic.</p>
+						            <p class="grey-text text-left">Trabajo con honestidad y apego a la verdad, que son la base de la responsabilidad social y el sustento de toda relación sana entre ciudadanos.</p>
 						        </div>
 						        </div>
 						        <!--Grid row-->
 
 										<!--Grid row-->
-						        <div class="row pb-5">
+						        <div class="row pb-2">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/equi-icn.png" width="100%"/>
 						        </div>
 						        <div class="col-10">
-						            <h5 class="font-weight-bold text-left mb-3 dark-grey-text">Inclusión y Equidad</h5>
-						            <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-						            deleniti hic.</p>
+						            <p class="grey-text text-left">Trasformación social mediante la formación de personas críticas, participativas y activas que procuran la innovación y la creación de iniciativas para el bienestar común.</p>
 						        </div>
 						        </div>
 						        <!--Grid row-->
 
 						        <!--Grid row-->
-						        <div class="row pb-5">
+						        <div class="row pb-2">
 						        <div class="col-2">
 						            <img src="<?php echo base_url('assets/redsems'); ?>/img/gob-icn.png" width="100%"/>
 						        </div>
 						        <div class="col-10">
-						            <h5 class="font-weight-bold text-left mb-3 dark-grey-text">Gobernanza</h5>
-						            <p class="grey-text text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-						            deleniti hic.</p>
+						            <p class="grey-text text-left">Respeto irrestricto a la dignidad y derechos humanos de todas las personas, con base en la convicción de igualdad de todos los individuos.</p>
+						        </div>
+						        </div>
+						        <!--Grid row-->
+
+						        <!--Grid row-->
+						        <div class="row pb-2">
+						        <div class="col-2">
+						            <img src="<?php echo base_url('assets/redsems'); ?>/img/cont-icn.png" width="100%"/>
+						        </div>
+						        <div class="col-10">
+						            <p class="grey-text text-left">Comprensión y aprecio de las diferencias culturales y lingüísticas, así como del diálogo con base en la equidad y el respeto mutuo.</p>
+						        </div>
+						        </div>
+						        <!--Grid row-->
+
+						        <!--Grid row-->
+						        <div class="row pb-2">
+						        <div class="col-2">
+						            <img src="<?php echo base_url('assets/redsems'); ?>/img/escuela-icn.png" width="100%"/>
+						        </div>
+						        <div class="col-10">
+						            <p class="grey-text text-left">Fortalecimiento del diálogo constructivo, la solidaridad y la búsqueda de acuerdos que permitan la convivencia sana y pacífica entre individuos.</p>
+						        </div>
+						        </div>
+						        <!--Grid row-->
+
+						        <!--Grid row-->
+						        <div class="row pb-2">
+						        <div class="col-2">
+						            <img src="<?php echo base_url('assets/redsems'); ?>/img/modelo-icn.png" width="100%"/>
+						        </div>
+						        <div class="col-10">
+						            <p class="grey-text text-left">Conciencia ambiental para favorecer la protección y conservación del entorno en el que vivimos y la prevención del cambio climático, con base en el desarrollo sostenible. </p>
 						        </div>
 						        </div>
 						        <!--Grid row-->
@@ -311,7 +334,7 @@
 			<div class="row">
 				  <a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-webtxt">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/web-txt-icn.png">Página web con texto</div>
+							<div class="genric-btn default circle"><i class="fas fa-code"></i>Página web</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -323,7 +346,7 @@
 					</a>
 						<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 							<div class="single-service rec-img">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/info-icn.png">Imagen</div>
+							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -335,7 +358,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/vid-icn.png">Video</div>
+							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -347,7 +370,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/info-icn.png">Imagen</div>
+							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -371,7 +394,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/word-icn.png">Archivo de texto</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -395,7 +418,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/aud-icn.png">Audio</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -407,7 +430,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/aud-icn.png">Audio</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -419,7 +442,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/word-icn.png">Archivo de texto</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -431,7 +454,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/vid-icn.png">Video</div>
+							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -443,7 +466,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/info-icn.png">Imagen</div>
+							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -513,7 +536,7 @@
 						<div class="col-md-12 col-lg-4 single-slidebar">
 							<h4 class="text-white">Recursos por Tipo</h4>
 							<ul class="cat-list">
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Página web con textos</p><span>37</span></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Página webs</p><span>37</span></a></li>
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Página web con diversos recursos</p><span>57</span></a></li>
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Imagen</p><span>33</span></a></li>
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Video</p><span>36</span></a></li>
@@ -549,7 +572,6 @@
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content col-lg-10">
 							<div class="title text-center">
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/pleca-NME-puntos.png" />
 								<h1 class="mb-10">Más Vistos</h1>
 								<p>Los recursos que más veces han sido descargados por los usuarios.</p>
 							</div>
@@ -559,7 +581,7 @@
 			<div class="row">
 				  <a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-webtxt">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/web-txt-icn.png">Página web con texto</div>
+							<div class="genric-btn default circle"><i class="fas fa-code"></i>Página web</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -571,7 +593,7 @@
 					</a>
 						<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 							<div class="single-service rec-img">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/info-icn.png">Imagen</div>
+							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -583,7 +605,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/vid-icn.png">Video</div>
+							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -595,7 +617,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/info-icn.png">Imagen</div>
+							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -619,7 +641,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/word-icn.png">Archivo de texto</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -643,7 +665,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/aud-icn.png">Audio</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -655,7 +677,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/aud-icn.png">Audio</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -667,7 +689,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/word-icn.png">Archivo de texto</div>
+							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -679,7 +701,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/vid-icn.png">Video</div>
+							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -691,7 +713,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/info-icn.png">Imagen</div>
+							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>

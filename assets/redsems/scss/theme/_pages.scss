@@ -94,11 +94,11 @@
 	}
 }
 
-
 .single-service {
 	background-color:$offwhite;
 	padding:30px;
 	margin-bottom:30px;
+	border-radius: 10px;
 	@include transition();
 	&:hover{
 		box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.5);

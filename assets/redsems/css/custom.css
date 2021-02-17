@@ -54,13 +54,6 @@ video.ilust-vid {
 	margin-right: 5px;
 }
 
-.genric-btn.default {
-	padding: 1px 10px;
-	border: 1px solid #d9dfe8;
-	color: #545454;
-	font-size: 12px;
-}
-
 #inter .sidebar .single-slidebar {
     background-color: transparent;
 	}
@@ -75,35 +68,27 @@ video.ilust-vid {
 	}
 
 .rec-app {
-	border-top: 3px solid rgba(255,113,0,.5);
 	border-left: none;
 }
 .rec-sim {
-	border-top: 3px solid rgba(0,158,210,.5);
 	border-left: none;
 }
 .rec-img {
-	border-top: 3px solid rgba(167,210,0,.5);
 	border-left: none;
 }
 .rec-txt {
-	border-top: 3px solid rgba(0,158,210,.5);
 	border-left: none;
 }
 .rec-vid {
-	border-top: 3px solid rgba(224,24,123,.55);
 	border-left: none;
 }
 .rec-aud {
-	border-top: 3px solid rgba(0,173,153,.5);
 	border-left: none;
 }
 .rec-web {
-	border-top: 3px solid rgba(177,24,107,.5);
 	border-left: none;
 }
 .rec-webtxt {
-	border-top: 3px solid rgba(177,24,107,.5);
 	border-left: none;
 }
 
@@ -152,9 +137,10 @@ video.ilust-vid {
 #recursos a {
     text-decoration: none;
 }
-a .cbp-vm-title, a .cbp-vm-details{
-    color: #545454;
-	  text-decoration: none;
+a .cbp-vm-title, a .cbp-vm-details {
+	color: #545454;
+	text-decoration: none;
+	font-size: 0.9rem;
 }
 a:-webkit-any-link {
 	text-decoration: none;

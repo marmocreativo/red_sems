@@ -26,11 +26,14 @@
 			<script type="module">
 
 			  var slider = tns({
-			    container: '.owl-carousel',
-			    items: 5,
+					container: '.owl-carousel',
+					autoWidth: true,
+          loop: true,
 			    autoplay: true,
 					controls: false,
 					navPosition: 'bottom',
+					mouseDrag: true,
+          swipeAngle: false,
 			  });
 			  </script>
 
