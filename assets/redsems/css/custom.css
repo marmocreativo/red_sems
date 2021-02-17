@@ -2,13 +2,17 @@
 #home {
 	overflow: hidden;
 	z-index: 999;
+	background:white url("../img/code_bg.png");
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: cover;
 }
 
 body {
-	background:white url("../img/background_1.png");
+	/* background:white url("../img/background_1.png");
 	background-position: center;
 	background-repeat: repeat-y;
-	background-size: contain;
+	background-size: contain; */
 	font-family: "Montserrat";
 }
 
@@ -368,7 +372,7 @@ p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c 
 	/* padding-left: .5rem; */
 	/* color: #6c757d; */
 	content: "" !important;
-	background: url('http://localhost/red_sems/assets/redsems/img/flecha_bread_bca.png')no-repeat center center / cover;
+	background: url('../img/flecha_bread_bca.png')no-repeat center center / cover;
 	height: 46px;
 	position: absolute;
 	z-index: 9999;
@@ -382,7 +386,7 @@ p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c 
 	/* padding-left: .5rem; */
 	/* color: #6c757d; */
 	content: "" !important;
-	background: url('http://localhost/red_sems/assets/redsems/img/flecha_bread_gris.png')no-repeat center center / cover;
+	background: url('../img/flecha_bread_gris.png')no-repeat center center / cover;
 	height: 46px;
 	position: absolute;
 	z-index: 9999;
@@ -397,7 +401,7 @@ p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c 
 	/* padding-left: .5rem; */
 	/* color: #6c757d; */
 	content: "";
-	background: url('http://localhost/red_sems/assets/redsems/img/flecha_bread_azul.png')no-repeat center center / cover;
+	background: url('../img/flecha_bread_azul.png')no-repeat center center / cover;
 	height: 46px;
 	position: absolute;
 	z-index: 9999;
