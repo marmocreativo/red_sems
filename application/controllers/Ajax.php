@@ -34,10 +34,11 @@ class Ajax extends CI_Controller {
 		if(!empty($busqueda)){
 			$parametros_cat_or['categorias.CATEGORIA_NOMBRE']=$busqueda;
 			$parametros_cat_or['categorias.CATEGORIA_DESCRIPCION']=$busqueda;
+		}else{
+			$parametros_cat_and['categorias.CATEGORIA_PADRE']=$categoria;
 		}
 
 		$parametros_cat_and['categorias.ESTADO']='activo';
-		$parametros_cat_and['categorias.CATEGORIA_PADRE']=$categoria;
 		$parametros_cat_and['categorias.TIPO_OBJETO']='archivo';
 		$parametros_cat_and['categorias.TIPO']='archivo';
 
@@ -54,12 +55,13 @@ class Ajax extends CI_Controller {
 		);
 
 		if(!empty($busqueda)){
-			$parametros_pub_or['archivos.ARCHIVO']=$busqueda;
+			$parametros_pub_or['archivos.TITULO']=$busqueda;
 			$parametros_pub_or['archivos.DESCRIPCION']=$busqueda;
+		}else{
+			$parametros_pub_and['categorias_objetos.ID_CATEGORIA']=$categoria;
 		}
 
 		$parametros_pub_and['archivos.ESTADO']='activo';
-		$parametros_pub_and['categorias_objetos.ID_CATEGORIA']=$categoria;
 
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join_pub,$parametros_pub_or,$parametros_pub_and,$orden_pub,'','',$agrupar_pub);
 
@@ -82,10 +84,11 @@ class Ajax extends CI_Controller {
 		if(!empty($busqueda)){
 			$parametros_cat_or['categorias.CATEGORIA_NOMBRE']=$busqueda;
 			$parametros_cat_or['categorias.CATEGORIA_DESCRIPCION']=$busqueda;
+		}else{
+			$parametros_cat_and['categorias.CATEGORIA_PADRE']=$categoria;
 		}
 
 		$parametros_cat_and['categorias.ESTADO']='activo';
-		$parametros_cat_and['categorias.CATEGORIA_PADRE']=$categoria;
 		$parametros_cat_and['categorias.TIPO_OBJETO']='archivo';
 		$parametros_cat_and['categorias.TIPO']='archivo';
 
@@ -104,10 +107,12 @@ class Ajax extends CI_Controller {
 		if(!empty($busqueda)){
 			$parametros_pub_or['archivos.TITULO']=$busqueda;
 			$parametros_pub_or['archivos.DESCRIPCION']=$busqueda;
+		}else{
+			$parametros_pub_and['categorias_objetos.ID_CATEGORIA']=$categoria;
 		}
 
 		$parametros_pub_and['archivos.ESTADO']='activo';
-		$parametros_pub_and['categorias_objetos.ID_CATEGORIA']=$categoria;
+
 
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join_pub,$parametros_pub_or,$parametros_pub_and,$orden_pub,'','',$agrupar_pub);
 

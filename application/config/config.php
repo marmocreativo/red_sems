@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/red_sems';
-//$config['base_url'] = 'http://crem.panduitlatam.com/';
+//$config['base_url'] = 'https://dottruckpermits.com/sep/red_sems';
 
 /*
 |--------------------------------------------------------------------------

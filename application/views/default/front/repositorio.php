@@ -1,6 +1,6 @@
 <!-- Main -->
 <div class="contenido-principal">
-  <div class="container">
+  <div class="container-fluid">
 		<div class="row mt-3">
 			<div class="col-12">
 				<nav aria-label="breadcrumb">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 col-md-8">
+			<div class="col-12 col-md-9">
 				<div class="contenedor_repositorio_publico"
 				data-categoria='<?php echo $consulta['categoria']; ?>'
 				data-orden_cat='<?php echo $consulta['orden_cat']; ?>'
@@ -39,7 +39,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-md-4">
+			<div class="col-12 col-md-3">
 				<div class="single-widget search-widget turquesa-fnd">
 						<h3 class="text-white">Nueva búsqueda</h3>
 						<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">

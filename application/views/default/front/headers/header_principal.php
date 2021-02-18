@@ -28,8 +28,8 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/animate.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script><![endif]-->
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css">
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css">
+		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css?v=1">
+		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css?v=1">
 		<!-- <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet"> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
