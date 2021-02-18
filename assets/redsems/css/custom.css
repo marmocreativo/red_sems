@@ -288,6 +288,9 @@ p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c 
 }
 
 /* Folders */
+.carpetas-cont a:hover, .archivos-cont a:hover{
+	text-decoration: none;
+}
 .single-promo-card {
 	border-radius: 15px !important;
 	border: none;
