@@ -61,3 +61,4 @@ ERROR - 2021-02-18 19:17:18 --> 404 Page Not Found: Assets/js
 ERROR - 2021-02-18 19:17:18 --> 404 Page Not Found: Assets/js
 ERROR - 2021-02-18 19:17:18 --> 404 Page Not Found: Assets/js
 ERROR - 2021-02-18 19:17:18 --> 404 Page Not Found: Assets/js
+ERROR - 2021-02-18 20:24:06 --> 404 Page Not Found: Repositorio/recurso

@@ -27,7 +27,7 @@
 									<p id="idioma"><span class="fas fa-language pr-1"></span> Idioma: <?php echo $archivo['IDIOMA']; ?></p>
 								</div>
 							</div>
-							<a class="genric-btn primary e-large" href="#" style="width:100%">Descarga el recurso</a>
+							<a class="genric-btn primary e-large" target="_blank" href="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" style="width:100%">Descarga el recurso</a>
 							<hr>
 							<div class="container-fluid job-experience">
 								<h4 class="single-title">Derechos</h4>
