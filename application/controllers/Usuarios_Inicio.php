@@ -157,6 +157,7 @@ class Usuarios_Inicio extends CI_Controller {
 			$this->email->subject('Bienvenido a '.$this->data['op']['titulo_sitio']);
 			$this->email->message($mensaje);
 			// envio el correo
+			/*
 			if($this->email->send()){
 				// Genero la retroalimentacion
 				$this->session->set_flashdata('exito', 'Tu registro se completó correctamente, ahora puedes iniciar sesión, te enviamos un correo de confirmación');
@@ -164,7 +165,8 @@ class Usuarios_Inicio extends CI_Controller {
 				// Genero la retroalimentacion
 				$this->session->set_flashdata('advertencia', 'Tu registro se completó correctamente, ahora puedes iniciar sesión, no pudimos enviar un correo de confirmación');
 			}
-
+			*/
+			$this->session->set_flashdata('exito', 'Tu registro se completó correctamente, ahora puedes iniciar sesión');
 			// redirecciono
 			redirect(base_url('login'));
 		}else{

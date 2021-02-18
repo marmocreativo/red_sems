@@ -4,9 +4,15 @@
 					<div class="container" id="info-banner">
 						<div class="row fullscreen d-flex align-items-center justify-content-center">
 							<div class="banner-content col-lg-12">
+								<div class="text-center">
+
+										<img src="<?php echo base_url('assets/img'); ?>/logo_full.png" class="img-fluid" style="max-width:300px">
+								</div>
 								<div class="row justify-content-center">
 								  <img src="<?php echo base_url('assets/redsems'); ?>/img/code_logo.svg" class="col-6">
+
 							  </div>
+								<h3 class="h3 text-white">CONTENIDO DIGITAL EDUCATIVO</h3>
 								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
 									<div class="row justify-content-center form-wrap">
 										<div class="col-lg-4 form-cols">

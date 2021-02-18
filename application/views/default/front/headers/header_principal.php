@@ -28,8 +28,8 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/animate.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
 <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script><![endif]-->
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css?v=1">
-		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css?v=1">
+		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css?v=<?php echo date('U'); ?>">
+		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css?v=<?php echo date('U'); ?>">
 		<!-- <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet"> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -72,7 +72,7 @@ NAVBAR
 <div class="menu_principal" style="background-color:#041e18!important; padding-top:10px; padding-bottom:10px;">
 	<div  style="width:100%; max-width:1600px; margin:0 auto;">
 		<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent;">
-			<a class="navbar-brand" href="<?php echo base_url(); ?>">RED SEMS</a>
+			<a class="navbar-brand" href="<?php echo base_url(); ?>"><?php echo $op['titulo_sitio']; ?></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>

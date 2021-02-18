@@ -69,72 +69,21 @@
 		<h5>Archivos</h5>
 	</div>
 	<?php foreach($archivos as $archivo){ ?>
-		<?php
-			//Obtengo el archivo
-			$tipo_archivo = 'archivo';
-			$icono = 'fa fa-folder';
-			if($archivo->TIPO_PUBLICACION=='video'){
-				$tipo_archivo = 'video';
-				$icono = 'fab fa-youtube';
-			}
-			$ultima_galeria = $this->GeneralModel->detalles_orden('galerias',['ID_OBJETO'=>$archivo->ID_PUBLICACION],'ID_GALERIA desc');
-			$multimedia = $this->GeneralModel->detalles('multimedia',['ID_MULTIMEDIA'=>$ultima_galeria['ID_MULTIMEDIA']]);
-		?>
 	<div class="col-12 col-sm-3 mb-4">
 			<div class="card">
 				<div class="card-body p-0 text-center">
 					<img src="<?php echo base_url('contenido/img/publicaciones/'.$archivo->IMAGEN); ?>" class="img-fluid" alt="">
 					<div class="p-3 d-flex justify-content-between">
-						<p class="h6"><i class="<?php echo $icono; ?>"></i> <?php echo character_limiter($archivo->PUBLICACION_TITULO,22); ?></p>
+						<p class="h6"> <?php echo character_limiter($archivo->TITULO,22); ?></p>
 
 						<button class="btn btn-sm btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					    <i class="fas fa-ellipsis-v"></i>
 					  </button>
 					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<?php if($tipo_archivo=='archivo'){ ?>
-							<a href="<?php echo base_url('contenido/docs/'.$multimedia['ARCHIVO']); ?>" class="dropdown-item" download="<?php echo $archivo->PUBLICACION_TITULO ?>"> <i class="fa fa-download"></i> Descargar</a>
-							<?php } ?>
-							<?php if($tipo_archivo=='video'){ ?>
-								<a href="<?php echo base_url('video/'.$archivo->ID_PUBLICACION); ?>" class="dropdown-item"> <i class="fa fa-watch"></i> Ver video</a>
-							<?php } ?>
-							<a href="#" data-toggle="modal" class="dropdown-item" data-target="#editar-<?php echo $archivo->ID_PUBLICACION; ?>"><i class="fa fa-pencil"></i>Editar</a>
-					    <a class="dropdown-item" href="<?php echo base_url('admin/repositorio/borrar_archivo?id='.$archivo->ID_PUBLICACION.'&categoria='.verificar_variable('GET','categoria','0').'&orden_cat='.$consulta['orden_cat'].'&busqueda='.$consulta['busqueda']); ?>"><i class="fa fa-trash"></i> Borrar</a>
+					    <a class="dropdown-item" href="<?php echo base_url('admin/repositorio/borrar_archivo?id='.$archivo->ID.'&categoria='.verificar_variable('GET','categoria','0').'&orden_cat='.$consulta['orden_cat'].'&busqueda='.$consulta['busqueda']); ?>"><i class="fa fa-trash"></i> Borrar</a>
 					  </div>
 					</div>
 					<hr>
-				</div>
-			</div>
-			<!-- Formulario -->
-			<div class="modal fade" id="editar-<?php echo $archivo->ID_PUBLICACION; ?>" tabindex="-1" role="dialog" aria-labelledby="descargar-<?php echo $archivo->ID_PUBLICACION; ?>" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLongTitle">Editar</h5>
-						</div>
-						<div class="modal-body">
-							<form class="" action="<?php echo base_url('admin/repositorio/actualizar_archivo'); ?>" method="post" enctype="multipart/form-data">
-								<input type="hidden" name="Identificador" value="<?php echo $archivo->ID_PUBLICACION; ?>">
-								<input type="hidden" name="Tipo" value="archivo">
-								<input type="hidden" name="categoria" value="<?php echo verificar_variable('GET','categoria','0');; ?>">
-								<input type="hidden" name="orden_cat" value="<?php echo verificar_variable('GET','orden_cat','');; ?>">
-								<input type="hidden" name="busqueda" value="<?php echo verificar_variable('GET','busqueda','');; ?>">
-								<div class="form-group">
-									<label for="PublicacionTitulo">Nombre del archivo</label>
-									<input type="text" class="form-control" name="PublicacionTitulo" value="<?php echo $archivo->PUBLICACION_TITULO; ?>">
-								</div>
-								<div class="form-group">
-									<label for="file">Archivo</label>
-									<input type="file" class="form-control" name="file" value="">
-								</div>
-								<img src="<?php echo base_url('contenido/img/publicaciones/'.$archivo->IMAGEN); ?>" width="300px" class="d-block mx-auto" alt="">
-								<div class="form-group">
-									<label for="Imagen">Previsualizar</label>
-									<input type="file" class="form-control" name="Imagen" value="">
-								</div>
-								<button type="submit" name="button" class="btn btn-primary">Actualizar</button>
-							</form>
-						</div>
-					</div>
 				</div>
 			</div>
 	</div>
