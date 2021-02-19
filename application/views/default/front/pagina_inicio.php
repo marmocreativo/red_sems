@@ -75,7 +75,7 @@
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 								<h4>Investiga</h4>
-								<img src="<?php echo base_url('assets/redsems'); ?>/img/investiga.png" width="80px"/>
+								<img src="<?php echo base_url('assets/redsems'); ?>/img/Investiga.png" width="80px"/>
 								<p>
 									Obtén información fidedigna para tus trabajos de investigación y actividades académicas.
 								</p>
