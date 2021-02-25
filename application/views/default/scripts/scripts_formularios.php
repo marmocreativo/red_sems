@@ -257,13 +257,19 @@ function cargar_municipios(){
     var categoria = $('.contenedor_repositorio_publico').attr('data-categoria');
     var orden_cat = $('.contenedor_repositorio_publico').attr('data-orden_cat');
     var busqueda = $('.contenedor_repositorio_publico').attr('data-busqueda');
+    var busqueda_curso = $('.contenedor_repositorio_publico').attr('data-busqueda_curso');
+    var busqueda_recurso = $('.contenedor_repositorio_publico').attr('data-busqueda_recurso');
+console.log(' busqueda_recurso: ' + busqueda_recurso)    ;
+console.log(' busqueda_curso: ' + busqueda_curso)    ;
     jQuery.ajax({
       method: "GET",
       url: "<?php echo base_url('ajax/vista_repositorio_publico'); ?>",
       data: {
         categoria : categoria,
         orden_cat : orden_cat,
-        busqueda : busqueda
+        busqueda : busqueda,
+        busqueda_curso : busqueda_curso,
+        busqueda_recurso : busqueda_recurso
       },
       dataType: "html",
       success : function(respuesta)
