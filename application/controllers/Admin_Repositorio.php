@@ -66,23 +66,7 @@ class Admin_Repositorio extends CI_Controller {
 		/*
 		PROCESO DE LA IMAGEN
 		*/
-		if(!empty($_FILES['Imagen']['name'])){
-
-			$archivo = $_FILES['Imagen']['tmp_name'];
-			$ancho = $this->data['op']['ancho_imagenes_publicaciones'];
-			$alto = 187;
-			$corte = 'corte';
-			$extension = '.jpg';
-			$tipo_imagen = 'image/jpeg';
-			$calidad = 80;
-			$nombre = 'categoria-'.uniqid();
-			$destino = $this->data['op']['ruta_imagenes'].'categorias/';
-			// Subo la imagen y obtengo el nombre Default si va vacía
-			$imagen = subir_imagen($archivo,$ancho,$alto,$corte,$extension,$tipo_imagen,$calidad,$nombre,$destino);
-
-		}else{
-			$imagen = 'default.jpg';
-		}
+		$imagen = 'default.jpg';
 
 		$id_borrador = generador_aleatorio(4);
 
@@ -124,25 +108,8 @@ class Admin_Repositorio extends CI_Controller {
 		/*
 		PROCESO DE LA IMAGEN
 		*/
-		if(!empty($_FILES['Imagen']['name'])){
+		$imagen = $this->input->post('ImagenActual');
 
-
-
-			$archivo = $_FILES['Imagen']['tmp_name'];
-			$ancho = $this->data['op']['ancho_imagenes_publicaciones'];
-			$alto = $this->data['op']['alto_imagenes_publicaciones'];
-			$corte = 'corte';
-			$extension = '.jpg';
-			$tipo_imagen = 'image/jpeg';
-			$calidad = 80;
-			$nombre = 'categoria-'.uniqid();
-			$destino = $this->data['op']['ruta_imagenes'].'categorias/';
-			// Subo la imagen y obtengo el nombre Default si va vacía
-			$imagen = subir_imagen($archivo,$ancho,$alto,$corte,$extension,$tipo_imagen,$calidad,$nombre,$destino);
-
-		}else{
-			$imagen = $this->input->post('ImagenActual');
-		}
 		$parametros = array(
 			'CATEGORIA_NOMBRE' => $this->input->post('NombreCategoria'),
 			'URL' => $url,
@@ -176,8 +143,8 @@ class Admin_Repositorio extends CI_Controller {
 				 echo '</pre>';
 			 }else{
 
-				 if($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png' || $ext == 'gif' || $ext == 'tif'){
- 					$archivo = $_FILES['file']['tmp_name'];
+				 if(!empty($_FILES['Imagen']['name'])){
+ 					$archivo = $_FILES['Imagen']['tmp_name'];
  					$ancho = 300;
  					$alto = 300;
  					$corte = 'corte';

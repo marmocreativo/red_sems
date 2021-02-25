@@ -5,8 +5,8 @@
 						<div class="row fullscreen d-flex align-items-center justify-content-center">
 							<div class="banner-content col-lg-12 pt-4">
 								<div class="row justify-content-center">
-									<img src="<?php echo base_url('assets/img'); ?>/logo_full.png" class="col-3" style="max-width:300px">
-								  <img src="<?php echo base_url('assets/redsems'); ?>/img/code_logo.svg" class="col-6">
+									<img src="<?php echo base_url('assets/img'); ?>/logo_full.png?v=1" class="col-3" style="max-width:300px">
+								  <img src="<?php echo base_url('assets/redsems'); ?>/img/code_logo.svg?v=1" class="col-6">
 							  </div>
 								<h3 class="h3 text-white">CONTENIDO DIGITAL EDUCATIVO</h3>
 								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
@@ -29,7 +29,7 @@
 										<div class="col-lg-3 form-cols">
 											<div class="default-select" id="default-selects2">
 												<select name="busqueda_recurso">
-													<option value="">Selecciona</option>
+													<option value="">Selecciona recurso</option>
 													<option value="Pdf">PDF</option>
 													<option value="Epub">Epub</option>
 													<option value="Imagen">Imágen</option>

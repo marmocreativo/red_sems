@@ -2,7 +2,7 @@
 #home {
 	overflow: hidden;
 	z-index: 999;
-	background:white url("../img/code_bg.png");
+	background:white url("../img/code_bg.png?v=1");
 	background-position: center;
 	background-repeat: repeat-y;
 	background-size: cover;

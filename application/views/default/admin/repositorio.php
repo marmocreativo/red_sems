@@ -145,6 +145,10 @@
 																<input type="file" class="form-control" name="file" value="" required>
 															</div>
 															<div class="form-group">
+																<label for="Imagen">Imágen miniatura</label>
+																<input type="file" class="form-control" name="Imagen" value="">
+															</div>
+															<div class="form-group">
 																<label for="Titulo">Titulo (Nombre amigable)</label>
 																<input type="text" class="form-control" name="Titulo" value="" required>
 															</div>

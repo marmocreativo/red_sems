@@ -24,10 +24,13 @@
                 <div class="col-lg-3 form-cols">
                   <div class="default-select" id="default-selects2">
                     <select name="busqueda_recurso">
-                      <option value="0">Selecciona recurso</option>
-                      <option value="Imagen">Imagen</option>
-                      <option value="Pdf">Pdf</option>
+                      <option value="">Selecciona recurso</option>
+                      <option value="Pdf">PDF</option>
                       <option value="Epub">Epub</option>
+                      <option value="Imagen">Imágen</option>
+                      <option value="Infografía">Infografía</option>
+                      <option value="Video">Video</option>
+                      <option value="Audio">Audio</option>
                     </select>
                   </div>
                 </div>

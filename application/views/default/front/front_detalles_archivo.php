@@ -19,10 +19,12 @@
 									</div>
                   <div class="Archivo">
                     <?php if($archivo['FORMATO']=='pdf'){ ?>
-                      <iframe src="http://docs.google.com/gview?url=<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>"
-                        style="width:100%; height:500px;" frameborder="0"></iframe>
+                      <hr>
+                      <embed src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" width="100%" height="500"
+                       type="application/pdf">
                     <?php } ?>
                     <?php if($archivo['FORMATO']=='jpg'||$archivo['FORMATO']=='jpeg'||$archivo['FORMATO']=='png'||$archivo['FORMATO']=='gif'||$archivo['FORMATO']=='svg'){ ?>
+                      <hr>
                       <img src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" class="img-fluid">
                     <?php } ?>
                   </div>
@@ -38,6 +40,9 @@
 								</div>
 							</div>
 							<a class="genric-btn primary e-large" target="_blank" href="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" style="width:100%">Descarga el recurso</a>
+              <?php if(verificar_permiso(['administrador','produccion','diseno_instrucional','comunicacion'])){ ?>
+                <a class="btn btn-outline-primary" target="_blank" href="<?php echo $archivo['ARCHIVO_EDITABLE'] ?>" style="width:100%">Ver archivo Editable</a>
+              <?php } ?>
 							<hr>
 							<div class="container-fluid job-experience">
 								<h4 class="single-title">Derechos</h4>
@@ -73,7 +78,7 @@
 								<div class="col-12 form-cols pt-10">
 									<div class="default-select" id="default-selects2">
 										<select name="busqueda_recurso">
-                      <option value="">Selecciona</option>
+                      <option value="">Selecciona recurso</option>
                       <option value="Pdf">PDF</option>
                       <option value="Epub">Epub</option>
                       <option value="Imagen">Imágen</option>
