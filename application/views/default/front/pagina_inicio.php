@@ -13,43 +13,34 @@
 
 							  </div>
 								<h3 class="h3 text-white">CONTENIDO DIGITAL EDUCATIVO</h3>
-								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
+								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
 									<div class="row justify-content-center form-wrap">
 										<div class="col-lg-4 form-cols">
 											<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
 										</div>
 										<div class="col-lg-3 form-cols">
 											<div class="default-select" id="default-selects">
-												<select>
-													<option value="1">Tipo de recurso</option>
-													<option value="2">Página web</option>
-													<option value="3">Página web con diversos recursos</option>
-													<option value="4">Imagen</option>
-													<option value="5">Video</option>
-													<option value="1">Archivo de texto</option>
-													<option value="2">Audio</option>
-													<option value="3">Simuladores</option>
-													<option value="4">Software/Aplicación</option>
-													<option value="5">Video</option>
+												<select name="busqueda_curso">
+													<option value="Curso">Curso_de_prueba</option>
+													<option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
+													<option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
+													<option value="Modulo_14">Modulo_14</option>
+													<option value="M16_Evolucion_y_sus_repercusiones_sociales">M16_Evolucion_y_sus_repercusiones_sociales</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-lg-3 form-cols">
 											<div class="default-select" id="default-selects2">
-												<select>
-													<option value="1">Audiencia</option>
-													<option value="2">Directores</option>
-													<option value="3">Docentes</option>
-													<option value="4">Tutores</option>
-													<option value="5">Estudiantes</option>
-													<option value="6">Padres de Familia</option>
-													<option value="4">Responsables de Academia</option>
-													<option value="5">Responsables de Subsistemas</option>
+												<select name="busqueda_recurso">
+													<option value="Tipo de recurso">Tipo de recurso</option>
+													<option value="Imagen">Imagen</option>
+													<option value="Pdf">Pdf</option>
+													<option value="Epub">Epub</option>
 												</select>
 											</div>
-										</div>
+										</div>											
 										<div class="col-lg-2 form-cols">
-										    <button type="button" class="btn btn-info">
+										    <button type="submit" class="btn btn-info">
 										      <span class="lnr lnr-magnifier"></span> Buscar
 										    </button>
 										</div>

@@ -77,9 +77,7 @@ class Ajax extends CI_Controller {
 		$orden_cat = verificar_variable('GET','orden_cat','CATEGORIA_NOMBRE ASC');
 		$busqueda = verificar_variable('GET','busqueda','');
 		$agrupar_cat = 'categorias.ID_CATEGORIA';
-
-		$tablas_join_cat = array(
-		);
+		$tablas_join_cat = array();
 
 		if(!empty($busqueda)){
 			$parametros_cat_or['categorias.CATEGORIA_NOMBRE']=$busqueda;
@@ -97,6 +95,8 @@ class Ajax extends CI_Controller {
 		// parametros de archivos
 		$parametros_pub_or = array();
 		$parametros_pub_and = array();
+		$busqueda_curso = verificar_variable('GET','busqueda_curso','');
+		$busqueda_recurso = verificar_variable('GET','busqueda_recurso','');
 		$orden_pub = verificar_variable('GET','orden_pub','TITULO ASC');
 		$agrupar_pub = 'archivos.ID';
 
@@ -107,13 +107,17 @@ class Ajax extends CI_Controller {
 		if(!empty($busqueda)){
 			$parametros_pub_or['archivos.TITULO']=$busqueda;
 			$parametros_pub_or['archivos.DESCRIPCION']=$busqueda;
-		}else{
-			$parametros_pub_and['categorias_objetos.ID_CATEGORIA']=$categoria;
+			$parametros_pub_or['archivos.TEMA']=$busqueda;
 		}
-
+		$parametros_pub_or['archivos.TITULO_CURSO']=$busqueda_curso;
+		$parametros_pub_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
 		$parametros_pub_and['archivos.ESTADO']='activo';
-
-
+		
+		/* echo 'ajax.php - $busqueda:'.$busqueda.'<br>';
+		echo 'ajax.php - $busqueda_curso:'.$busqueda_curso.'<br>';
+		echo 'ajax.php - $busqueda_recurso:'.$busqueda_recurso.'<br><br>';
+		*/
+		
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join_pub,$parametros_pub_or,$parametros_pub_and,$orden_pub,'','',$agrupar_pub);
 
 		$this->load->view('default'.$this->data['dispositivo'].'/ajax/repositorio_publico_ajax',$this->data);

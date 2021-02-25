@@ -22,7 +22,7 @@
 									</p>
 									<p id="fecha-c"><span class="fas fa-calendar-alt pr-2"></span> Creado: <?php echo $archivo['FECHA_CREACION']; ?></p>
 									<p id="tema"><span class="fas fa-book pr-2"></span> Tema: <?php echo $archivo['TEMA']; ?></p>
-									<p id="audiencia"><span class="fas fa-users pr-1"></span> Audiencia: </p>
+									<p id="audiencia"><span class="fas fa-users pr-1"></span> Curso: <?php echo $archivo['TITULO_CURSO']; ?></p>
 									<p id="alcance"><span class="fas fa-map-marker pr-1"></span> Cobertura: <?php echo $archivo['COBERTURA']; ?></p>
 									<p id="idioma"><span class="fas fa-language pr-1"></span> Idioma: <?php echo $archivo['IDIOMA']; ?></p>
 								</div>
@@ -50,31 +50,22 @@
 								</div>
 								<div class="col-12 form-cols pt-10">
 									<div class="default-select" id="default-selects">
-										<select class="col-12">
-											<option value="1">Tipo de recurso</option>
-											<option value="2">Página web con texto</option>
-											<option value="3">Página web con diversos recursos</option>
-											<option value="4">Imagen</option>
-											<option value="5">Video</option>
-											<option value="1">Archivo de texto</option>
-											<option value="2">Audio</option>
-											<option value="3">Simuladores</option>
-											<option value="4">Software/Aplicación</option>
-											<option value="5">Video</option>
+										<select name="busqueda_curso">
+											<option value="Curso">Curso_de_prueba</option>
+											<option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
+											<option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
+											<option value="Modulo_14">Modulo_14</option>
+											<option value="M16_Evolucion_y_sus_repercusiones_sociales">M16_Evolucion_y_sus_repercusiones_sociales</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-12 form-cols pt-10">
 									<div class="default-select" id="default-selects2">
-										<select class="col-12">
-											<option value="1">Audiencia</option>
-											<option value="2">Directores</option>
-											<option value="3">Docentes</option>
-											<option value="4">Tutores</option>
-											<option value="5">Estudiantes</option>
-											<option value="6">Padres de Familia</option>
-											<option value="4">Responsables de Academia</option>
-											<option value="5">Responsables de Subsistemas</option>
+										<select name="busqueda_recurso">
+											<option value="Tipo de recurso">Tipo de recurso</option>
+											<option value="Imagen">Imagen</option>
+											<option value="Pdf">Pdf</option>
+											<option value="Epub">Epub</option>
 										</select>
 									</div>
 								</div>

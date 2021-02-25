@@ -32,6 +32,8 @@ class Front_Repositorio extends CI_Controller {
 		$this->data['consulta']['categoria'] = verificar_variable('GET','categoria','0');
 		$this->data['consulta']['orden_cat'] = verificar_variable('GET','orden_cat','ORDEN ASC');
 		$this->data['consulta']['busqueda'] = verificar_variable('GET','busqueda','');
+		$this->data['consulta']['busqueda_curso'] = verificar_variable('GET','busqueda_curso','');
+		$this->data['consulta']['busqueda_recurso'] = verificar_variable('GET','busqueda_recurso','');
 
 		// Open Tags
 		$this->data['titulo']  = $this->data['op']['titulo_sitio'];
@@ -157,15 +159,24 @@ class Front_Repositorio extends CI_Controller {
 		$this->data['consulta']['mostrar_por_pagina'] = $mostrar_por_pagina;
 		$pagina = verificar_variable('GET','pagina','1');
 		$this->data['consulta']['pagina'] = $pagina;
-		$agrupar = 'archivos.ID_PUBLICACION';
+		$agrupar = 'archivos.ID';
 		$busqueda = verificar_variable('GET','busqueda','');
+		$busqueda_curso = verificar_variable('GET','busqueda_curso','');
+		$busqueda_recurso = verificar_variable('GET','busqueda_recurso','');
 		$this->data['consulta']['busqueda'] = $busqueda;
+		$this->data['consulta']['busqueda_curso'] = $busqueda_curso;
+		$this->data['consulta']['busqueda_recurso'] = $busqueda_recurso;
 		// Expando la busqueda y genero los $parametros_or
+
 		if(!empty($busqueda)){
 			$parametros_or['archivos.TITULO']=$busqueda;
 			$parametros_or['archivos.DESCRIPCION']=$busqueda;
 			$parametros_or['archivos.TEMA']=$busqueda;
 		}
+		
+		$parametros_or['archivos.TITULO_CURSO']=$busqueda_curso;
+		$parametros_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
+
 		// Genero los parametros AND
 		$parametros_and['archivos.ESTADO']='activo';
 
@@ -197,17 +208,17 @@ class Front_Repositorio extends CI_Controller {
 			$this->data['offset']='';
 		}
 		// Consultas rápidas
-		$this->data['consulta_actual'] = 'tipo='.$tipo.'&orden='.$orden.'&mostrar_por_pagina='.$mostrar_por_pagina.'&pagina='.$pagina.'&busqueda='.$busqueda;
-		$this->data['consulta_siguiente'] = 'tipo='.$tipo.'&orden='.$orden.'&mostrar_por_pagina='.$mostrar_por_pagina.'&pagina='.$this->data['pagina_siguiente'].'&busqueda='.$busqueda;
-		$this->data['consulta_anterior'] = 'tipo='.$tipo.'&orden='.$orden.'&mostrar_por_pagina='.$mostrar_por_pagina.'&pagina='.$this->data['pagina_anterior'].'&busqueda='.$busqueda;
+		$this->data['consulta_actual'] = 'tipo='.$tipo.'&orden='.$orden.'&mostrar_por_pagina='.$mostrar_por_pagina.'&pagina='.$pagina.'&busqueda='.$busqueda.'&busqueda_curso='.$busqueda_curso.'&busqueda_recurso='.$busqueda_recurso;
+		$this->data['consulta_siguiente'] = 'tipo='.$tipo.'&orden='.$orden.'&mostrar_por_pagina='.$mostrar_por_pagina.'&pagina='.$this->data['pagina_siguiente'].'&busqueda='.$busqueda.'&busqueda_curso='.$busqueda_curso.'&busqueda_recurso='.$busqueda_recurso;
+		$this->data['consulta_anterior'] = 'tipo='.$tipo.'&orden='.$orden.'&mostrar_por_pagina='.$mostrar_por_pagina.'&pagina='.$this->data['pagina_anterior'].'&busqueda='.$busqueda.'&busqueda_curso='.$busqueda_curso.'&busqueda_recurso='.$busqueda_recurso;
 
 		// Consulta
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join,$parametros_or,$parametros_and,$orden,$mostrar_por_pagina,$this->data['offset'],$agrupar);
 
 
 		// Open Tags
-		$this->data['titulo']  = 'Resultados de busqueda | '.$busqueda;
-		$this->data['descripcion']  = $busqueda;
+		$this->data['titulo']  = 'Resultados de busqueda | '.$busqueda.' | '.$busqueda_curso.' | '.$busqueda_recurso;
+		$this->data['descripcion']  = $busqueda.' | '.$busqueda_curso.' | '.$busqueda_recurso;
 		$this->data['imagen']  = $this->data['imagen']  = base_url('assets/img/share_default.jpg');
 		//vista especializada
 		$this->data['vista'] = vista_especializada($this->data['op']['plantilla'].$this->data['dispositivo'],'/front/front_','busqueda_','archivos','_'.$this->data['tipo']);
