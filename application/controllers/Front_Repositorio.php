@@ -174,8 +174,12 @@ class Front_Repositorio extends CI_Controller {
 			$parametros_or['archivos.TEMA']=$busqueda;
 		}
 		
-		$parametros_or['archivos.TITULO_CURSO']=$busqueda_curso;
-		$parametros_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
+		if(!empty($busqueda_curso)){
+			$parametros_or['archivos.TITULO_CURSO']=$busqueda_curso;
+		}
+		if(!empty($busqueda_recurso)){
+			$parametros_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
+		}
 
 		// Genero los parametros AND
 		$parametros_and['archivos.ESTADO']='activo';
