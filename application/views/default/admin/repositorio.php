@@ -117,10 +117,6 @@
 							        	<div class="form-group">
 													<input type="text" class="form-control" name="NombreCategoria" value="">
 							        	</div>
-												<div class="form-group">
-													<label for="Imagen">Imágen</label>
-													<input type="file" class="form-control" name="Imagen" value="" accept="image/*">
-												</div>
 												<button type="submit" class="btn btn-success" name="button">Crear</button>
 							        </form>
 							      </div>
@@ -130,7 +126,7 @@
 							<!-- Subir archivo de gran tamaño -->
 								<button type="button" class="btn btn-warning btn-block mb-4" data-toggle="modal" data-target="#archivo_grande"><i class="fa fa-upload"></i> Subir arhivo (<?php echo ini_get('upload_max_filesize'); ?> max.)</button>
 								<div class="modal fade" id="archivo_grande" tabindex="-1" role="dialog" aria-labelledby="archivo_grande" aria-hidden="true">
-								  <div class="modal-dialog" role="document">
+								  <div class="modal-dialog modal-lg" role="document">
 								    <div class="modal-content">
 								      <div class="modal-header">
 								        <h5 class="modal-title">Subir archivo</h5>
@@ -141,61 +137,73 @@
 													<input type="hidden" name="categoria" value="<?php echo $consulta['categoria']; ?>">
 													<input type="hidden" name="orden_cat" value="<?php echo $consulta['orden_cat']; ?>">
 													<input type="hidden" name="busqueda" value="<?php echo $consulta['busqueda']; ?>">
-													<div class="form-group">
-														<label for="file">Archivo</label>
-														<input type="file" class="form-control" name="file" value="" required>
-													</div>
-													<div class="form-group">
-														<label for="Titulo">Titulo (Nombre amigable)</label>
-														<input type="text" class="form-control" name="Titulo" value="" required>
-													</div>
-													<div class="form-group">
-														<label for="Cadido">CADIDO</label>
-														<input type="text" class="form-control" name="Cadido" value="" required>
-													</div>
-													<div class="form-group">
-														<label for="Nomenclatura">Nomenclatura (Sin espacios ni caracteres especiales)</label>
-														<input type="text" class="form-control" name="Nomenclatura" value="" required>
-													</div>
-													<div class="form-group">
-														<label for="Descripcion">Descripción</label>
-														<textarea class="form-control" name="Descripcion" rows="5"></textarea>
-													</div>
-													<div class="form-group">
-														<label for="Tema">Tema (Palabras clave)</label>
-														<textarea class="form-control" name="Tema" rows="5"></textarea>
-													</div>
-													<div class="form-group">
-														<label for="TipoRecurso">Tipo de recurso</label>
-														<select class="form-control" name="TipoRecurso">
-															<option value="">Selecciona</option>
-															<option value="Pdf">PDF</option>
-															<option value="Epub">Epub</option>
-															<option value="Imagen">Infografía / Imágen</option>
-															<option value="Video">Video</option>
-															<option value="Audio">Audio</option>
-														</select>
-													</div>
+													<div class="row">
+														<div class="col-4">
+															<h4>Generales</h4>
+															<div class="form-group">
+																<label for="file">Archivo</label>
+																<input type="file" class="form-control" name="file" value="" required>
+															</div>
+															<div class="form-group">
+																<label for="Titulo">Titulo (Nombre amigable)</label>
+																<input type="text" class="form-control" name="Titulo" value="" required>
+															</div>
+															<div class="form-group">
+																<label for="Cadido">CADIDO</label>
+																<input type="text" class="form-control" name="Cadido" value="" required>
+															</div>
+															<div class="form-group">
+																<label for="Nomenclatura">Nomenclatura (Sin espacios ni caracteres especiales)</label>
+																<input type="text" class="form-control" name="Nomenclatura" value="" required>
+															</div>
+															<div class="form-group">
+																<label for="Descripcion">Descripción</label>
+																<textarea class="form-control" name="Descripcion" rows="5"></textarea>
+															</div>
+														</div>
+														<div class="col-4">
+															<h4>Dublin Core</h4>
+															<div class="form-group">
+																<label for="Tema">Tema (Palabras clave)</label>
+																<textarea class="form-control" name="Tema" rows="5"></textarea>
+															</div>
+															<div class="form-group">
+																<label for="TipoRecurso">Tipo de recurso</label>
+																<select class="form-control" name="TipoRecurso">
+																	<option value="">Selecciona</option>
+																	<option value="Pdf">PDF</option>
+																	<option value="Epub">Epub</option>
+																	<option value="Imagen">Imágen</option>
+																	<option value="Infografía">Infografía</option>
+																	<option value="Video">Video</option>
+																	<option value="Audio">Audio</option>
+																</select>
+															</div>
 
-													<div class="form-group">
-														<label for="Cobertura">Cobertura</label>
-														<input type="text" class="form-control" name="Cobertura" value="">
-													</div>
-													<div class="form-group">
-														<label for="Derechos">Derechos</label>
-														<textarea class="form-control" name="Derechos" rows="5">ESTA OBRA SE DISTRIBUYE BAJO LOS TÉRMINOS Y CONDICIONES DE LA PRESENTE LICENCIA PÚBLICA DE CREATIVE COMMONS (“CCPL” O “LICENCIA”). LA OBRA ESTÁ PROTEGIDA POR LA LEY DEL DERECHO DE AUTOR Y/O POR CUALQUIER OTRA LEY QUE RESULTE APLICABLE. CUALQUIER USO DISTINTO DEL AUTORIZADO POR LA PRESENTE LICENCIA O POR LA LEY DEL DERECHO DE AUTOR ESTÁ PROHIBIDO.</textarea>
-													</div>
-													<div class="form-group">
-														<label for="TituloCurso">Título del Curso</label>
-														<input type="text" class="form-control" name="TituloCurso" value="">
-													</div>
-													<div class="form-group">
-														<label for="PropositoDidactico">Propósito didáctico</label>
-														<input type="text" class="form-control" name="PropositoDidactico" value="">
-													</div>
-													<div class="form-group">
-														<label for="UrlEditable">URL del archivo Editable</label>
-														<input type="text" class="form-control" name="UrlEditable" value="">
+															<div class="form-group">
+																<label for="Cobertura">Cobertura</label>
+																<input type="text" class="form-control" name="Cobertura" value="">
+															</div>
+															<div class="form-group">
+																<label for="Derechos">Derechos</label>
+																<textarea class="form-control" name="Derechos" rows="5">ESTA OBRA SE DISTRIBUYE BAJO LOS TÉRMINOS Y CONDICIONES DE LA PRESENTE LICENCIA PÚBLICA DE CREATIVE COMMONS (“CCPL” O “LICENCIA”). LA OBRA ESTÁ PROTEGIDA POR LA LEY DEL DERECHO DE AUTOR Y/O POR CUALQUIER OTRA LEY QUE RESULTE APLICABLE. CUALQUIER USO DISTINTO DEL AUTORIZADO POR LA PRESENTE LICENCIA O POR LA LEY DEL DERECHO DE AUTOR ESTÁ PROHIBIDO.</textarea>
+															</div>
+														</div>
+														<div class="col-4">
+															<h4>Prepa en Línea</h4>
+															<div class="form-group">
+																<label for="TituloCurso">Título del Curso</label>
+																<input type="text" class="form-control" name="TituloCurso" value="">
+															</div>
+															<div class="form-group">
+																<label for="PropositoDidactico">Propósito didáctico</label>
+																<input type="text" class="form-control" name="PropositoDidactico" value="">
+															</div>
+															<div class="form-group">
+																<label for="UrlEditable">URL del archivo Editable</label>
+																<input type="text" class="form-control" name="UrlEditable" value="">
+															</div>
+														</div>
 													</div>
 													<hr>
 													<button type="submit" class="btn btn-success" name="button" id="boton_subir_archivo_pesado">Subir</button>

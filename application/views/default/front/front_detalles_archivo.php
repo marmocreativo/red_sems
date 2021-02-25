@@ -13,11 +13,18 @@
 									<div class="title d-flex flex-row justify-content-between">
 										<div class="titles">
 											<h4><?php echo $archivo['TITULO']; ?></h4>
-											<h5 class=""><?php echo $archivo['CREADOR']; ?></h5>
-											<h5 class=""><?php echo $archivo['COLABORADOR']; ?></h5>
+											<h5 class="creador"><?php echo $archivo['CREADOR']; ?></h5>
+											<h5 class="colaborador"><?php echo $archivo['COLABORADOR']; ?></h5>
 										</div>
 									</div>
-									<p>
+                  <div class="Archivo">
+                    <?php if($archivo['FORMATO']=='pdf'){ ?>
+                      <iframe src="http://docs.google.com/gview?url=<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>"
+                        style="width:100%; height:500px;" frameborder="0"></iframe>
+                    <?php } ?>
+                  </div>
+                  <hr>
+									<p class="descripcion">
 										<?php echo $archivo['DESCRIPCION']; ?>
 									</p>
 									<p id="fecha-c"><span class="fas fa-calendar-alt pr-2"></span> Creado: <?php echo $archivo['FECHA_CREACION']; ?></p>
@@ -63,10 +70,13 @@
 								<div class="col-12 form-cols pt-10">
 									<div class="default-select" id="default-selects2">
 										<select name="busqueda_recurso">
-											<option value="0">Selecciona recurso</option>
-											<option value="Imagen">Imagen</option>
-											<option value="Pdf">Pdf</option>
-											<option value="Epub">Epub</option>
+                      <option value="">Selecciona</option>
+                      <option value="Pdf">PDF</option>
+                      <option value="Epub">Epub</option>
+                      <option value="Imagen">Imágen</option>
+                      <option value="Infografía">Infografía</option>
+                      <option value="Video">Video</option>
+                      <option value="Audio">Audio</option>
 										</select>
 									</div>
 								</div>
