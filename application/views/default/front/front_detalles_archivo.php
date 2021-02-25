@@ -22,6 +22,9 @@
                       <iframe src="http://docs.google.com/gview?url=<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>"
                         style="width:100%; height:500px;" frameborder="0"></iframe>
                     <?php } ?>
+                    <?php if($archivo['FORMATO']=='jpg'||$archivo['FORMATO']=='jpeg'||$archivo['FORMATO']=='png'||$archivo['FORMATO']=='gif'||$archivo['FORMATO']=='svg'){ ?>
+                      <img src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" class="img-fluid">
+                    <?php } ?>
                   </div>
                   <hr>
 									<p class="descripcion">

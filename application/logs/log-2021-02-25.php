@@ -50,3 +50,7 @@ ERROR - 2021-02-25 15:03:39 --> 404 Page Not Found: Repositorio/recurso
 ERROR - 2021-02-25 15:03:40 --> 404 Page Not Found: Contenido/docs
 ERROR - 2021-02-25 15:04:57 --> 404 Page Not Found: Repositorio/recurso
 ERROR - 2021-02-25 15:05:12 --> 404 Page Not Found: Repositorio/recurso
+ERROR - 2021-02-25 15:07:54 --> 404 Page Not Found: Assets/img
+ERROR - 2021-02-25 15:09:25 --> 404 Page Not Found: Contenido/docs
+ERROR - 2021-02-25 15:09:25 --> 404 Page Not Found: Repositorio/recurso
+ERROR - 2021-02-25 15:09:32 --> 404 Page Not Found: Contenido/docs
