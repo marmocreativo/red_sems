@@ -3,14 +3,10 @@
 				<div class="video-container">
 					<div class="container" id="info-banner">
 						<div class="row fullscreen d-flex align-items-center justify-content-center">
-							<div class="banner-content col-lg-12">
-								<div class="text-center">
-
-										<img src="<?php echo base_url('assets/img'); ?>/logo_full.png" class="img-fluid" style="max-width:300px">
-								</div>
+							<div class="banner-content col-lg-12 pt-4">
 								<div class="row justify-content-center">
+									<img src="<?php echo base_url('assets/img'); ?>/logo_full.png" class="col-3" style="max-width:300px">
 								  <img src="<?php echo base_url('assets/redsems'); ?>/img/code_logo.svg" class="col-6">
-
 							  </div>
 								<h3 class="h3 text-white">CONTENIDO DIGITAL EDUCATIVO</h3>
 								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
@@ -64,8 +60,15 @@
 			<!-- End banner Area -->
 
 			<!-- Start features Area -->
-			<section class="features-area">
+			<section class="callto-action-area section-gap" id="bienvenida">
 				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content col-lg-9">
+							<div class="title text-center">
+								<h1 class="mb-10 text-white">¡Bienvenido a la RED SEMS!</h1>
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
@@ -98,22 +101,6 @@
 				</div>
 			</section>
 			<!-- End features Area -->
-						<!-- Start callto-action Area -->
-						<section class="callto-action-area section-gap" id="bienvenida">
-							<div class="container">
-								<div class="row d-flex justify-content-center">
-									<div class="menu-content col-lg-9">
-										<div class="title text-center">
-											<h1 class="mb-10 text-white">¡Bienvenido a la RED SEMS!</h1>
-											<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-											<a class="primary-btn" href="#">Ver video</a>
-											<a class="primary-btn" href="#">Introducción</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<!-- End calto-action Area -->
 
 						<!--Section: Features v.3-->
 						<section class="pt-50" id="ejes-modelo">
@@ -243,78 +230,81 @@
 			<section class="feature-cat-area pt-50" id="categorias">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-60 col-lg-10">
+						<div class="menu-content pb-20 col-lg-10">
 							<div class="title text-center">
 								<h1 class="mb-10">Recursos por tipo</h1>
 								<p>Explora por tipo o por palabras clave</p>
 							</div>
 						</div>
-					<div class="owl-carousel">
-						<div>
-							<div class="single-fcat">
-
-								<div class='circle fill-secondary'></div>
-								<a href="category.html">
-									<i class="fas fa-code"></i>
-								</a>
-								<p>Página web</p>
+						<div class="splide" style="width:100%">
+							<div class="splide__track">
+								<ul class="splide__list">
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-secondary'></div>
+											<a href="category.html">
+												<i class="fas fa-code"></i>
+											</a>
+											<p>Página web</p>
+										</div>
+									</li>
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-blue'></div>
+											<a href="category.html">
+												<i class="fas fa-image"></i>
+											</a>
+											<p>Imagen</p>
+										</div>
+									</li>
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-teal'></div>
+											<a href="category.html">
+												<i class="fas fa-play"></i>
+											</a>
+											<p>Video</p>
+										</div>
+									</li>
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-lime'></div>
+											<a href="category.html">
+												<i class="fas fa-chalkboard-teacher"></i>
+											</a>
+											<p>Presentación</p>
+										</div>
+									</li>
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-pink'></div>
+											<a href="category.html">
+												<i class="fas fa-file-alt"></i>
+											</a>
+											<p>Archivo de texto</p>
+										</div>
+									</li>
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-secondary'></div>
+											<a href="category.html">
+												<i class="fas fa-file-audio"></i>
+											</a>
+											<p>Audio</p>
+										</div>
+									</li>
+									<li class="splide__slide">
+										<div class="single-fcat">
+											<div class='circle fill-teal'></div>
+											<a href="category.html">
+												<i class="fas fa-laptop-code"></i>
+											</a>
+											<p>Software/Aplicación</p>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<div>
-							<div class="single-fcat">
-								<div class='circle fill-blue'></div>
-								<a href="category.html">
-									<i class="fas fa-image"></i>
-								</a>
-								<p>Imagen</p>
-							</div>
-						</div>
-						<div>
-							<div class="single-fcat">
-								<div class='circle fill-teal'></div>
-								<a href="category.html">
-									<i class="fas fa-play"></i>
-								</a>
-								<p>Video</p>
-							</div>
-						</div>
-						<div>
-							<div class="single-fcat">
-								<div class='circle fill-pink'></div>
-								<a href="category.html">
-									<i class="fas fa-file-alt"></i>
-								</a>
-								<p>Archivo de texto</p>
-							</div>
-						</div>
-						<div>
-							<div class="single-fcat">
-								<div class='circle fill-lime'></div>
-								<a href="category.html">
-									<i class="fas fa-chalkboard-teacher"></i>
-								</a>
-								<p>Presentación</p>
-							</div>
-						</div>
-						<div>
-							<div class="single-fcat">
-								<div class='circle fill-secondary'></div>
-								<a href="category.html">
-									<i class="fas fa-file-audio"></i>
-								</a>
-								<p>Audio</p>
-							</div>
-						</div>
-						<div>
-							<div class="single-fcat">
-								<div class='circle fill-teal'></div>
-								<a href="category.html">
-									<i class="fas fa-laptop-code"></i>
-								</a>
-								<p>Software/Aplicación</p>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 			</section>
@@ -383,7 +373,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-sim">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/sim-icn.png">Simulador</div>
+							<div class="genric-btn default circle"><i class="fas fa-chalkboard-teacher"></i>Presentación</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -407,7 +397,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-app">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/software-icn.png">Software/Aplicación</div>
+							<div class="genric-btn default circle"><i class="fas fa-laptop-code"></i>Software/Aplicación</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -483,56 +473,19 @@
 		</section>
 
 		<!-- Start About Area -->
-		<section class="callto-action-area section-gap" id="inter">
+		<section class="section-gap" id="inter">
 			<div class="container">
 				<div class="row d-flex sidebar">
-						<div class="col-md-12 col-lg-4 single-slidebar">
-							<h4 class="text-white">¿Qué son los Recursos Educativos Digitales?</h4>
-							<div class="blog-list">
-								<div class="single-blog " style="background:#000 url(<?php echo base_url('assets/redsems'); ?>/img/blog1.jpg);">
-									<a href="blog-single.html"><h4>¿Qué es un REA? </h4></a>
-									<div class="meta justify-content-between d-flex">
-										<p>
-											02 Hours ago
-										</p>
-										<p>
-											<span class="lnr lnr-heart"></span>
-											06
-											 <span class="lnr lnr-bubble"></span>
-											02
-										</p>
-									</div>
-								</div>
-								<div class="single-blog " style="background:#000 url(<?php echo base_url('assets/redsems'); ?>/img/blog2.jpg);">
-									<a href="blog-single.html"><h4>Derechos de Autor </h4></a>
-									<div class="meta justify-content-between d-flex">
-										<p>
-											02 Hours ago
-										</p>
-										<p>
-											<span class="lnr lnr-heart"></span>
-											06
-											 <span class="lnr lnr-bubble"></span>
-											02
-										</p>
-									</div>
-								</div>
-								<div class="single-blog " style="background:#000 url(<?php echo base_url('assets/redsems'); ?>/img/blog1.jpg);">
-									<a href="blog-single.html"><h4>REA en las actividades de enseñanza-aprendizaje</h4></a>
-									<div class="meta justify-content-between d-flex">
-										<p>
-											02 Hours ago
-										</p>
-										<p>
-											<span class="lnr lnr-heart"></span>
-											06
-											 <span class="lnr lnr-bubble"></span>
-											02
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
+					<div class="col-md-12 col-lg-4 single-slidebar">
+						<h4 class="text-white">Recursos por Área</h4>
+						<ul class="cat-list">
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Comunicación</p><span>37</span></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Sociales</p><span>57</span></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Humanidades</p><span>33</span></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p><span>36</span></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Experimentales</p><span>47</span></a></li>
+						</ul>
+					</div>
 
 						<div class="col-md-12 col-lg-4 single-slidebar">
 							<h4 class="text-white">Recursos por Tipo</h4>
@@ -543,7 +496,7 @@
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Video</p><span>36</span></a></li>
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Archivo de texto</p><span>47</span></a></li>
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Audio</p><span>33</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Simuladores</p><span>36</span></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Presentaciónes</p><span>36</span></a></li>
 								<li><a class="justify-content-between d-flex" href="category.html"><p>Software/Aplicación</p><span>47</span></a></li>
 							</ul>
 						</div>
@@ -630,7 +583,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-sim">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/sim-icn.png">Simulador</div>
+							<div class="genric-btn default circle"><i class="fas fa-chalkboard-teacher"></i>Presentación</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>
@@ -654,7 +607,7 @@
 					</a>
 					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
 						<div class="single-service rec-app">
-							<div class="genric-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/software-icn.png">Software/Aplicación</div>
+							<div class="genric-btn default circle"><i class="fas fa-laptop-code"></i>Software/Aplicación</div>
 							<div class="cbp-vm-title">
 								<h5>Nombre de Recurso</h5>
 								<div class="cbp-vm-price">Autor</div>

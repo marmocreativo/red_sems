@@ -2,6 +2,43 @@
 <div class="contenido-principal">
   <div class="container-fluid">
 		<div class="row mt-3">
+			<div class="col-12 banner-content"  id="busqueda-int">
+          <h5>Nueva búsqueda</h5>
+            <form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
+              <div class="row justify-content-center form-wrap">
+                <div class="col-lg-4 form-cols">
+                  <input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
+                </div>
+                <div class="col-lg-3 form-cols">
+                  <div class="default-select" id="default-selects">
+                    <select name="busqueda_curso">
+                      <option value="0">Selecciona curso</option>
+                      <option value="Curso_de_prueba">Curso_de_prueba</option>
+                      <option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
+                      <option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
+                      <option value="Modulo_14">Modulo_14</option>
+                      <option value="M16_Evolucion_y_sus_repercusiones_sociales">M16_Evolucion_y_sus_repercusiones_sociales</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-3 form-cols">
+                  <div class="default-select" id="default-selects2">
+                    <select name="busqueda_recurso">
+                      <option value="0">Selecciona recurso</option>
+                      <option value="Imagen">Imagen</option>
+                      <option value="Pdf">Pdf</option>
+                      <option value="Epub">Epub</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-2 form-cols">
+                    <button type="submit" class="btn btn-info">
+                      <span class="lnr lnr-magnifier"></span> Buscar
+                    </button>
+                </div>
+              </div>
+            </form>
+			</div>
 			<div class="col-12">
 				<nav aria-label="breadcrumb">
 				  <ol class="breadcrumb">
@@ -28,7 +65,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 col-md-9">
+			<div class="col-12">
 				<div class="contenedor_repositorio_publico"
 				data-categoria='<?php echo $consulta['categoria']; ?>'
 				data-orden_cat='<?php echo $consulta['orden_cat']; ?>'
@@ -40,50 +77,11 @@
 						<i class="fa fa-spinner fa-pulse fa-4x"></i>
 					</div>
 				</div>
-<?php 
+<?php
 /* echo 'repositorio.php - consulta[busqueda]: '.$consulta['busqueda'].'<br>';
 echo 'repositorio.php - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<br>';
 echo 'repositorio.php - consulta[busqueda_recurso]: '.$consulta['busqueda_recurso'].'<br><br>'; */
 ?>
-			</div>
-			<div class="col-12 col-md-3">
-				<div class="single-widget search-widget turquesa-fnd">
-						<h3 class="text-white">Nueva búsqueda</h3>
-						<form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
-							<div class="row justify-content-center form-wrap">
-								<div class="col-12 form-cols">
-									<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
-								</div>
-								<div class="col-12 form-cols pt-10">
-									<div class="default-select" id="default-selects">
-										<select class="col-12" name="busqueda_curso">
-											<option value="0">Selecciona curso</option>
-											<option value="Curso_de_prueba">Curso_de_prueba</option>
-											<option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
-											<option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
-											<option value="Modulo_14">Modulo_14</option>
-											<option value="M16_Evolucion_y_sus_repercusiones_sociales">M16_Evolucion_y_sus_repercusiones_sociales</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-12 form-cols pt-10">
-									<div class="default-select" id="default-selects2">
-										<select class="col-12" name="busqueda_recurso">
-											<option value="0">Selecciona recurso</option>
-											<option value="Imagen">Imagen</option>
-											<option value="Pdf">Pdf</option>
-											<option value="Epub">Epub</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-12 form-cols pt-10">
-										<button type="submit" class="btn btn-info btn-block">
-											<span class="lnr lnr-magnifier"></span> Buscar
-										</button>
-								</div>
-							</div>
-						</form>
-					</div>
 			</div>
 		</div>
   </div>
