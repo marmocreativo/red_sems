@@ -8,7 +8,7 @@
 				<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 					<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 						<div class="card-body d-flex justify-content-between">
-							<a href="<?php echo base_url('repositorio?categoria='.$categoria->ID_CATEGORIA.'&orden_cat'.$consulta['orden_cat'].'&busqueda'.$consulta['busqueda'].'&busqueda_curso'.$consulta['busqueda_curso'].'&busqueda_recurso'.$consulta['busqueda_recurso']); ?>" class="d-block">
+							<a href="<?php echo base_url('admin/repositorio?categoria='.$categoria->ID_CATEGORIA.'&orden_cat'.$consulta['orden_cat'].'&busqueda'.$consulta['busqueda'].'&busqueda_curso'.$consulta['busqueda_curso'].'&busqueda_recurso'.$consulta['busqueda_recurso']); ?>" class="d-block">
 							<p class="h4" title="<?php echo $categoria->CATEGORIA_NOMBRE; ?>"><i class="fa fa-folder"></i> <?php echo character_limiter($categoria->CATEGORIA_NOMBRE,22); ?></p>
 							</a>
 						</div>
