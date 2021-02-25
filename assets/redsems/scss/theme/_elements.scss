@@ -955,6 +955,8 @@ h1, h2, h3, h4, h5, h6 {
 				min-height: 28px;
 				font-size: 12px;
 				padding-left: 20px;
+				text-overflow: ellipsis;
+        overflow: hidden;
 				&.selected {
 					color: $primary;
 					background: transparent;

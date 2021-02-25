@@ -85,32 +85,6 @@ $(document).ready(function(){
     }
   })
 
-	// Initiate Owl carousel
-	$('.owl-carousel').owlCarousel({
-		margin: 10,
-		stagePadding: 20,
-		mouseDrag: true,
-		autoplay:true,
-		autoplayTimeout:2000,
-		autoplayHoverPause:true,
-		responsiveClass: true,
-		responsive: {
-			0: {
-				items: 1,
-				nav: false
-			},
-			600: {
-				items: 3,
-				nav: false
-			},
-			1000: {
-				items: 5,
-				nav: false,
-				loop: true,
-				margin: 20
-			}
-		}
-	})
 
 	// Smooth scroll
 	// handle links with @href started with '#' only

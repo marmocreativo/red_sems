@@ -21,8 +21,6 @@
 <script src="<?php echo base_url('assets/js/mixitup.min.js'); ?>"></script>
 <!--wow js-->
 <script src="<?php echo base_url('assets/js/wow.min.js'); ?>"></script>
-<!--owl carousel js-->
-<script src="<?php echo base_url('assets/js/owl.carousel.min.js'); ?>"></script>
 <!--countdown js-->
 <script src="<?php echo base_url('assets/js/jquery.countdown.min.js'); ?>"></script>
 <!--custom js-->

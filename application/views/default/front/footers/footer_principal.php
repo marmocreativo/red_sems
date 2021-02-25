@@ -21,23 +21,17 @@
   		<script src="<?php echo base_url('assets/redsems'); ?>/js/easing.min.js"></script>
 			<script src="<?php echo base_url('assets/redsems'); ?>/js/jquery.nice-select.min.js"></script>
 			<script src="<?php echo base_url('assets/redsems'); ?>/js/main.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 			<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
-			<script type="module">
-
-			  var slider = tns({
-					container: '.owl-carousel',
-					autoWidth: true,
-          loop: true,
-			    autoplay: true,
-					controls: false,
-					navPosition: 'bottom',
-					mouseDrag: true,
-          swipeAngle: false,
-			  });
-			  </script>
 
 			<?php $this->load->view('default'.$dispositivo.'/scripts/scripts_formularios'); ?>
 <?php $this->load->view('default'.$dispositivo.'/scripts/scripts_front'); ?>
 		</body>
+		<script>
+			new Splide( '.splide', {
+				type     : 'loop',
+				autoWidth: true,
+				focus    : 'center',
+			} ).mount();
+		</script>
 	</html>

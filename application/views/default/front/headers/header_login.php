@@ -26,7 +26,7 @@
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/all.min.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/nice-select.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/animate.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/main.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/redsems'); ?>/css/custom.css">

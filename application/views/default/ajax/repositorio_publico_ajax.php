@@ -33,7 +33,7 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 		<div class="col-sm-12 col-lg-6">
 			<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>">
 				<div class="single-service rec-webtxt">
-					<div class="generic-btn default circle"><img src="<?php echo base_url('assets/redsems'); ?>/img/web-txt-icn.png"><?php echo $archivo->TIPO_RECURSO; ?></div>
+					<div class="genric-btn default circle"><i class="fas fa-file-alt"></i><?php echo $archivo->TIPO_RECURSO; ?></div>
 					<div class="cbp-vm-title">
 						<h5><?php echo $archivo->TITULO; ?></h5>
 						<div class="cbp-vm-price"><?php echo $archivo->TITULO_CURSO; ?></div>
