@@ -109,8 +109,13 @@ class Ajax extends CI_Controller {
 			$parametros_pub_or['archivos.DESCRIPCION']=$busqueda;
 			$parametros_pub_or['archivos.TEMA']=$busqueda;
 		}
-		$parametros_pub_or['archivos.TITULO_CURSO']=$busqueda_curso;
-		$parametros_pub_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
+		if(!empty($busqueda_curso)){
+			$parametros_pub_or['archivos.TITULO_CURSO']=$busqueda_curso;
+		}
+		if(!empty($busqueda_recurso)){
+			$parametros_pub_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
+		}
+				
 		$parametros_pub_and['archivos.ESTADO']='activo';
 		
 		/* echo 'ajax.php - $busqueda:'.$busqueda.'<br>';

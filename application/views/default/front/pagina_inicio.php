@@ -21,7 +21,8 @@
 										<div class="col-lg-3 form-cols">
 											<div class="default-select" id="default-selects">
 												<select name="busqueda_curso">
-													<option value="Curso">Curso_de_prueba</option>
+													<option value="0">Selecciona curso</option>
+													<option value="Curso_de_prueba">Curso_de_prueba</option>
 													<option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
 													<option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
 													<option value="Modulo_14">Modulo_14</option>
@@ -32,7 +33,7 @@
 										<div class="col-lg-3 form-cols">
 											<div class="default-select" id="default-selects2">
 												<select name="busqueda_recurso">
-													<option value="Tipo de recurso">Tipo de recurso</option>
+													<option value="0">Selecciona recurso</option>
 													<option value="Imagen">Imagen</option>
 													<option value="Pdf">Pdf</option>
 													<option value="Epub">Epub</option>

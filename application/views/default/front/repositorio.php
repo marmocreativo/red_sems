@@ -33,47 +33,46 @@
 				data-categoria='<?php echo $consulta['categoria']; ?>'
 				data-orden_cat='<?php echo $consulta['orden_cat']; ?>'
 				data-busqueda='<?php echo $consulta['busqueda']; ?>'
+				data-busqueda_curso='<?php echo $consulta['busqueda_curso']; ?>'
+				data-busqueda_recurso='<?php echo $consulta['busqueda_recurso']; ?>'
 				>
 					<div class="text-center">
 						<i class="fa fa-spinner fa-pulse fa-4x"></i>
 					</div>
 				</div>
+<?php 
+/* echo 'repositorio.php - consulta[busqueda]: '.$consulta['busqueda'].'<br>';
+echo 'repositorio.php - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<br>';
+echo 'repositorio.php - consulta[busqueda_recurso]: '.$consulta['busqueda_recurso'].'<br><br>'; */
+?>
 			</div>
 			<div class="col-12 col-md-3">
 				<div class="single-widget search-widget turquesa-fnd">
 						<h3 class="text-white">Nueva búsqueda</h3>
-						<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
+						<form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
 							<div class="row justify-content-center form-wrap">
 								<div class="col-12 form-cols">
 									<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
 								</div>
 								<div class="col-12 form-cols pt-10">
 									<div class="default-select" id="default-selects">
-										<select class="col-12">
-											<option value="1">Tipo de recurso</option>
-											<option value="2">Página web con texto</option>
-											<option value="3">Página web con diversos recursos</option>
-											<option value="4">Imagen</option>
-											<option value="5">Video</option>
-											<option value="1">Archivo de texto</option>
-											<option value="2">Audio</option>
-											<option value="3">Simuladores</option>
-											<option value="4">Software/Aplicación</option>
-											<option value="5">Video</option>
+										<select class="col-12" name="busqueda_curso">
+											<option value="0">Selecciona curso</option>
+											<option value="Curso_de_prueba">Curso_de_prueba</option>
+											<option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
+											<option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
+											<option value="Modulo_14">Modulo_14</option>
+											<option value="M16_Evolucion_y_sus_repercusiones_sociales">M16_Evolucion_y_sus_repercusiones_sociales</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-12 form-cols pt-10">
 									<div class="default-select" id="default-selects2">
-										<select class="col-12">
-											<option value="1">Audiencia</option>
-											<option value="2">Directores</option>
-											<option value="3">Docentes</option>
-											<option value="4">Tutores</option>
-											<option value="5">Estudiantes</option>
-											<option value="6">Padres de Familia</option>
-											<option value="4">Responsables de Academia</option>
-											<option value="5">Responsables de Subsistemas</option>
+										<select class="col-12" name="busqueda_recurso">
+											<option value="0">Selecciona recurso</option>
+											<option value="Imagen">Imagen</option>
+											<option value="Pdf">Pdf</option>
+											<option value="Epub">Epub</option>
 										</select>
 									</div>
 								</div>
