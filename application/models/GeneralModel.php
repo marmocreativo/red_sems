@@ -86,6 +86,23 @@ class GeneralModel extends CI_Model {
       }
     }
 
+/*
+echo '<br>';
+echo '<br>tabla: '.$tabla;
+echo '<br>';
+foreach($parametros_or as $cve => $param){ 
+  echo '<br>or: '.$cve.'  =>  '.$param;
+}
+echo '<br>';
+foreach($parametros_and as $cve => $param){ 
+  echo '<br>and: '.$cve.'  =>  '.$param;
+}
+echo '<br><br>orden: '.$orden;
+echo '<br>agrupar: '.$agrupar;
+echo '<br>limite: '.$limite;
+echo '<br>';
+echo '<br>';
+*/
     // Parametros
     if(!empty($parametros_or)){
       $this->db->group_start();
