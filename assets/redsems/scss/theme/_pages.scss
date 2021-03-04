@@ -96,10 +96,11 @@
 
 .single-service {
 	background-color:$offwhite;
-	padding:30px;
+	padding:20px;
 	margin-bottom:30px;
 	border-radius: 10px;
 	@include transition();
+	display: flex;
 	&:hover{
 		box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.5);
 		cursor:pointer;

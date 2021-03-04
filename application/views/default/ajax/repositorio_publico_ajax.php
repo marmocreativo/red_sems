@@ -10,7 +10,7 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 ?>
 	</div>
 	<?php foreach($categorias as $categoria){ ?>
-	<div class="col-12 col-sm-6 col-md-4 mb-3">
+	<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
 		<a href="<?php echo base_url('repositorio?categoria='.$categoria->ID_CATEGORIA.'&orden_cat'.$consulta['orden_cat'].'&busqueda'.$consulta['busqueda'].'&busqueda_curso'.$consulta['busqueda_curso'].'&busqueda_recurso'.$consulta['busqueda_recurso']); ?>" class="d-block">
 			<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 				<div class="card-header p-0">
@@ -32,15 +32,23 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 	<?php foreach($archivos as $archivo){ ?>
 		<div class="col-sm-12 col-lg-6">
 			<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>">
-				<div class="single-service rec-webtxt">
-					<div class="genric-btn default circle"><i class="fas fa-file-alt"></i><?php echo $archivo->TIPO_RECURSO; ?></div>
-					<div class="cbp-vm-title">
-						<h5><?php echo $archivo->TITULO; ?></h5>
-						<div class="cbp-vm-price"><?php echo $archivo->TITULO_CURSO; ?></div>
-						<div class="cbp-vm-price"><?php echo $archivo->CREADOR; ?></div>
+				<div class="single-service area-com row" data-bs-toggle="tooltip" title="<?php echo $archivo->DESCRIPCION; ?>">
+					<div class="col-4">
+						<div class="previo">
+							<img src="https://dottruckpermits.com/sep/red_sems/assets/redsems/img/code_bg.png?v=1">
+						</div>
 					</div>
-					<div class="cbp-vm-details">
-						<?php echo $archivo->DESCRIPCION; ?>
+					<div class="col-8">
+						<div class="genric-btn default circle"><i class="fas fa-file-alt"></i><?php echo $archivo->TIPO_RECURSO; ?></div>
+						<div class="icn-area"></div>
+						<div class="cbp-vm-title">
+							<h5><?php echo $archivo->TITULO; ?></h5>
+							<div class="cbp-vm-price"><?php echo $archivo->TITULO_CURSO; ?></div>
+							<div class="cbp-vm-price"><?php echo $archivo->CREADOR; ?></div>
+						</div>
+						<div class="cbp-vm-details">
+							<?php echo $archivo->DESCRIPCION; ?>
+						</div>
 					</div>
 				</div>
 			</a>
