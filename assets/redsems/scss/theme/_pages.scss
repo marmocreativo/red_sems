@@ -94,12 +94,43 @@
 	}
 }
 
-.single-service {
+.grid .single-service {
 	background-color:$offwhite;
-	padding:30px;
-	margin-bottom:30px;
+	padding: 0px;
+	margin: 0 0 30px 0 !important;
+	border-radius: 10px;
+	display: block;
+	overflow: hidden;
+	@include transition();
+	&:hover{
+		box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.5);
+		cursor:pointer;
+		color: $white;
+		@extend .p1-gradient-bg;
+		h4,p,.lnr{
+			color:$white;
+		}
+	}
+	p{
+		@include transition();
+	}
+	h4{
+		@include transition();
+		margin-top:20px;
+		margin-bottom:20px;
+		.lnr{
+			margin-right:15px;
+		}
+	}
+}
+.list .single-service {
+	background-color: transparent;
+	padding: 0px;
+	margin: 2px 0 !important;
 	border-radius: 10px;
 	@include transition();
+	display: flex;
+	overflow: hidden;
 	&:hover{
 		box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.5);
 		cursor:pointer;
