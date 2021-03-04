@@ -35,9 +35,9 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 		<!-- <div class="archivo list col-12"> Clases para cambio a listado-->
 		<div class="archivo grid col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
 			<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>">
-				<div class="single-service area-com row" data-bs-toggle="tooltip" title="<?php echo $archivo->DESCRIPCION; ?>">
+				<div class="single-service area-com m-0 row" data-bs-toggle="tooltip" title="<?php echo $archivo->DESCRIPCION; ?>">
 						<div class="previo">
-							<img src="https://dottruckpermits.com/sep/red_sems/assets/redsems/img/code_bg.png?v=1">
+							<img src="<?php echo base_url('contenido/img/publicaciones/'.$archivo->IMAGEN); ?>" class="img-fluid mb-3">
 						</div>
 					<div class="info">
 						<div class="genric-btn default circle"><i class="fas fa-file-alt"></i><?php echo $archivo->TIPO_RECURSO; ?></div>

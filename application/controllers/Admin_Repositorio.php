@@ -124,7 +124,7 @@ class Admin_Repositorio extends CI_Controller {
 
 	public function crear_archivo()
 	{
-		
+
 		if(isset($_FILES['file']['name'])&&!empty($_FILES['file']['name'])&& $_FILES['file']['error'] == 0){
 			$nombre_archivo = 'archivo-'.uniqid();
 			$ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -207,6 +207,96 @@ class Admin_Repositorio extends CI_Controller {
 			 $this->session->set_flashdata('alerta', 'No se ha podido subir el archivo');
 			 redirect('admin/repositorio?categoria='.$_POST['categoria']);
 		 }
+
+	}
+
+	public function actualizar_archivo()
+	{
+
+		$this->form_validation->set_rules('Titulo', 'Titulo', 'required|max_length[255]', array( 'required' => 'Debes designar el %s.', 'max_length' => 'El nombre no puede superar los 255 caracteres' ));
+
+		if($this->form_validation->run())
+    {
+			if(isset($_FILES['file']['name'])&&!empty($_FILES['file']['name'])&& $_FILES['file']['error'] == 0){
+				$nombre_archivo = 'archivo-'.uniqid();
+				$ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+				$config['upload_path']          = 'contenido/docs/';
+				$config['allowed_types']        = '*';
+				$config['file_name']						=	$nombre_archivo;
+
+				$this->load->library('upload', $config);
+
+				if ( ! $this->upload->do_upload('file'))
+				 {
+					 $error = array('error' => $this->upload->display_errors());
+					 echo 'Ha ocurrido un error al subir el archivo';
+					 echo '<pre>';
+					 var_dump($error);
+					 echo '</pre>';
+				 }else{
+					 $archivo_final = $nombre_archivo.'.'.$ext;
+					 $extencion_final = $ext;
+				 }
+			 }else{
+				 $archivo_final = $this->input->post('ArchivoActual');
+				 $extencion_final = $this->input->post('FormatoActual');;
+			 }
+
+				 if(!empty($_FILES['Imagen']['name'])){
+					$archivo = $_FILES['Imagen']['tmp_name'];
+					$ancho = 300;
+					$alto = 300;
+					$corte = 'corte';
+					$extension = '.jpg';
+					$tipo_imagen = 'image/jpeg';
+					$calidad = 80;
+					$nombre = 'publicacion-'.uniqid();
+					$destino = $this->data['op']['ruta_imagenes'].'publicaciones/';
+					// Subo la imagen y obtengo el nombre Default si va vacía
+					$imagen = subir_imagen($archivo,$ancho,$alto,$corte,$extension,$tipo_imagen,$calidad,$nombre,$destino);
+				}else{
+					$imagen = $this->input->post('ImagenActual');
+				}
+
+				 $parametros = array(
+					 'TITULO' => $this->input->post('Titulo'),
+					 'CADIDO' => $this->input->post('Cadido'),
+					 'NOMENCLATURA' => $this->input->post('Nomenclatura'),
+					 'DESCRIPCION' => $this->input->post('Descripcion'),
+					 'TEMA' =>  $this->input->post('Tema'),
+					 'TIPO_RECURSO' =>  $this->input->post('TipoRecurso'),
+					 'FORMATO' =>  $extencion_final,
+					 'COBERTURA' => $this->input->post('Cobertura'),
+					 'DERECHOS' => $this->input->post('Derechos'),
+					 'TITULO_CURSO' => $this->input->post('TituloCurso'),
+					 'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
+					 'AREA_CONOCIMIENTO' => $this->input->post('AreaConocimiento'),
+					 'ARCHIVO' => $archivo_final,
+					 'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+					 'IMAGEN' => $imagen,
+				 );
+				 $archivo_id = $this->GeneralModel->actualizar('archivos',['ID'=>$this->input->post('Identificador')],$parametros);
+
+				 // Si se subió el archivo
+				 $this->session->set_flashdata('exito', 'Archivo actualizado correctamente');
+				redirect('admin/repositorio?categoria='.$_POST['categoria']);
+
+
+    }else{
+
+			// Datos publicación
+			$this->data['archivo'] = $this->GeneralModel->detalles('archivos',['ID'=>$_GET['id']]);
+			// Extra datos
+			$this->data['extra'] = $this->GeneralModel->lista('extra_datos','',['ID_OBJETO'=>$_GET['id'],'TIPO_OBJETO'=>'publicacion'],'','','');
+			$this->data['extra_datos'] = array(); foreach($this->data['extra'] as $m){ $this->data['extra_datos'][$m->DATO_NOMBRE]= $m->DATO_VALOR; }
+			// Reviso la vista especializada
+			$this->data['vista'] = vista_especializada('default'.$this->data['dispositivo'],'/admin/','form_actualizar_','archivo','_'.$this->data['tipo']);
+
+			// Cargo Vistas
+			$this->load->view('default'.$this->data['dispositivo'].'/admin/header_principal',$this->data);
+			$this->load->view($this->data['vista'],$this->data);
+			$this->load->view('default'.$this->data['dispositivo'].'/admin/footer_principal',$this->data);
+		}
 
 	}
 
