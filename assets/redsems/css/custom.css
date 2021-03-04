@@ -53,6 +53,60 @@ video.ilust-vid {
     margin: 0 -1rem 0 auto;
 		text-shadow: none;
 }
+
+/* Vista de archivos y folders */
+
+.separador {
+    display: flex;
+    margin: 10px 0;
+    border-top: solid 1px #e8e8e8;
+    padding-top: 15px;
+}
+.separador h5 {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: solid 1px #e4e7ea;
+}
+.switch {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background: #f1f2f2;
+    border-radius: 8px;
+    border: solid 1px #d6d6d7;
+    cursor: pointer;
+    margin-right: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.switch.list-btn::after, .switch.grid-btn::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 13px;
+    opacity: .75;
+    color: #545454;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 5px;
+    width: 21px;
+    height: 21px;
+    display: block;
+}
+.switch.list-btn::after {
+	content: "\f03a";
+}
+.switch.grid-btn::after {
+	content: "\f009";
+}
+.switch:hover::after {
+    color: #4f3d97;
+}
+.switch:hover {
+    background: #dedaee;
+    color: #4f3d97;
+    scale: 1.1;
+}
+
 .genric-btn img {
 	height: 30px;
 	margin-right: 5px;
@@ -184,26 +238,56 @@ video.ilust-vid {
 #recursos a {
     text-decoration: none;
 }
-.previo {
-	width: 100%;
-	height: 120px;
-	border-radius: 13px;
+.grid .previo {
+	width: calc(100% - 10px);
+	height: 150px;
+	border-radius: 8px;
 	overflow: hidden;
 	display: inline-block;
-	margin-right: 20px;
+	margin: 5px;
 }
-.previo img {
+.grid .previo img {
 	-o-object-fit: cover;
 	object-fit: cover;
 	width: 100%;
 	height: 300px;
 	object-fit: cover;
-	max-height: 120px;
+	max-height: 200px;
 	object-position: 50% 50%;
 }
-.info {
+.list .previo {
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+	overflow: hidden;
 	display: inline-block;
+	margin: 5px;
+}
+.list .previo img {
+	-o-object-fit: cover;
+	object-fit: cover;
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+	max-height: 200px;
+	object-position: 50% 50%;
+}
+.grid .info {
+	display: inline-block;
+	margin: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: calc(100% - 30px);
+  box-sizing: border-box;
+}
+.list .info {
+	display: flex;
 	flex: 1;
+	margin: 5px 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	align-items: center;
 }
 a .cbp-vm-title, a .cbp-vm-details {
 	color: #545454;
@@ -219,7 +303,13 @@ a:-webkit-any-link {
 .single-service:hover .resource-btn .fa {
     color: #222;
 }
-
+.grid .cbp-vm-details {
+    height: 21px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
 .cbp-vm-image {
 	display: block;
 	margin: 0 auto;
@@ -236,15 +326,25 @@ a:-webkit-any-link {
 	color: #545454;
 	text-decoration: none;
 }
+.list .cbp-vm-title {
+	margin: 0 0 0 20px;
+	padding: 0;
+	flex: 5;
+}
 
 .cbp-vm-title h5 {
   margin-bottom: 0;
+	font-size: 1.1em;
 }
 
 .cbp-vm-price {
-	color: #c0c0c0;
+	color: #8e8e8e;
 }
 
+.list .cbp-vm-price {
+	display: inline;
+	margin-right: 20px;
+}
 .cbp-vm-add {
   text-align: center;
   background-color: #a6d200;
@@ -264,6 +364,10 @@ a:-webkit-any-link {
 
 .cbp-vm-add:before {
 	margin-right: 5px;
+}
+.list a {
+    border-bottom: solid 1px #e3e3e3 !important;
+    display: block;
 }
 
 /* Slider custom */

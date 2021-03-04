@@ -10,7 +10,7 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 ?>
 	</div>
 	<?php foreach($categorias as $categoria){ ?>
-	<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+	<div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2 mb-3">
 		<a href="<?php echo base_url('repositorio?categoria='.$categoria->ID_CATEGORIA.'&orden_cat'.$consulta['orden_cat'].'&busqueda'.$consulta['busqueda'].'&busqueda_curso'.$consulta['busqueda_curso'].'&busqueda_recurso'.$consulta['busqueda_recurso']); ?>" class="d-block">
 			<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 				<div class="card-header p-0">
@@ -26,11 +26,14 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 </div>
 
 <div class="row">
-	<div class="col-12">
+	<div class="col-12 separador">
 		<h5>Archivos</h5>
+	  <div class="switch list-btn"></div>
+	  <div class="switch grid-btn"></div>
 	</div>
 	<?php foreach($archivos as $archivo){ ?>
-		<div class="col-sm-12 col-lg-6">
+		<!-- <div class="archivo list col-12"> Clases para cambio a listado-->
+		<div class="archivo grid col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-2">
 			<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>">
 				<div class="single-service area-com row" data-bs-toggle="tooltip" title="<?php echo $archivo->DESCRIPCION; ?>">
 						<div class="previo">
