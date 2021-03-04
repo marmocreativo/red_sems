@@ -197,14 +197,7 @@
 															<h4>Prepa en Línea</h4>
 															<div class="form-group">
 																<label for="TituloCurso">Título del Curso</label>
-																<select  class="form-control" name="TituloCurso" >
-																	<option value="0">Selecciona curso</option>
-																	<?php 
-																		$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
-																		foreach($cursos as $curso){
-																			echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
-																	} ?>
-																</select>
+																<input type="text" class="form-control" name="TituloCurso" value="">
 															</div>
 															<div class="form-group">
 																<label for="PropositoDidactico">Propósito didáctico</label>

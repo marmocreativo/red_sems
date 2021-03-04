@@ -12,13 +12,13 @@
                 <div class="col-lg-3 form-cols">
                   <div class="default-select" id="default-selects">
                     <select name="busqueda_curso">
-                      <option value="0">Selecciona curso</option>
-                      <option value="Curso_de_prueba">Curso_de_prueba</option>
-                      <option value="Evolucion_y_procesos_biologicos_SCORM">Evolucion_y_procesos_biologicos_SCORM</option>
-                      <option value="M7_Prepa_en_Linea-SEP">M7_Prepa_en_Linea-SEP</option>
-                      <option value="Modulo_14">Modulo_14</option>
-                      <option value="M16_Evolucion_y_sus_repercusiones_sociales">M16_Evolucion_y_sus_repercusiones_sociales</option>
-                    </select>
+                    	<option value="0">Selecciona curso</option>
+						<?php 
+							$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
+							foreach($cursos as $curso){
+								echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
+						} ?>
+					</select>
                   </div>
                 </div>
                 <div class="col-lg-3 form-cols">

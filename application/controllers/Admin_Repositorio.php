@@ -124,7 +124,7 @@ class Admin_Repositorio extends CI_Controller {
 
 	public function crear_archivo()
 	{
-
+		
 		if(isset($_FILES['file']['name'])&&!empty($_FILES['file']['name'])&& $_FILES['file']['error'] == 0){
 			$nombre_archivo = 'archivo-'.uniqid();
 			$ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
