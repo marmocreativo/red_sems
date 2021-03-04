@@ -33,12 +33,10 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 		<div class="col-sm-12 col-lg-6">
 			<a href="<?php echo base_url('repositorio/recurso/'.$archivo->ID); ?>">
 				<div class="single-service area-com row" data-bs-toggle="tooltip" title="<?php echo $archivo->DESCRIPCION; ?>">
-					<div class="col-4">
 						<div class="previo">
 							<img src="https://dottruckpermits.com/sep/red_sems/assets/redsems/img/code_bg.png?v=1">
 						</div>
-					</div>
-					<div class="col-8">
+					<div class="info">
 						<div class="genric-btn default circle"><i class="fas fa-file-alt"></i><?php echo $archivo->TIPO_RECURSO; ?></div>
 						<div class="icn-area"></div>
 						<div class="cbp-vm-title">
