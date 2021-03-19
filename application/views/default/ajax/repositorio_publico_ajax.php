@@ -28,8 +28,8 @@ echo 'repo_pub_ajax - consulta[busqueda_curso]: '.$consulta['busqueda_curso'].'<
 <div class="row">
 	<div class="col-12 separador">
 		<h5>Archivos</h5>
-	  <div class="switch list-btn"></div>
-	  <div class="switch grid-btn"></div>
+	  <div class="switch list-btn" id="switch-list"></div>
+	  <div class="switch grid-btn" id="switch-grid"></div>
 	</div>
 	<?php foreach($archivos as $archivo){ ?>
 		<!-- <div class="archivo list col-12"> Clases para cambio a listado-->

@@ -1,4 +1,6 @@
-/* Correcciones plantilla */
+/***********************************
+    Correcciones plantillas
+***********************************/
 #home {
 	overflow: hidden;
 	z-index: 999;
@@ -54,7 +56,9 @@ video.ilust-vid {
 		text-shadow: none;
 }
 
-/* Vista de archivos y folders */
+/***********************************
+    Vista de archivos y folders
+***********************************/
 
 .separador {
     display: flex;
@@ -106,6 +110,9 @@ video.ilust-vid {
     color: #4f3d97;
     scale: 1.1;
 }
+.list .cbp-vm-details {
+    display: none;
+}
 
 .genric-btn img {
 	height: 30px;
@@ -119,8 +126,8 @@ video.ilust-vid {
     border-radius: 11px;
     text-align: center;
 }
-.area-com .icn-area {background: #FFB7B3}
-.area-com .icn-area::after {
+.area-com.icn-area, .area-com .icn-area {background: #FFB7B3}
+.area-com.icn-area::after, .area-com .icn-area::after {
 	content: "\f086";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
@@ -131,8 +138,8 @@ video.ilust-vid {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.area-exp .icn-area {background: #ABF5E8}
-.area-exp .icn-area::after {
+.area-exp.icn-area, .area-exp .icn-area {background: #ABF5E8}
+.area-exp.icn-area::after, .area-exp .icn-area::after {
 	content: "\f492";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
@@ -143,8 +150,8 @@ video.ilust-vid {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.area-mate .icn-area {background: #9FA9D9}
-.area-mate .icn-area::after {
+.area-mate.icn-area, .area-mate .icn-area {background: #9FA9D9}
+.area-mate.icn-area::after, .area-mate .icn-area::after {
 	content: "\f698";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
@@ -155,8 +162,8 @@ video.ilust-vid {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.area-social .icn-area {background: #D1B7E6}
-.area-social .icn-area::after {
+.area-social.icn-area, .area-social .icn-area {background: #D1B7E6}
+.area-social.icn-area::after, .area-social .icn-area::after {
 	content: "\f0c0";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
@@ -167,8 +174,8 @@ video.ilust-vid {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.area-hum .icn-area {background: #E0D6CE}
-.area-hum .icn-area::after {
+.area-hum.icn-area, .area-hum .icn-area {background: #E0D6CE}
+.area-hum.icn-area::after, .area-hum .icn-area::after {
 	content: "\f66f";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
@@ -188,16 +195,14 @@ video.ilust-vid {
 #inter .sidebar .single-slidebar {
     background-color: transparent;
 	}
-
-	.loadmore-btn {
-	    text-align: center;
-	    background-color: #3d4c8e;
-	    color: #fff;
-	    padding: 8px 15px;
-	    margin-bottom: 60px;
-	    max-width: 200px;
-	}
-
+.loadmore-btn {
+	text-align: center;
+	background-color: #3d4c8e;
+	color: #fff;
+	padding: 8px 15px;
+	margin-bottom: 60px;
+	max-width: 200px;
+}
 .area-com:hover {
 	background: #fe6e65;
 }
@@ -370,7 +375,9 @@ a:-webkit-any-link {
     display: block;
 }
 
-/* Slider custom */
+/***********************************
+    Splide slider
+***********************************/
 
 .splide__pagination {
   bottom: 0 !important;
@@ -438,16 +445,38 @@ div.single-fcat:hover > div.circle {
   background: linear-gradient(232deg, #d6cbc1 0%, #9e8770 100%);
 }
 
-/* Estilos recurso individual */
+/***********************************
+    Estilos recurso individual
+***********************************/
+
 .single-widget h3 {
     margin-top: 0;
 }
-.details .title h5 {
-    margin: 3px 0;
-    color: #a0a0a0;
+.single-post .title .genric-btn {
+	display: inline-block;
+margin: 0 6px 0 0;
+background: transparent;
+border-radius: 0;
+border-right: solid 1px #c8c8c8;
 }
-p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c {
-	color: #fe6e65;
+.title {
+	margin-bottom: 7px;
+}
+.title .genric-btn i {
+    margin: 0;
+}
+.details {
+	width: 100%;
+}
+.details .title h5 {
+  margin: 3px 0;
+  color: #494949;
+}
+#detalles-recurso .icn-area {
+    margin: 0;
+}
+.titles {
+  display: inline-block;
 }
 #busqueda-int {
     margin-top: 0;
@@ -460,8 +489,59 @@ p#tema, p#audiencia, span#idioma, p#idioma, p#alcance, span#contacto, p#fecha-c 
 #busqueda-int .form-wrap {
     margin: 0;
 }
+#detalles-recurso {
+    background: #f4f5f7;
+    color: #6c757d;
+    padding-top: 20px;
+}
+#detalles-recurso p {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+#detalles-recurso b {
+    color: #6c757d !important;
+}
+#detalles-recurso .btn {
+    text-align: left;
+    font-size: 14px;
+}
+.btn-citas {
+	margin-top: 16px;
+}
+.btn-copy-cita {
+    white-space: normal !important;
+    text-align: left;
+}
+#detalles-recurso .fas {
+    width: 18px;
+    color: #44518d;
+}
+.area-c-tag, #fecha-c {
+	padding-top: 10px;
+  border-top: solid 1px #d5d5d5;
+  margin-top: 10px;
+}
+.descripcion {
+    color: #575757;
+    padding-top: 10px;
+    border-top: solid 1px #e1e1e1;
+    margin-top: 10px;
+}
+.Archivo img {
+    width: 100%;
+}
+.btn-descarga, .btn-editable {
+	font-size: 13px;
+	background: #c5e1ff;
+	padding: 5px 10px;
+	border-radius: 8px;
+	display: inline;
+}
 
-/* Folders */
+/***********************************
+    Folders
+***********************************/
+
 .carpetas-cont a:hover, .archivos-cont a:hover{
 	text-decoration: none;
 }

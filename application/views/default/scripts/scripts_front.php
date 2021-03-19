@@ -54,8 +54,26 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
     }
   }
 
+  // Switch Grid-list
+  $('body').on ('click','#switch-list', function(){
+    $('.archivo').removeClass('grid');
+    $('.archivo').removeClass('col-sm-6');
+    $('.archivo').removeClass('col-md-4');
+    $('.archivo').removeClass('col-lg-3');
+    $('.archivo').removeClass('col-xxl-2');
+    $('.archivo').addClass('list');
+    $('.archivo').addClass('col-12');
+  });
 
-
+  $('body').on ('click','#switch-grid', function(){
+    $('.archivo').removeClass('list');
+    $('.archivo').removeClass('col-12');
+    $('.archivo').addClass('grid');
+    $('.archivo').addClass('col-sm-6');
+    $('.archivo').addClass('col-md-4');
+    $('.archivo').addClass('col-lg-3');
+    $('.archivo').addClass('col-xxl-2');
+  });
 
 
 </script>
