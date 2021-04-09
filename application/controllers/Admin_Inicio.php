@@ -275,18 +275,5 @@ class Admin_Inicio extends CI_Controller {
          redirect(base_url('admin/menu'));
 			}
 	}
-	public function ajuste_base_de_datos()
-	{
-		$this->load->dbforge();
-		
-		$fields = array(
-        'AREA_CONOCIMIENTO' => array(
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-                'null' => TRUE,
-        )
-			);
-			$this->dbforge->add_column('archivos',$fields);
-	}
 
 }

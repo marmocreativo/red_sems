@@ -28,10 +28,12 @@
 <?php $this->load->view('default'.$dispositivo.'/scripts/scripts_front'); ?>
 		</body>
 		<script>
+		if ( $( ".splide" ).length ) {
 			new Splide( '.splide', {
 				type     : 'loop',
 				autoWidth: true,
 				focus    : 'center',
 			} ).mount();
+		};
 		</script>
 	</html>

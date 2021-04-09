@@ -1,10 +1,10 @@
-
+<?php $lista_usuarios = $this->GeneralModel->lista('usuarios','',['ESTADO'=>'activo'],'USUARIO_NOMBRE ASC','',''); ?>
 <div class="row mb-4">
 	<div class="col-12">
 		<h5>Carpetas</h5>
 	</div>
 	<?php foreach($categorias as $categoria){ ?>
-		<div class="col-12 col-sm-6 col-md-3 mb-3">
+		<div class="col-12 col-sm-6 col-md-4 mb-3">
 				<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 					<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 						<div class="card-body d-flex justify-content-between">
@@ -63,10 +63,12 @@
 					<div class="p-3 d-flex justify-content-between">
 						<p class="h6"> <?php echo character_limiter($archivo->TITULO,22); ?></p>
 
-						<ul class="list-inline">
-						  <li class="list-inline-item"><a href="<?php echo base_url('admin/repositorio/actualizar_archivo?id='.$archivo->ID.'&categoria='.verificar_variable('GET','categoria','0').'&orden_cat='.$consulta['orden_cat'].'&busqueda='.$consulta['busqueda']); ?>" ><i class="fa fa-pencil"></i>Editar</a></li>
-						  <li class="list-inline-item"><a href="<?php echo base_url('admin/repositorio/borrar_archivo?id='.$archivo->ID.'&categoria='.verificar_variable('GET','categoria','0').'&orden_cat='.$consulta['orden_cat'].'&busqueda='.$consulta['busqueda']); ?>"><i class="fa fa-trash"></i> Borrar</a></li>
-						</ul>
+						<button class="btn btn-sm btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    <i class="fas fa-ellipsis-v"></i>
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="<?php echo base_url('admin/repositorio/borrar_archivo?id='.$archivo->ID.'&categoria='.verificar_variable('GET','categoria','0').'&orden_cat='.$consulta['orden_cat'].'&busqueda='.$consulta['busqueda']); ?>"><i class="fa fa-trash"></i> Borrar</a>
+					  </div>
 					</div>
 					<hr>
 				</div>

@@ -233,6 +233,35 @@ class Front_Repositorio extends CI_Controller {
 
 	}
 
+	public function descarga()
+	{
+		// Verifico el switch de mantenimiento
+		if(verificar_mantenimiento($this->data['op']['modo_mantenimiento'])){ redirect(base_url('mantenimiento')); }
+
+		// Datos Generales
+		$this->data['archivo']  = $this->GeneralModel->detalles('archivos',['ID'=>$this->uri->segment(3, 0)]);
+		$this->data['extra'] = $this->GeneralModel->lista('extra_datos','',['ID_OBJETO'=>$this->data['archivo']['ID'],'TIPO_OBJETO'=>'archivo'],'','','');
+		$this->data['extra_datos'] = array(); foreach($this->data['extra'] as $m){ $this->data['extra_datos'][$m->DATO_NOMBRE]= $m->DATO_VALOR; }
+
+		// Open Tags
+		$this->data['titulo']  = $this->data['archivo']['TITULO'].' | '.$this->data['op']['titulo_sitio'];
+		$this->data['descripcion']  = $this->data['archivo']['DESCRIPCION'];
+		$this->data['imagen']  = base_url('contenido/img/archivos/'.$this->data['archivo']['IMAGEN']);
+		//vista especializada
+		$this->data['vista'] = vista_especializada($this->data['op']['plantilla'].$this->data['dispositivo'],'/front/front_','descarga_','archivo','_'.$this->data['tipo']);
+
+		// Cargo Vistas
+		if(empty($this->data['archivo'])){
+			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/headers/header_principal',$this->data);
+			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/404',$this->data);
+			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/footers/footer_principal',$this->data);
+		}else{
+			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/headers/header_principal',$this->data);
+			$this->load->view($this->data['vista'],$this->data);
+			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/footers/footer_principal',$this->data);
+		}
+	}
+
 	public function recurso()
 	{
 		// Verifico el switch de mantenimiento
