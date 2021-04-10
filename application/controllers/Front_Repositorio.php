@@ -173,7 +173,7 @@ class Front_Repositorio extends CI_Controller {
 			$parametros_or['archivos.DESCRIPCION']=$busqueda;
 			$parametros_or['archivos.TEMA']=$busqueda;
 		}
-		
+
 		if(!empty($busqueda_curso)){
 			$parametros_or['archivos.TITULO_CURSO']=$busqueda_curso;
 		}
@@ -289,6 +289,33 @@ class Front_Repositorio extends CI_Controller {
 			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/headers/header_principal',$this->data);
 			$this->load->view($this->data['vista'],$this->data);
 			$this->load->view($this->data['op']['plantilla'].$this->data['dispositivo'].'/front/footers/footer_principal',$this->data);
+		}
+	}
+
+	public function calificacion(){
+		$this->form_validation->set_rules('Nombre', 'Nombre', 'required|max_length[255]', array( 'required' => 'Debes agregar tu %s.', 'max_length' => 'El nombre no puede superar los 255 caracteres' ));
+		$this->form_validation->set_rules('Comentario', 'Comentario', 'required', array( 'required' => 'Debes agregar un %s.' ));
+
+		if($this->form_validation->run())
+	  {
+			$parametros = array(
+				'ID_OBJETO'=>$this->input->post('IdArchivo'),
+				'ID_USUARIO'=>'-',
+				'USUARIO_NOMBRE'=>$this->input->post('Nombre'),
+				'COMENTARIO_CALIFICACION'=>$this->input->post('EstrellasCalificacion'),
+				'USUARIO_IP'=>$this->input->post('Comentario'),
+				'COMENTARIO_PADRE'=>'0',
+				'FECHA_REGISTRO' => date('Y-m-d H:i:s'),
+				'TIPO_OBJETO' => 'archivo',
+				'ESTADO' => 'activo',
+			);
+
+			$id_comentario = $this->GeneralModel->crear('comentarios',$parametros);
+			$this->session->set_flashdata('exito', 'Gracias por tu comentario');
+			redirect(base_url('repositorio/decarga/'.$this->input->post('IdArchivo')));
+		}else{
+			$this->session->set_flashdata('exito', 'Gracias por tu comentario');
+			redirect(base_url('repositorio/decarga/'.$this->input->post('IdArchivo')));
 		}
 	}
 }

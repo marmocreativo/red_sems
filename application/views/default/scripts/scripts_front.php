@@ -5,6 +5,18 @@
 
   };
 
+// EstrellasCalificacion
+if($( ".estrellas" ).length ){
+  $('.estrellas').starrr({
+    rating: 0,
+    emptyClass: 'far fa-star text-warning fa-2x',
+    fullClass: 'fa fa-star text-warning fa-2x',
+  });
+
+  $('.estrellas').on('starrr:change', function(e, value){
+    $('#EstrellasCalificacion').val(value);
+  })
+}
 
 // lightbox
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {

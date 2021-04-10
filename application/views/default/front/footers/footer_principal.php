@@ -21,6 +21,7 @@
   		<script src="<?php echo base_url('assets/redsems'); ?>/js/easing.min.js"></script>
 			<script src="<?php echo base_url('assets/redsems'); ?>/js/jquery.nice-select.min.js"></script>
 			<script src="<?php echo base_url('assets/redsems'); ?>/js/main.js"></script>
+			<script src="<?php echo base_url(); ?>assets/plugins/starrr/starrr.js" ></script>
 			<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 			<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
 

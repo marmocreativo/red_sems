@@ -17,85 +17,142 @@
 											<h5 class="colaborador"><?php echo $archivo['COLABORADOR']; ?></h5>
 										</div>
 									</div>
-									<hr>
-                  <!-- div class="Archivo">
-                    <?php if($archivo['FORMATO']=='pdf'){ ?>
-                      <hr>
-                      <embed src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" width="100%" height="500"
-                       type="application/pdf">
-                    <?php } ?>
-                    <?php if($archivo['FORMATO']=='jpg'||$archivo['FORMATO']=='jpeg'||$archivo['FORMATO']=='png'||$archivo['FORMATO']=='gif'||$archivo['FORMATO']=='svg'){ ?>
-                      <hr>
-                      <img src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" class="img-fluid">
-                    <?php } ?>
-                  </div>
-                  <hr -->
-									<!--p class="descripcion">
-										<?php echo $archivo['DESCRIPCION']; ?>
-									</p>
-									<p id="fecha-c"><span class="fas fa-calendar-alt pr-2"></span> Creado: <?php echo $archivo['FECHA_CREACION']; ?></p>
-									<p id="tema"><span class="fas fa-book pr-2"></span> Tema: <?php echo $archivo['TEMA']; ?></p>
-									<p id="audiencia"><span class="fas fa-users pr-1"></span> Curso: <?php echo $archivo['TITULO_CURSO']; ?></p>
-									<p id="alcance"><span class="fas fa-map-marker pr-1"></span> Cobertura: <?php echo $archivo['COBERTURA']; ?></p>
-									<p id="idioma"><span class="fas fa-language pr-1"></span> Idioma: <?php echo $archivo['IDIOMA']; ?></p -->
 								</div>
 							</div>
 							<a class="genric-btn primary e-large" target="_blank" href="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" style="width:100%">Descarga el recurso</a>
-              <?php if(verificar_permiso(['administrador','produccion','diseno_instrucional','comunicacion'])){ ?>
-                <a class="btn btn-outline-primary" target="_blank" href="<?php echo $archivo['ARCHIVO_EDITABLE'] ?>" style="width:100%">Ver archivo Editable</a>
-              <?php } ?>
 							<hr>
-							<!-- div class="container-fluid job-experience">
-								<h4 class="single-title">Derechos</h4>
-								<ul>
-									<li>
-										<img src="img/pages/list.jpg" alt="">
-										<span><?php echo $archivo['DERECHOS']; ?></span>
-									</li>
-								</ul>
-							</div -->
-
+              <h3>Danos tu opinión respecto al archivo</h3>
+              <div class="row mt-3">
+              <div class="col">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <form class="" action="<?php echo base_url('repositorio/calificacion') ?>" method="post">
+                        <input type="hidden" name="IdArchivo" value="<?php echo $archivo['ID']?>">
+                        <label for="EstrellasCalificacion">Click en la cantidad de estrellas que quieres dar.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
+                        <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
+                        <div class="form-group">
+                          <label for="Nombre">Nombre</label>
+                          <input type="text" class="form-control" name="Nombre" value="">
+                        </div>
+                        <div class="form-group">
+                          <label for="Comentario">Comentario</label>
+                          <textarea class="form-control" name="Comentario" rows="2" cols="80" required=""></textarea>
+                        </div>
+                        <button aria-label="Calificar" type="submit" class="btn btn-primary float-right" name="button"> <i class="fa fa-star"></i> Agregar comentario</button>
+                      </form>
+                    </div>
+                  </div>
+              </div>
+            </div>
   		</div>
       <div class="col-12 col-sm-4">
-				<div class="single-widget search-widget turquesa-fnd">
-						<h3 class="text-white">Nueva búsqueda</h3>
-						<form action="<?php echo base_url('repositorio'); ?>" method="get" class="serach-form-area">
-							<div class="row justify-content-center form-wrap">
-								<div class="col-12 form-cols">
-									<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
-								</div>
-								<div class="col-12 form-cols pt-10">
-									<div class="default-select" id="default-selects">
-										<select name="busqueda_curso">
-											<option value="0">Selecciona curso</option>
-											<?php 	$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
-											foreach($cursos as $curso){
-												echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
-											} ?>
-										</select>
-									</div>
-								</div>
-								<div class="col-12 form-cols pt-10">
-									<div class="default-select" id="default-selects2">
-										<select name="busqueda_recurso">
-					                      <option value="">Selecciona recurso</option>
-					                      <option value="Pdf">PDF</option>
-					                      <option value="Epub">Epub</option>
-					                      <option value="Imagen">Imágen</option>
-					                      <option value="Infografía">Infografía</option>
-					                      <option value="Video">Video</option>
-					                      <option value="Audio">Audio</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-12 form-cols pt-10">
-										<button type="submit" class="btn btn-info btn-block">
-											<span class="lnr lnr-magnifier"></span> Buscar
-										</button>
-								</div>
-							</div>
-						</form>
-					</div>
+        <div class="card opiniones-serv" id="calificacion">
+                  <div class="card-body">
+                    <h5 class="card-title">Calificación del recurso</h5>
+                    <?php
+                      $cantidad_comentarios = $this->GeneralModel->conteo('comentarios','','',['ID_OBJETO'=>$archivo['ID']],'');
+                      $estrellas_5 = $this->GeneralModel->conteo('comentarios','','',['ID_OBJETO'=>$archivo['ID'],'COMENTARIO_CALIFICACION'=>'5'],'');
+                      $estrellas_4 = $this->GeneralModel->conteo('comentarios','','',['ID_OBJETO'=>$archivo['ID'],'COMENTARIO_CALIFICACION'=>'4'],'');
+                      $estrellas_3 = $this->GeneralModel->conteo('comentarios','','',['ID_OBJETO'=>$archivo['ID'],'COMENTARIO_CALIFICACION'=>'3'],'');
+                      $estrellas_2 = $this->GeneralModel->conteo('comentarios','','',['ID_OBJETO'=>$archivo['ID'],'COMENTARIO_CALIFICACION'=>'2'],'');
+                      $estrellas_1 = $this->GeneralModel->conteo('comentarios','','',['ID_OBJETO'=>$archivo['ID'],'COMENTARIO_CALIFICACION'=>'1'],'');
+
+                      $total_estrellas = 0;
+
+                      $total_estrellas += ($estrellas_5*5);
+                      $total_estrellas += ($estrellas_4*4);
+                      $total_estrellas += ($estrellas_3*3);
+                      $total_estrellas += ($estrellas_2*2);
+                      $total_estrellas += ($estrellas_1*1);
+
+                      $promedio = $total_estrellas / $cantidad_comentarios;
+
+                      $estrella_completa = $promedio;
+                        $estrella_incompleta = 5-$promedio;
+
+
+                    ?>
+                    <h2 class="h1" style="display:inline;"><?php echo number_format($promedio,1); ?></h2>
+                    <?php for($i=1; $i<=$estrella_completa; $i++){ ?> <i class="fa fa-star fa-2x text<?php echo $primary; ?>"></i> <?php } ?>
+                    <?php for($i=1; $i<=$estrella_incompleta; $i++){ ?> <i class="far fa-star fa-2x text<?php echo $primary; ?>"></i> <?php } ?>
+                     <br>
+                      <a data-toggle="collapse" href="#detalles_calificaciones" role="button" aria-expanded="false" aria-controls="detalles_calificaciones">Ver más detalles</a>
+                      <div class="collapse" id="detalles_calificaciones">
+                      <div class="row">
+                        <div class="col">
+                          <ul class=" list-unstyled rating m-0">
+                             <i class="fa fa-star"></i><i class="far fa-star"></i>  <i class="far fa-star"></i>  <i class="far fa-star"></i>  <i class="far fa-star"></i>                           </ul>
+                        </div>
+                        <div class="col-7">
+                          <div class="progress">
+                            <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <ul class=" list-unstyled rating m-0">
+                             <i class="fa fa-star"></i>  <i class="fa fa-star"></i><i class="far fa-star"></i>  <i class="far fa-star"></i>  <i class="far fa-star"></i>                           </ul>
+                        </div>
+                        <div class="col-7">
+                          <div class="progress">
+                            <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <ul class=" list-unstyled rating m-0">
+                             <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i><i class="far fa-star"></i>  <i class="far fa-star"></i>                           </ul>
+                        </div>
+                        <div class="col-7">
+                          <div class="progress">
+                          <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <ul class=" list-unstyled rating m-0">
+                             <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>                              <i class="far fa-star"></i>                           </ul>
+                        </div>
+                        <div class="col-7">
+                          <div class="progress">
+                            <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <ul class=" list-unstyled rating m-0">
+                             <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>                                                       </ul>
+                        </div>
+                        <div class="col-7">
+                          <div class="progress">
+                            <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <?php $comentarios = $this->GeneralModel->lista('comentarios','',['ID_OBJETO'=>$archivo['ID']],'','',''); ?>
+                    <?php foreach($comentarios as $comentario){ ?>
+                      <div class="list-group">
+                          <li class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                              <ul class="rating pl-0">
+                                <?php for($i=1; $i<=$comentario->COMENTARIO_CALIFICACION; $i++){ ?> <li class="fa fa-star text-primary"></li> <?php } ?>
+                                <?php for($i=1; $i<=(5-$comentario->COMENTARIO_CALIFICACION); $i++){ ?> <li class="far fa-star text-primary"></li> <?php } ?>
+                              </ul>
+                              <small><?php echo $comentario->FECHA_REGISTRO ?></small>
+                            </div>
+                            <h5 class="mb-1"><?php echo $comentario->USUARIO_NOMBRE ?></h5>
+                            <p class="mb-1"><?php echo $comentario->USUARIO_IP ?></p>
+                          </li>
+                        </div>
+                    <?php } ?>
+                </div>
+              </div>
       </div>
   	</div>
   </div>
