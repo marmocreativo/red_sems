@@ -19,7 +19,8 @@
 									</div>
 								</div>
 							</div>
-							<a class="genric-btn primary e-large" target="_blank" href="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" style="width:100%">Descarga el recurso</a>
+              <?php $datos_archivo =  pathinfo(base_url("contenido/docs/".$archivo['ARCHIVO']));  ?>
+							<a class="genric-btn primary e-large" download='<?php echo $archivo['CADIDO'].'_'.$archivo['NOMENCLATURA'].'_v'.$archivo['VERSION'].'.'.$datos_archivo['extension']; ?>' href="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" style="width:100%">Descarga el recurso</a>
 							<hr>
               <h3>Danos tu opinión respecto al archivo</h3>
               <div class="row mt-3">
@@ -28,7 +29,27 @@
                     <div class="card-body">
                       <form class="" action="<?php echo base_url('repositorio/calificacion') ?>" method="post">
                         <input type="hidden" name="IdArchivo" value="<?php echo $archivo['ID']?>">
-                        <label for="EstrellasCalificacion">Click en la cantidad de estrellas que quieres dar.</label>
+                        <label for="EstrellasCalificacion">Fomenta el logro de tu aprendizaje.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
+                        <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
+                        <hr>
+                        <label for="EstrellasCalificacion">Es suficiente para la comprensión del tema.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
+                        <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
+                        <hr>
+                        <label for="EstrellasCalificacion">La información es clara y organizada.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
+                        <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
+                        <hr>
+                        <label for="EstrellasCalificacion">Es creativo e innovador.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
+                        <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
+                        <hr>
+                        <label for="EstrellasCalificacion">Es intuitivo.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
+                        <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
+                        <hr>
+                        <label for="EstrellasCalificacion">Es de calidad.</label>
                         <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
                         <div class="form-group">
@@ -66,16 +87,21 @@
                       $total_estrellas += ($estrellas_2*2);
                       $total_estrellas += ($estrellas_1*1);
 
-                      $promedio = $total_estrellas / $cantidad_comentarios;
+                      if($cantidad_comentarios==0){
+                        $promedio = 5;
+                      }else{
+                        $promedio = $total_estrellas / $cantidad_comentarios;
+                      }
+
 
                       $estrella_completa = $promedio;
-                        $estrella_incompleta = 5-$promedio;
+                      $estrella_incompleta = 5-$promedio;
 
 
                     ?>
                     <h2 class="h1" style="display:inline;"><?php echo number_format($promedio,1); ?></h2>
-                    <?php for($i=1; $i<=$estrella_completa; $i++){ ?> <i class="fa fa-star fa-2x text<?php echo $primary; ?>"></i> <?php } ?>
-                    <?php for($i=1; $i<=$estrella_incompleta; $i++){ ?> <i class="far fa-star fa-2x text<?php echo $primary; ?>"></i> <?php } ?>
+                    <?php for($i=1; $i<=$estrella_completa; $i++){ ?> <i class="fa fa-star fa-2x text-primary"></i> <?php } ?>
+                    <?php for($i=1; $i<=$estrella_incompleta; $i++){ ?> <i class="far fa-star fa-2x text-primary"></i> <?php } ?>
                      <br>
                       <a data-toggle="collapse" href="#detalles_calificaciones" role="button" aria-expanded="false" aria-controls="detalles_calificaciones">Ver más detalles</a>
                       <div class="collapse" id="detalles_calificaciones">

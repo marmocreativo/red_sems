@@ -91,5 +91,6 @@ $route['busqueda'] = 'Front_Publicaciones/busqueda';
 $route['categoria/(:any)'] = 'Front_Publicaciones/categoria/$1';
 $route['categoria/(:any)/(:num)'] = 'Front_Publicaciones/categoria/$1/$2';
 
+$route['ajuste'] = 'Front_Publicaciones/ajuste/';
 $route['reaccionar'] = 'Front_Publicaciones/reaccionar/';
 $route['(:any)'] = 'Front_Publicaciones/publicacion/';

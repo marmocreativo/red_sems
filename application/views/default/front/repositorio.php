@@ -13,7 +13,7 @@
                   <div class="default-select" id="default-selects">
                     <select name="busqueda_curso">
                     	<option value="0">Selecciona curso</option>
-						<?php 
+						<?php
 							$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
 							foreach($cursos as $curso){
 								echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
@@ -61,8 +61,9 @@
 							<?php } ?>
 							<li class="breadcrumb-item" aria-current="page"><a href="<?php echo base_url('repositorio?categoria='.$categoria_padre['ID_CATEGORIA']); ?>" title="<?php echo $categoria_padre['CATEGORIA_NOMBRE']; ?>"><?php echo character_limiter($categoria_padre['CATEGORIA_NOMBRE'],10); ?></a></li>
 						  <?php } ?>
+              <li class="breadcrumb-item active" aria-current="page"><?php echo $categoria['CATEGORIA_NOMBRE']; ?></li>
 						<?php } ?>
-						<li class="breadcrumb-item active" aria-current="page"><?php echo $categoria['CATEGORIA_NOMBRE']; ?></li>
+
 				  </ol>
 				</nav>
 			</div>

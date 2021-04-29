@@ -54,8 +54,7 @@
 											<h5><?php echo $archivo['TITULO']; ?></h5>
 										</div>
 									</div>
-                  <a class="btn-descarga primary e-large" target="_blank" href="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" style="width:100%"><i class="fas fa-download"></i> Descarga</a>
-                  <?php if(verificar_permiso(['administrador','produccion','diseno_instrucional','comunicacion'])){ ?>
+                  <?php if(isset($_SESSION['usuario'])&&verificar_permiso(['administrador','produccion','diseno_instrucional','comunicacion'])){ ?>
                   <a class="btn-editable" target="_blank" href="<?php echo $archivo['ARCHIVO_EDITABLE'] ?>" style="width:100%"><i class="fas fa-vector-square"></i> Ver Editable</a>
                   <?php } ?>
                   <div class="Archivo">
@@ -90,15 +89,53 @@
           <button type="button" class="btn btn-block btn-outline-secondary btn-citas" data-toggle="modal" data-target="#citasModal"><i class="fas fa-quote-right"></i> Citar este recurso</button>
           <button type="button" class="btn btn-block btn-outline-secondary btn-derechos" data-toggle="modal" data-target="#derechosModal"><i class="far fa-copyright"></i> Derechos</button>
           <p class="descripcion"><?php echo $archivo['DESCRIPCION']; ?></p>
-
-***front detalles archivo <?=$archivo["ID"]?> envia a descarga  *** 
-            <a class="genric-btn primary e-large"  href="<?php echo base_url('repositorio/decarga/'.$archivo['ID']); ?>" style="width:100%">Ir a descarga</a>
+          <hr>
+          <a class="genric-btn primary e-large"  href="<?php echo base_url('repositorio/decarga/'.$archivo['ID']); ?>" style="width:100%" >Ir a descarga</a>
 
       </div>
   	</div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <?php $historiales = $this->GeneralModel->lista('archivos_historial','',['ID_ARCHIVO'=>$archivo['ID']],'FECHA_CREACION DESC','',''); ?>
+        <h3>Historial de versiones</h3>
+        <table class="table table-stripped table-bordered">
+          <thead>
+            <tr>
+              <th>TITULO</th>
+              <th>VERSION</th>
+              <th>FECHA</th>
+              <th>ARCHIVO</th>
+              <th>Fomento Aprendizaje</th>
+              <th>Comprensión del tema</th>
+              <th>Información organizada</th>
+              <th>Diseño creativo</th>
+              <th>Diseño intuitivo</th>
+              <th>Diseño de calidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($historiales as $historial){ ?>
+            <tr>
+              <td><?php echo $historial->TITULO ?></td>
+              <td><?php echo $historial->VERSION ?></td>
+              <td><?php echo $historial->FECHA_CREACION ?></td>
+              <td> <a href="<?php echo base_url('contenido/docs/'.$historial->ARCHIVO) ?>" download>Descargar</a> </td>
+              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
+              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
+              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
+              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
+              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
+              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
-  <!-- Modal Derechos-->
+<!-- Modal Derechos-->
 <div class="modal fade" id="derechosModal" tabindex="-1" aria-labelledby="derechosModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -119,9 +156,22 @@
  </div>
  <!-- Fin modal derechos -->
 
+
  <!-- Modal Citas-->
 <div class="modal fade" id="citasModal" tabindex="-1" aria-labelledby="citasModalLabel" aria-hidden="true">
  <div class="modal-dialog">
+<script type="text/javascript">
+function copyToClipboard() {
+  var $temp = $("<input>")
+  $("#citasModal").append($temp);
+  $temp.val($('#cajacita').text()).select();
+
+  document.execCommand("copy");
+  $temp.remove();
+
+  $('#copiado').text('Enlace copiado');
+}
+</script>
    <div class="modal-content">
      <div class="modal-header">
        <h5 class="modal-title" id="citasModalLabel"><i class="fas fa-quote-right"></i> Citas</h5>
@@ -130,8 +180,10 @@
        </button>
      </div>
      <div class="modal-body">
-       <p>Apellido, inicial(es) del nombre (año). Nombre de la sección o artículo. En Nombre de la página web. https://url</p>
+       <p id="cajacita"><b>Fuente: </b>Prepa en linea. <b>Curso:</b> <?php echo $archivo['TITULO_CURSO']; ?>. <b>Tema:</b> <?php echo $archivo['TEMA']; ?>. <b>Creado:</b> <?php echo $archivo['FECHA_CREACION']; ?>. <b>Página web:</b> /sep/red_sems</p>
+       <p id="copiado" class="copiado" align="right"> </p>
      <div class="modal-footer">
+       <button  type="button" class="btn btn-secondary" onclick="copyToClipboard()">Copiar</button>
        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
      </div>
    </div>

@@ -13,9 +13,10 @@ if($( ".estrellas" ).length ){
     fullClass: 'fa fa-star text-warning fa-2x',
   });
 
-  $('.estrellas').on('starrr:change', function(e, value){
+  /*$('.estrellas').on('starrr:change', function(e, value){
     $('#EstrellasCalificacion').val(value);
   })
+  */
 }
 
 // lightbox

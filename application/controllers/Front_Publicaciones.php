@@ -485,4 +485,37 @@ class Front_Publicaciones extends CI_Controller {
 
 		// Vistas
 	}
+
+	public function ajuste(){
+		$archivos = $this->GeneralModel->lista('archivos','','','','','');
+		foreach($archivos as $archivo){
+			// verifico si existe
+			$historial = $this->GeneralModel->detalles('archivos_historial',['ID_ARCHIVO'=>$archivo->ID]);
+
+			if(empty($historial)){
+				$parametros = array(
+					'ID_ARCHIVO' => $archivo->ID,
+					'TITULO' => $archivo->TITULO,
+					'CADIDO' => $archivo->CADIDO,
+					'NOMENCLATURA' => $archivo->NOMENCLATURA,
+					'DESCRIPCION' => $archivo->DESCRIPCION,
+					'TEMA' =>  $archivo->TEMA,
+					'TIPO_RECURSO' =>  $archivo->TIPO_RECURSO,
+					'FORMATO' =>  $archivo->FORMATO,
+					'COBERTURA' => $archivo->COBERTURA,
+					'DERECHOS' => $archivo->DERECHOS,
+					'TITULO_CURSO' => $archivo->TITULO_CURSO,
+					'PROPOSITO_DIDACTICO' => $archivo->PROPOSITO_DIDACTICO,
+					'ARCHIVO' => $archivo->ARCHIVO,
+					'ARCHIVO_EDITABLE' => $archivo->ARCHIVO_EDITABLE,
+					'VERSION' => $archivo->VERSION,
+					'IMAGEN' => $archivo->IMAGEN,
+					'FECHA_CREACION' => $archivo->FECHA_CREACION,
+					'ESTADO' => $archivo->ESTADO,
+				);
+				$archivo_id = $this->GeneralModel->crear('archivos_historial',$parametros);
+			}
+
+		}
+	}
 }

@@ -63,6 +63,14 @@ class Ajax extends CI_Controller {
 
 		$parametros_pub_and['archivos.ESTADO']='activo';
 
+		// Inicializo Variables
+		$this->data['consulta']=array();
+		$this->data['consulta']['categoria'] = verificar_variable('GET','categoria','0');
+		$this->data['consulta']['orden_cat'] = verificar_variable('GET','orden_cat','ORDEN ASC');
+		$this->data['consulta']['busqueda'] = verificar_variable('GET','busqueda','');
+		$this->data['consulta']['busqueda_curso'] = verificar_variable('GET','busqueda_curso','');
+		$this->data['consulta']['busqueda_recurso'] = verificar_variable('GET','busqueda_recurso','');
+
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join_pub,$parametros_pub_or,$parametros_pub_and,$orden_pub,'','',$agrupar_pub);
 
 		$this->load->view('default'.$this->data['dispositivo'].'/ajax/repositorio_ajax',$this->data);
@@ -115,14 +123,22 @@ class Ajax extends CI_Controller {
 		if(!empty($busqueda_recurso)){
 			$parametros_pub_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
 		}
-				
+
 		$parametros_pub_and['archivos.ESTADO']='activo';
-		
+
 		/* echo 'ajax.php - $busqueda:'.$busqueda.'<br>';
 		echo 'ajax.php - $busqueda_curso:'.$busqueda_curso.'<br>';
 		echo 'ajax.php - $busqueda_recurso:'.$busqueda_recurso.'<br><br>';
 		*/
-		
+
+		// Inicializo Variables
+		$this->data['consulta']=array();
+		$this->data['consulta']['categoria'] = verificar_variable('GET','categoria','0');
+		$this->data['consulta']['orden_cat'] = verificar_variable('GET','orden_cat','ORDEN ASC');
+		$this->data['consulta']['busqueda'] = verificar_variable('GET','busqueda','');
+		$this->data['consulta']['busqueda_curso'] = verificar_variable('GET','busqueda_curso','');
+		$this->data['consulta']['busqueda_recurso'] = verificar_variable('GET','busqueda_recurso','');
+
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join_pub,$parametros_pub_or,$parametros_pub_and,$orden_pub,'','',$agrupar_pub);
 
 		$this->load->view('default'.$this->data['dispositivo'].'/ajax/repositorio_publico_ajax',$this->data);

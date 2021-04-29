@@ -124,7 +124,7 @@ class Admin_Repositorio extends CI_Controller {
 
 	public function crear_archivo()
 	{
-		
+
 		if(isset($_FILES['file']['name'])&&!empty($_FILES['file']['name'])&& $_FILES['file']['error'] == 0){
 			$nombre_archivo = 'archivo-'.uniqid();
 			$ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
@@ -145,8 +145,8 @@ class Admin_Repositorio extends CI_Controller {
 
 				 if(!empty($_FILES['Imagen']['name'])){
  					$archivo = $_FILES['Imagen']['tmp_name'];
- 					$ancho = 300;
- 					$alto = 300;
+ 					$ancho = 306;
+ 					$alto = 200;
  					$corte = 'corte';
  					$extension = '.jpg';
  					$tipo_imagen = 'image/jpeg';
@@ -179,6 +179,28 @@ class Admin_Repositorio extends CI_Controller {
 						'ESTADO' => 'activo',
 					);
 					$archivo_id = $this->GeneralModel->crear('archivos',$parametros);
+					// Historial
+					$parametros_historial = array(
+						'ID_ARCHIVO'=>$archivo_id,
+						'TITULO' => $this->input->post('Titulo'),
+						'CADIDO' => $this->input->post('Cadido'),
+						'NOMENCLATURA' => $this->input->post('Nomenclatura'),
+						'DESCRIPCION' => $this->input->post('Descripcion'),
+						'TEMA' =>  $this->input->post('Tema'),
+						'TIPO_RECURSO' =>  $this->input->post('TipoRecurso'),
+						'FORMATO' =>  $ext,
+						'COBERTURA' => $this->input->post('Cobertura'),
+						'DERECHOS' => $this->input->post('Derechos'),
+						'TITULO_CURSO' => $this->input->post('TituloCurso'),
+						'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
+						'ARCHIVO' => $nombre_archivo.'.'.$ext,
+						'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+						'VERSION' => '1',
+						'IMAGEN' => $imagen,
+						'FECHA_CREACION' => date('Y-m-d H:i:s'),
+						'ESTADO' => 'activo',
+					);
+					$archivo_id = $this->GeneralModel->crear('archivos_historial',$parametros_historial);
 					// Asigno a categoría
 					$parametros = array(
 						'ID_CATEGORIA' => $_POST['categoria'],
@@ -207,6 +229,110 @@ class Admin_Repositorio extends CI_Controller {
 			 $this->session->set_flashdata('alerta', 'No se ha podido subir el archivo');
 			 redirect('admin/repositorio?categoria='.$_POST['categoria']);
 		 }
+
+	}
+
+	public function actualizar_archivo()
+	{
+		$this->form_validation->set_rules('Titulo', 'Titulo', 'required|max_length[255]', array( 'required' => 'Debes designar el %s.', 'max_length' => 'El nombre no puede superar los 255 caracteres' ));
+
+		if($this->form_validation->run())
+    {
+
+			// Checo si mandé archivo
+			if(isset($_FILES['file']['name'])&&!empty($_FILES['file']['name'])&& $_FILES['file']['error'] == 0){
+				$nombre_archivo = 'archivo-'.uniqid();
+				$ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+				$config['upload_path']          = 'contenido/docs/';
+				$config['allowed_types']        = '*';
+				$config['file_name']						=	$nombre_archivo;
+
+				$this->load->library('upload', $config);
+
+				if ( ! $this->upload->do_upload('file'))
+				 {
+					 $error = array('error' => $this->upload->display_errors());
+					 echo 'Ha ocurrido un error al subir el archivo';
+					 echo '<pre>';
+					 var_dump($error);
+					 echo '</pre>';
+
+						$partes_ruta = pathinfo(base_url('contenido/docs/'.$this->input->post('ArchivoActual')));
+						$nombre_archivo = $partes_ruta['filename'];
+						$ext = $partes_ruta['extension'];
+				 }
+			}else{
+				$partes_ruta = pathinfo(base_url('contenido/docs/'.$this->input->post('ArchivoActual')));
+				$nombre_archivo = $partes_ruta['filename'];
+				$ext = $partes_ruta['extension'];
+			}
+
+			// Checo si mandé imagen
+			if(!empty($_FILES['Imagen']['name'])){
+			 $archivo = $_FILES['Imagen']['tmp_name'];
+			 $ancho = 306;
+			 $alto = 200;
+			 $corte = 'corte';
+			 $extension = '.jpg';
+			 $tipo_imagen = 'image/jpeg';
+			 $calidad = 80;
+			 $nombre = 'publicacion-'.uniqid();
+			 $destino = $this->data['op']['ruta_imagenes'].'publicaciones/';
+			 // Subo la imagen y obtengo el nombre Default si va vacía
+			 $imagen = subir_imagen($archivo,$ancho,$alto,$corte,$extension,$tipo_imagen,$calidad,$nombre,$destino);
+		 }else{
+			 $imagen = $this->input->post('ImagenActual');
+		 }
+
+		 $datos_archivo = $this->GeneralModel->detalles('archivos',['ID'=>$this->input->post('Identificador')]);
+		 $version = intval($datos_archivo['VERSION'])+1;
+
+
+			$parametros = array(
+				'TITULO' => $this->input->post('Titulo'),
+				'CADIDO' => $this->input->post('Cadido'),
+				'NOMENCLATURA' => $this->input->post('Nomenclatura'),
+				'DESCRIPCION' => $this->input->post('Descripcion'),
+				'TEMA' =>  $this->input->post('Tema'),
+				'TIPO_RECURSO' =>  $this->input->post('TipoRecurso'),
+				'FORMATO' =>  $ext,
+				'COBERTURA' => $this->input->post('Cobertura'),
+				'DERECHOS' => $this->input->post('Derechos'),
+				'TITULO_CURSO' => $this->input->post('TituloCurso'),
+				'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
+				'ARCHIVO' => $nombre_archivo.'.'.$ext,
+				'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+				'VERSION' => $version,
+				'IMAGEN' => $imagen,
+				'ESTADO' => 'activo',
+			);
+			$archivo_id = $this->GeneralModel->actualizar('archivos',['ID'=>$this->input->post('Identificador')],$parametros);
+
+			$parametros_historial = array(
+				'ID_ARCHIVO' => $this->input->post('Identificador'),
+				'TITULO' => $this->input->post('Titulo'),
+				'CADIDO' => $this->input->post('Cadido'),
+				'NOMENCLATURA' => $this->input->post('Nomenclatura'),
+				'DESCRIPCION' => $this->input->post('Descripcion'),
+				'TEMA' =>  $this->input->post('Tema'),
+				'TIPO_RECURSO' =>  $this->input->post('TipoRecurso'),
+				'FORMATO' =>  $ext,
+				'COBERTURA' => $this->input->post('Cobertura'),
+				'DERECHOS' => $this->input->post('Derechos'),
+				'TITULO_CURSO' => $this->input->post('TituloCurso'),
+				'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
+				'ARCHIVO' => $nombre_archivo.'.'.$ext,
+				'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+				'VERSION' => $version,
+				'IMAGEN' => $imagen,
+				'FECHA_CREACION' => date('Y-m-d H:i:s'),
+				'ESTADO' => 'activo',
+			);
+			$archivo_id = $this->GeneralModel->crear('archivos_historial',$parametros_historial);
+		}
+
+		$this->session->set_flashdata('exito', 'Archivo actualizado correctamente');
+	 redirect('admin/repositorio?categoria='.$_POST['categoria']);
 
 	}
 
