@@ -96,7 +96,7 @@
   	</div>
     <hr>
     <div class="row">
-      <div class="col">
+      <div class="col tabla-historial">
         <?php $historiales = $this->GeneralModel->lista('archivos_historial','',['ID_ARCHIVO'=>$archivo['ID']],'FECHA_CREACION DESC','',''); ?>
         <h3>Historial de versiones</h3>
         <table class="table table-stripped table-bordered">
