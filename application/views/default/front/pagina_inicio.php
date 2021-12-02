@@ -18,7 +18,7 @@
 											<div class="default-select" id="default-selects">
 												<select name="busqueda_curso">
 													<option value="0">Selecciona curso</option>
-													<?php 
+													<?php
 							$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
 							foreach($cursos as $curso){
 								echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
@@ -310,167 +310,6 @@
 			</section>
 			<!-- End feature-cat Area -->
 
-			<!-- Start feature-cat Area -->
-			<section class="feature-cat-area pt-50" id="recursos">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content col-lg-10">
-							<div class="title text-center">
-								<h1 class="mb-10">Recursos Recientes</h1>
-								<p>Recursos agregados</p>
-							</div>
-						</div>
-					</div>
-			<!-- End feature-cat Area -->
-			<div class="row">
-				  <a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-webtxt">
-							<div class="genric-btn default circle"><i class="fas fa-code"></i>Página web</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
-							</div>
-						</div>
-					</a>
-						<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-							<div class="single-service rec-img">
-							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Melon sierra leone bologi carrot peanut salsify celery onion jícama summer purslane.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-sim">
-							<div class="genric-btn default circle"><i class="fas fa-chalkboard-teacher"></i>Presentación</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Celery carrot napa cabbage wakame zucchini celery chard beetroot jícama sierra leone.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Catsear cabbage tomato parsnip cucumber pea brussels sprout spring onion shallot swiss .
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-app">
-							<div class="genric-btn default circle"><i class="fas fa-laptop-code"></i>Software/Aplicación</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Mung bean taro chicory spinach komatsuna fennel.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Epazote soko chickpea radicchio rutabaga desert raisin wattle seed coriander water.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Tatsoi caulie broccoli rabe bush tomato fava bean beetroot epazote salad grape.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Endive okra chard desert raisin prairie turnip cucumber maize avocado.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Bush tomato peanut shallot turnip prairie turnip gram desert raisin.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Yarrow leek cabbage amaranth onion salsify caulie kale desert raisin prairie turnip garlic.
-							</div>
-						</div>
-					</a>
-			<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Más recursos</a>
-		</div><!-- /row -->
-		</div><!-- /container -->
-		</section>
 
 		<!-- Start About Area -->
 		<section class="section-gap" id="inter">
@@ -479,10 +318,10 @@
 					<div class="col-md-12 col-lg-4 single-slidebar">
 						<h4 class="text-white">Recursos por Área</h4>
 						<ul class="cat-list">
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Comunicación</p><span>37</span></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Sociales</p><span>57</span></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Humanidades</p><span>33</span></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p><span>36</span></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Comunicación</p></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Sociales</p></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Humanidades</p></a></li>
+							<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p></a></li>
 							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Experimentales</p><span>47</span></a></li>
 						</ul>
 					</div>
@@ -490,194 +329,31 @@
 						<div class="col-md-12 col-lg-4 single-slidebar">
 							<h4 class="text-white">Recursos por Tipo</h4>
 							<ul class="cat-list">
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Página webs</p><span>37</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Página web con diversos recursos</p><span>57</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Imagen</p><span>33</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Video</p><span>36</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Archivo de texto</p><span>47</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Audio</p><span>33</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Presentaciónes</p><span>36</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Software/Aplicación</p><span>47</span></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Página webs</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Página web con diversos recursos</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Imagen</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Video</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Archivo de texto</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Audio</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Presentaciónes</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Software/Aplicación</p></a></li>
 							</ul>
 						</div>
 
 						<div class="col-md-12 col-lg-4 single-slidebar">
 							<h4 class="text-white">Palabras clave</h4>
 							<ul class="cat-list">
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Tecnología</p><span>37</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p><span>57</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias</p><span>33</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Artes y Humanidades</p><span>36</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Física</p><span>47</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Química</p><span>27</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Psicología</p><span>17</span></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Aprendizaje</p><span>17</span></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Tecnología</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Artes y Humanidades</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Física</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Química</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Psicología</p></a></li>
+								<li><a class="justify-content-between d-flex" href="category.html"><p>Aprendizaje</p></a></li>
 							</ul>
 						</div>
 				</div>
 			</div>
 		</section>
 		<!-- End About Area -->
-
-			<!-- Start post Area -->
-			<!-- Start feature-cat Area -->
-			<section class="feature-cat-area pt-50" id="mas-vistos">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content col-lg-10">
-							<div class="title text-center">
-								<h1 class="mb-10">Más Vistos</h1>
-								<p>Los recursos que más veces han sido descargados por los usuarios.</p>
-							</div>
-						</div>
-					</div>
-			<!-- End feature-cat Area -->
-			<div class="row">
-				  <a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-webtxt">
-							<div class="genric-btn default circle"><i class="fas fa-code"></i>Página web</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
-							</div>
-						</div>
-					</a>
-						<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-							<div class="single-service rec-img">
-							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Melon sierra leone bologi carrot peanut salsify celery onion jícama summer purslane.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-sim">
-							<div class="genric-btn default circle"><i class="fas fa-chalkboard-teacher"></i>Presentación</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Celery carrot napa cabbage wakame zucchini celery chard beetroot jícama sierra leone.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Catsear cabbage tomato parsnip cucumber pea brussels sprout spring onion shallot swiss .
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-app">
-							<div class="genric-btn default circle"><i class="fas fa-laptop-code"></i>Software/Aplicación</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Mung bean taro chicory spinach komatsuna fennel.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Epazote soko chickpea radicchio rutabaga desert raisin wattle seed coriander water.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-aud">
-							<div class="genric-btn default circle"><i class="fas fa-file-audio"></i>Audio</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Tatsoi caulie broccoli rabe bush tomato fava bean beetroot epazote salad grape.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-txt">
-							<div class="genric-btn default circle"><i class="fas fa-file-alt"></i>Archivo de texto</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Endive okra chard desert raisin prairie turnip cucumber maize avocado.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-vid">
-							<div class="genric-btn default circle"><i class="fas fa-play"></i>Video</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Bush tomato peanut shallot turnip prairie turnip gram desert raisin.
-							</div>
-						</div>
-					</a>
-					<a href="recurso.html" class="col-lg-4 col-md-6 px-1">
-						<div class="single-service rec-img">
-							<div class="genric-btn default circle"><i class="fas fa-image"></i>Imagen</div>
-							<div class="cbp-vm-title">
-								<h5>Nombre de Recurso</h5>
-								<div class="cbp-vm-price">Autor</div>
-							</div>
-							<div class="cbp-vm-details">
-								Yarrow leek cabbage amaranth onion salsify caulie kale desert raisin prairie turnip garlic.
-							</div>
-						</div>
-					</a>
-			<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Más recursos</a>
-		</div><!-- /container -->
-		</section>
-			<!-- End post Area -->

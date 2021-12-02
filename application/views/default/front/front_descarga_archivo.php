@@ -29,36 +29,38 @@
                     <div class="card-body">
                       <form class="" action="<?php echo base_url('repositorio/calificacion') ?>" method="post">
                         <input type="hidden" name="IdArchivo" value="<?php echo $archivo['ID']?>">
-                        <label class="pregunta-calif" for="EstrellasCalificacion">Fomenta el logro de tu aprendizaje.</label>
-                        <div class="estrellas"><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a></div>
+                        <label for="EstrellasCalificacion">Fomenta el logro de tu aprendizaje.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
-
-                        <label class="pregunta-calif" for="EstrellasCalificacion">Es suficiente para la comprensión del tema.</label>
-                        <div class="estrellas"><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a></div>
+                        <hr>
+                        <label for="EstrellasCalificacion">Es suficiente para la comprensión del tema.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
-
-                        <label class="pregunta-calif" for="EstrellasCalificacion">La información es clara y organizada.</label>
-                        <div class="estrellas"><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a></div>
+                        <hr>
+                        <label for="EstrellasCalificacion">La información es clara y organizada.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
-
-                        <label class="pregunta-calif" for="EstrellasCalificacion">Es creativo e innovador.</label>
-                        <div class="estrellas"><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a></div>
+                        <hr>
+                        <label for="EstrellasCalificacion">Es creativo e innovador.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
-
-                        <label class="pregunta-calif" for="EstrellasCalificacion">Es intuitivo.</label>
-                        <div class="estrellas"><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a></div>
+                        <hr>
+                        <label for="EstrellasCalificacion">Es intuitivo.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
-
-                        <label class="pregunta-calif" for="EstrellasCalificacion">Es de calidad.</label>
-                        <div class="estrellas"><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a><a href="#" class="far fa-star fa-2x"></a></div>
+                        <hr>
+                        <label for="EstrellasCalificacion">Es de calidad.</label>
+                        <div class="estrellas"><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a><a href="#" class="far fa-star text-warning fa-2x"></a></div>
                         <input type="hidden" name="EstrellasCalificacion" id="EstrellasCalificacion" value="5">
                         <div class="form-group">
-                          <input type="text" class="form-control" name="Nombre" value="" placeholder="Nombre">
+                          <label for="Nombre">Nombre</label>
+                          <input type="text" class="form-control" name="Nombre" value="">
                         </div>
                         <div class="form-group">
-                          <textarea class="form-control" name="Comentario" rows="2" cols="80" required="" placeholder="Añade un comentario"></textarea>
+                          <label for="Comentario">Comentario</label>
+                          <textarea class="form-control" name="Comentario" rows="2" cols="80" required=""></textarea>
                         </div>
-                        <button aria-label="Calificar" type="submit" class="btn btn-primary float-right" name="button"></i> Calificar</button>
+                        <button aria-label="Calificar" type="submit" class="btn btn-primary float-right" name="button"> <i class="fa fa-star"></i> Agregar comentario</button>
                       </form>
                     </div>
                   </div>
@@ -103,56 +105,56 @@
                      <br>
                       <a data-toggle="collapse" href="#detalles_calificaciones" role="button" aria-expanded="false" aria-controls="detalles_calificaciones">Ver más detalles</a>
                       <div class="collapse" id="detalles_calificaciones">
-                      <div class="row mb-2">
-                        <div class="col-sm-12 col-md-5">
+                      <div class="row">
+                        <div class="col">
                           <ul class=" list-unstyled rating m-0">
                              <i class="fa fa-star"></i><i class="far fa-star"></i>  <i class="far fa-star"></i>  <i class="far fa-star"></i>  <i class="far fa-star"></i>                           </ul>
                         </div>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-7">
                           <div class="progress">
                             <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="row mb-2">
-                        <div class="col-sm-12 col-md-5">
+                      <div class="row">
+                        <div class="col">
                           <ul class=" list-unstyled rating m-0">
                              <i class="fa fa-star"></i>  <i class="fa fa-star"></i><i class="far fa-star"></i>  <i class="far fa-star"></i>  <i class="far fa-star"></i>                           </ul>
                         </div>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-7">
                           <div class="progress">
                             <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="row mb-2">
-                        <div class="col-sm-12 col-md-5">
+                      <div class="row">
+                        <div class="col">
                           <ul class=" list-unstyled rating m-0">
                              <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i><i class="far fa-star"></i>  <i class="far fa-star"></i>                           </ul>
                         </div>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-7">
                           <div class="progress">
                           <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="row mb-2">
-                        <div class="col-sm-12 col-md-5">
+                      <div class="row">
+                        <div class="col">
                           <ul class=" list-unstyled rating m-0">
                              <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>                              <i class="far fa-star"></i>                           </ul>
                         </div>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-7">
                           <div class="progress">
                             <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </div>
-                      <div class="row mb-2">
-                        <div class="col-sm-12 col-md-5">
+                      <div class="row">
+                        <div class="col">
                           <ul class=" list-unstyled rating m-0">
                              <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>  <i class="fa fa-star"></i>                                                       </ul>
                         </div>
-                        <div class="col-sm-12 col-md-7">
+                        <div class="col-7">
                           <div class="progress">
                             <div class="progress-bar bg-primary-8" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
