@@ -163,9 +163,11 @@ class Front_Repositorio extends CI_Controller {
 		$busqueda = verificar_variable('GET','busqueda','');
 		$busqueda_curso = verificar_variable('GET','busqueda_curso','');
 		$busqueda_recurso = verificar_variable('GET','busqueda_recurso','');
+		$busqueda_area = verificar_variable('GET','busqueda_area','');
 		$this->data['consulta']['busqueda'] = $busqueda;
 		$this->data['consulta']['busqueda_curso'] = $busqueda_curso;
 		$this->data['consulta']['busqueda_recurso'] = $busqueda_recurso;
+		$this->data['consulta']['busqueda_area'] = $busqueda_area;
 		// Expando la busqueda y genero los $parametros_or
 
 		if(!empty($busqueda)){
@@ -179,6 +181,9 @@ class Front_Repositorio extends CI_Controller {
 		}
 		if(!empty($busqueda_recurso)){
 			$parametros_or['archivos.TIPO_RECURSO']=$busqueda_recurso;
+		}
+		if(!empty($busqueda_area)){
+			$parametros_or['archivos.AREA_DE_CONOCIMIENTO']=$busqueda_area;
 		}
 
 		// Genero los parametros AND

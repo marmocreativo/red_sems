@@ -1,15 +1,9 @@
 <!-- start footer Area -->
-			<footer class="footer-area section-gap">
+			<footer class="bg-secondary py-4">
 				<div class="container">
 
-					<div class="row footer-bottom d-flex justify-content-between">
-
-						<div class="col-lg-4 col-sm-12 footer-social">
-							<a href="#"><i class="fab fa-facebook"></i></a>
-							<a href="#"><i class="fab fa-twitter"></i></a>
-							<a href="#"><i class="fab fa-dribbble"></i></a>
-							<a href="#"><i class="fab fa-behance"></i></a>
-						</div>
+					<div class="row text-white d-flex justify-content-between">
+						todos los derechos reservador
 					</div>
 				</div>
 			</footer>

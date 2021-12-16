@@ -11,35 +11,44 @@
 								<h3 class="h3 text-white">CONTENIDO DIGITAL EDUCATIVO</h3>
 								<form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
 									<div class="row justify-content-center form-wrap">
-										<div class="col-lg-4 form-cols">
+										<div class="col-lg-3 form-cols">
 											<input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
 										</div>
-										<div class="col-lg-3 form-cols">
+										<div class="col-lg-2 form-cols">
 											<div class="default-select" id="default-selects">
 												<select name="busqueda_curso">
-													<option value="0">Selecciona curso</option>
+													<option value="">Curso</option>
 													<?php
-							$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
-							foreach($cursos as $curso){
-								echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
-							} ?>
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-3 form-cols">
-											<div class="default-select" id="default-selects2">
-												<select name="busqueda_recurso">
-													<option value="">Selecciona recurso</option>
-													<option value="Pdf">PDF</option>
-													<option value="Epub">Epub</option>
-													<option value="Imagen">Imágen</option>
-													<option value="Infografía">Infografía</option>
-													<option value="Video">Video</option>
-													<option value="Audio">Audio</option>
+														$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
+														foreach($cursos as $curso){
+															echo '<option value="'.$curso->TIPO_NOMBRE.'" >'.$curso->TIPO_NOMBRE_PLURAL.'</option>';
+														} ?>
 												</select>
 											</div>
 										</div>
 										<div class="col-lg-2 form-cols">
+											<div class="default-select" id="default-selects2">
+												<select name="busqueda_area">
+													<?php $areas_conocimiento = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'areas_conocimientos'],'','',''); ?>
+													<option value="">Área de conocimiento</option>
+													<?php foreach($areas_conocimiento as $area){ ?>
+														<option value="<?php echo $area->TIPO_NOMBRE;  ?>"><?php echo $area->TIPO_NOMBRE_PLURAL;  ?></option>
+													<?php } ?>
+													</select>
+											</div>
+										</div>
+										<div class="col-lg-2 form-cols">
+											<div class="default-select" id="default-selects2">
+												<select name="busqueda_recurso">
+													<?php $tipos_recurso = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'tipo_recurso'],'','',''); ?>
+													<option value="">Tipo de recurso</option>
+													<?php foreach($tipos_recurso as $tipo_recurso){ ?>
+														<option value="<?php echo $tipo_recurso->TIPO_NOMBRE;  ?>"><?php echo $tipo_recurso->TIPO_NOMBRE_PLURAL;  ?></option>
+													<?php } ?>
+													</select>
+											</div>
+										</div>
+										<div class="col-lg-3 form-cols">
 										    <button type="submit" class="btn btn-info">
 										      <span class="lnr lnr-magnifier"></span> Buscar
 										    </button>
@@ -237,71 +246,33 @@
 							</div>
 						</div>
 						<div class="splide" style="width:100%">
+							<?php
+								$iconos = [
+									'Página web'=>'fas fa-code',
+									'Imagen'=>'fas fa-image',
+									'Video'=>'fas fa-play',
+									'Presentación'=>'fas fa-chalkboard-teacher',
+									'Archivo de texto'=>'fas fa-file-alt',
+									'Audio'=>'fas fa-file-audio',
+									'Software/Aplicación'=>'fas fa-laptop-code',
+									'Pdf'=>'far fa-file-pdf',
+									'Epub'=>'fas fa-book',
+									'Infografía'=>'fas fa-chart-pie'
+								];
+							?>
 							<div class="splide__track">
 								<ul class="splide__list">
+									<?php foreach($tipos_recurso as $tipo_recurso){ ?>
 									<li class="splide__slide">
 										<div class="single-fcat">
 											<div class='circle fill-secondary'></div>
-											<a href="category.html">
-												<i class="fas fa-code"></i>
+											<a href="<?php echo base_url('repositorio?busqueda=&busqueda_curso=0&busqueda_recurso='.$tipo_recurso->TIPO_NOMBRE); ?>">
+												<i class="<?php if(isset($iconos[$tipo_recurso->TIPO_NOMBRE])){ echo $iconos[$tipo_recurso->TIPO_NOMBRE]; }else{ echo 'far fa-file'; } ?>"></i>
 											</a>
-											<p>Página web</p>
+											<p><?php echo $tipo_recurso->TIPO_NOMBRE_PLURAL; ?></p>
 										</div>
 									</li>
-									<li class="splide__slide">
-										<div class="single-fcat">
-											<div class='circle fill-blue'></div>
-											<a href="category.html">
-												<i class="fas fa-image"></i>
-											</a>
-											<p>Imagen</p>
-										</div>
-									</li>
-									<li class="splide__slide">
-										<div class="single-fcat">
-											<div class='circle fill-teal'></div>
-											<a href="category.html">
-												<i class="fas fa-play"></i>
-											</a>
-											<p>Video</p>
-										</div>
-									</li>
-									<li class="splide__slide">
-										<div class="single-fcat">
-											<div class='circle fill-lime'></div>
-											<a href="category.html">
-												<i class="fas fa-chalkboard-teacher"></i>
-											</a>
-											<p>Presentación</p>
-										</div>
-									</li>
-									<li class="splide__slide">
-										<div class="single-fcat">
-											<div class='circle fill-pink'></div>
-											<a href="category.html">
-												<i class="fas fa-file-alt"></i>
-											</a>
-											<p>Archivo de texto</p>
-										</div>
-									</li>
-									<li class="splide__slide">
-										<div class="single-fcat">
-											<div class='circle fill-secondary'></div>
-											<a href="category.html">
-												<i class="fas fa-file-audio"></i>
-											</a>
-											<p>Audio</p>
-										</div>
-									</li>
-									<li class="splide__slide">
-										<div class="single-fcat">
-											<div class='circle fill-teal'></div>
-											<a href="category.html">
-												<i class="fas fa-laptop-code"></i>
-											</a>
-											<p>Software/Aplicación</p>
-										</div>
-									</li>
+									<?php } ?>
 								</ul>
 							</div>
 						</div>
@@ -309,8 +280,6 @@
 			</div>
 			</section>
 			<!-- End feature-cat Area -->
-
-
 		<!-- Start About Area -->
 		<section class="section-gap" id="inter">
 			<div class="container">
@@ -318,39 +287,29 @@
 					<div class="col-md-12 col-lg-4 single-slidebar">
 						<h4 class="text-white">Recursos por Área</h4>
 						<ul class="cat-list">
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Comunicación</p></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Sociales</p></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Humanidades</p></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p></a></li>
-							<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias Experimentales</p><span>47</span></a></li>
+							<?php $areas_conocimiento = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'areas_conocimiento'],'','',''); ?>
+							<?php foreach($areas_conocimiento as $area){ ?>
+								<li><a class="justify-content-between d-flex" href="<?php echo base_url('repositorio?busqueda=&busqueda_curso=0&busqueda_recurso&busqueda_area='.$area->TIPO_NOMBRE); ?>"><p><?php echo $area->TIPO_NOMBRE; ?></p></a></li>
+							<?php } ?>
 						</ul>
 					</div>
 
 						<div class="col-md-12 col-lg-4 single-slidebar">
 							<h4 class="text-white">Recursos por Tipo</h4>
 							<ul class="cat-list">
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Página webs</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Página web con diversos recursos</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Imagen</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Video</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Archivo de texto</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Audio</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Presentaciónes</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Software/Aplicación</p></a></li>
+								<?php foreach($tipos_recurso as $tipo_recurso){ ?>
+									<li><a class="justify-content-between d-flex" href="<?php echo base_url('repositorio?busqueda=&busqueda_curso=0&busqueda_recurso='.$tipo_recurso->TIPO_NOMBRE.'&busqueda_area'); ?>"><p><?php echo $tipo_recurso->TIPO_NOMBRE_PLURAL; ?></p><!--<span>37</span>--></a></li>
+								<?php } ?>
 							</ul>
 						</div>
 
 						<div class="col-md-12 col-lg-4 single-slidebar">
-							<h4 class="text-white">Palabras clave</h4>
+							<h4 class="text-white">Recursos por Curso</h4>
 							<ul class="cat-list">
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Tecnología</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Matemáticas</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Ciencias</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Artes y Humanidades</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Física</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Química</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Psicología</p></a></li>
-								<li><a class="justify-content-between d-flex" href="category.html"><p>Aprendizaje</p></a></li>
+								<?php $cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'','',''); ?>
+								<?php foreach($cursos as $curso){ ?>
+								<li><a class="justify-content-between d-flex" href="<?php echo base_url('repositorio?busqueda=&busqueda_curso='.$curso->TIPO_NOMBRE.'&busqueda_recurso&busqueda_area'); ?>"><p><?php echo $curso->TIPO_NOMBRE_PLURAL; ?></p><!--<span>37</span>--></a></li>
+								<?php } ?>
 							</ul>
 						</div>
 				</div>

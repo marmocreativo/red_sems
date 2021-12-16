@@ -141,13 +141,25 @@
 													<div class="row">
 														<div class="col-4">
 															<h4>Generales</h4>
+
+															<div class="form-group">
+																<label for="TipoRecurso">Tipo de recurso</label>
+																<?php $tipos_recurso = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'tipo_recurso'],'','',''); ?>
+																<select class="form-control" name="TipoRecurso">
+																	<option value="">Selecciona</option>
+																	<?php foreach($tipos_recurso as $tipo){ ?>
+																	<option value="<?php echo $tipo->TIPO_NOMBRE ?>"><?php echo $tipo->TIPO_NOMBRE_PLURAL ?></option>
+																	<?php } ?>
+																</select>
+															</div>
+
 															<div class="form-group">
 																<label for="file">Archivo</label>
-																<input type="file" class="form-control" name="file" value="" required>
+																<input type="file" id="Archivo" class="form-control" name="file" value="" required>
 															</div>
 															<div class="form-group">
 																<label for="Imagen">Imágen miniatura</label>
-																<input type="file" class="form-control" name="Imagen" value="">
+																<input type="file" id="Imagen" class="form-control" name="Imagen" value="">
 															</div>
 															<div class="form-group">
 																<label for="Titulo">Titulo (Nombre amigable)</label>
@@ -170,19 +182,7 @@
 															<h4>Dublin Core</h4>
 															<div class="form-group">
 																<label for="Tema">Tema (Palabras clave)</label>
-																<textarea class="form-control" name="Tema" rows="5"></textarea>
-															</div>
-															<div class="form-group">
-																<label for="TipoRecurso">Tipo de recurso</label>
-																<select class="form-control" name="TipoRecurso">
-																	<option value="">Selecciona</option>
-																	<option value="Pdf">PDF</option>
-																	<option value="Epub">Epub</option>
-																	<option value="Imagen">Imágen</option>
-																	<option value="Infografía">Infografía</option>
-																	<option value="Video">Video</option>
-																	<option value="Audio">Audio</option>
-																</select>
+																<textarea class="form-control" id='Tema' name="Tema" rows="5"></textarea>
 															</div>
 
 															<div class="form-group">
@@ -199,13 +199,18 @@
 															<div class="form-group">
 																<label for="TituloCurso">Título del Curso</label>
 																<select  class="form-control" name="TituloCurso" >
-																	<option value="0">Selecciona curso</option>
+																	<option value="">Selecciona curso</option>
 																	<?php
 																		$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
 																		foreach($cursos as $curso){
-																			echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
+																			echo '<option value="'.$curso->TIPO_NOMBRE.'" >'.$curso->TIPO_NOMBRE_PLURAL.'</option>';
 																	} ?>
 																</select>
+															</div>
+															<div class="form-group">
+																<label for="AreasConocimiento">Áreas del conocimiento</label>
+																<?php $areas_conocimiento = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'areas_conocimientos'],'','',''); ?>
+																<textarea class="form-control" name="AreasConocimiento" id='AreasConocimiento' rows="5"><?php foreach($areas_conocimiento as $areas){ echo $areas->TIPO_NOMBRE.', ';} ?></textarea>
 															</div>
 															<div class="form-group">
 																<label for="PropositoDidactico">Propósito didáctico</label>

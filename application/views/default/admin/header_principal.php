@@ -45,6 +45,7 @@
 		<link href="<?php echo base_url('assets/metronic/'); ?>vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo base_url('assets/metronic/'); ?>vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 		<script src="https://kit.fontawesome.com/cdf4e31978.js" crossorigin="anonymous"></script>
+		<link href="<?php echo base_url('assets/plugins/'); ?>tagsinput/jquery.tagsinput.min.css" rel="stylesheet" type="text/css" />
 
 		<!--end:: Global Optional Vendors -->
 

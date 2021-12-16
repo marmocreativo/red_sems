@@ -20,7 +20,7 @@
 						<a class="btn btn-block btn-link" href="<?php echo base_url('login/recuperar_pass');?>"> <span class="fa fa-question-circle"></span> Olvidé mi contraseña</a>
 					</div>
 					<div class="col-12 col-sm-6">
-						<!--<a class="btn btn-block btn-link" href="<?php echo base_url('usuarios/crear');?>"> <span class="fa fa-pen-square"></span> Registrarme</a>-->
+						<a class="btn btn-block btn-link" href="<?php echo base_url('usuarios/crear');?>"> <span class="fa fa-pen-square"></span> Registrarme</a>
 					</div>
 				</div>
 			</form>

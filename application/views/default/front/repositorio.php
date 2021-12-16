@@ -6,32 +6,41 @@
           <h5>Nueva búsqueda</h5>
             <form action="<?php echo base_url('repositorio'); ?>" method="get" class="search-form-area">
               <div class="row justify-content-center form-wrap">
-                <div class="col-lg-4 form-cols">
+                <div class="col-lg-3 form-cols">
                   <input type="text" class="form-control" name="busqueda" placeholder="Busca un recurso">
                 </div>
-                <div class="col-lg-3 form-cols">
+                <div class="col-lg-2 form-cols">
                   <div class="default-select" id="default-selects">
                     <select name="busqueda_curso">
-                    	<option value="0">Selecciona curso</option>
-						<?php
-							$cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
-							foreach($cursos as $curso){
-								echo '<option value="'.$curso->ID.'" >'.$curso->TIPO_NOMBRE.'</option>';
-						} ?>
-					</select>
+                      <option value="">Curso</option>
+                      <?php
+                        $cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
+                        foreach($cursos as $curso){
+                          echo '<option value="'.$curso->TIPO_NOMBRE.'" >'.$curso->TIPO_NOMBRE_PLURAL.'</option>';
+                        } ?>
+                    </select>
                   </div>
                 </div>
-                <div class="col-lg-3 form-cols">
+                <div class="col-lg-2 form-cols">
+                  <div class="default-select" id="default-selects2">
+                    <select name="busqueda_area">
+                      <?php $areas_conocimiento = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'areas_conocimientos'],'','',''); ?>
+                      <option value="">Área de conocimiento</option>
+                      <?php foreach($areas_conocimiento as $area){ ?>
+                        <option value="<?php echo $area->TIPO_NOMBRE;  ?>"><?php echo $area->TIPO_NOMBRE_PLURAL;  ?></option>
+                      <?php } ?>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-lg-2 form-cols">
                   <div class="default-select" id="default-selects2">
                     <select name="busqueda_recurso">
-                      <option value="">Selecciona recurso</option>
-                      <option value="Pdf">PDF</option>
-                      <option value="Epub">Epub</option>
-                      <option value="Imagen">Imágen</option>
-                      <option value="Infografía">Infografía</option>
-                      <option value="Video">Video</option>
-                      <option value="Audio">Audio</option>
-                    </select>
+                      <?php $tipos_recurso = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'tipo_recurso'],'','',''); ?>
+                      <option value="">Tipo de recurso</option>
+                      <?php foreach($tipos_recurso as $tipo_recurso){ ?>
+                        <option value="<?php echo $tipo_recurso->TIPO_NOMBRE;  ?>"><?php echo $tipo_recurso->TIPO_NOMBRE_PLURAL;  ?></option>
+                      <?php } ?>
+                      </select>
                   </div>
                 </div>
                 <div class="col-lg-2 form-cols">
@@ -76,6 +85,7 @@
 				data-busqueda='<?php echo $consulta['busqueda']; ?>'
 				data-busqueda_curso='<?php echo $consulta['busqueda_curso']; ?>'
 				data-busqueda_recurso='<?php echo $consulta['busqueda_recurso']; ?>'
+        data-busqueda_area='<?php echo $consulta['busqueda_area']; ?>'
 				>
 					<div class="text-center">
 						<i class="fa fa-spinner fa-pulse fa-4x"></i>

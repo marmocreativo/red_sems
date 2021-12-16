@@ -102,10 +102,10 @@
         <table class="table table-stripped table-bordered">
           <thead>
             <tr>
-              <th>Título</th>
-              <th>Versión</th>
-              <th>Fecha</th>
-              <th>Archivo</th>
+              <th>TITULO</th>
+              <th>VERSION</th>
+              <th>FECHA</th>
+              <th>ARCHIVO</th>
               <th>Fomento Aprendizaje</th>
               <th>Comprensión del tema</th>
               <th>Información organizada</th>

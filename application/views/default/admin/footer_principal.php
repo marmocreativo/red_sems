@@ -91,6 +91,7 @@
 		<script src="<?php echo base_url('assets/metronic/'); ?>vendors/custom/flot/jquery.flot.selection.js"></script>
 		<script src="<?php echo base_url('assets/metronic/'); ?>vendors/custom/flot/jquery.flot.composeImages.js"></script>
 		<script src="<?php echo base_url('assets/metronic/'); ?>vendors/custom/flot/jquery.flot.legend.js"></script>
+		<script src="<?php echo base_url('assets/plugins/'); ?>tagsinput/jquery.tagsinput.min.js" type="text/javascript"></script>
 		<!--end:: Global Optional Vendors -->
 
 		<!--begin::Global Theme Bundle(used by all pages) -->

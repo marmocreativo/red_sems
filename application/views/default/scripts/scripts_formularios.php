@@ -371,6 +371,12 @@ console.log(' busqueda_curso: ' + busqueda_curso)    ;
       });
     });
 
-
+    $('#Tema').tagsInput({
+      'width':'100%',
+    });
+    $('#AreasConocimiento').tagsInput({
+      'width':'100%',
+    });
+    //$('#Area').jsonTagEditor();
 
 </script>

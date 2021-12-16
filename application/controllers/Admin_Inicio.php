@@ -276,4 +276,22 @@ class Admin_Inicio extends CI_Controller {
 			}
 	}
 
+	public function nuevas_columnas(){
+		/*
+		$this->load->dbforge();
+		$fields = array(
+        'COMENTARIO_TEXTO' => array('type' => 'TEXT'),
+				'COMENTARIO_AREA' => array('type' => 'TEXT'),
+		);
+		$this->dbforge->add_column('comentarios', $fields);
+*/
+
+		$comentarios = $this->GeneralModel->lista('comentarios','','','','','');
+
+		echo '<pre>';
+		var_dump($comentarios);
+		echo '</pre>';
+
+	}
+
 }
