@@ -73,6 +73,8 @@ class Ajax extends CI_Controller {
 
 		$this->data['archivos'] = $this->GeneralModel->lista_join('archivos',$tablas_join_pub,$parametros_pub_or,$parametros_pub_and,$orden_pub,'','',$agrupar_pub);
 
+		//var_dump($this->db->last_query());
+
 		$this->load->view('default'.$this->data['dispositivo'].'/ajax/repositorio_ajax',$this->data);
 	}
 
@@ -84,6 +86,8 @@ class Ajax extends CI_Controller {
 		$parametros_cat_and = array();
 		$orden_cat = verificar_variable('GET','orden_cat','CATEGORIA_NOMBRE ASC');
 		$busqueda = verificar_variable('GET','busqueda','');
+		$busqueda_curso = verificar_variable('GET','busqueda_curso','');
+		$busqueda_recurso = verificar_variable('GET','busqueda_recurso','');
 		$agrupar_cat = 'categorias.ID_CATEGORIA';
 		$tablas_join_cat = array();
 
@@ -116,6 +120,8 @@ class Ajax extends CI_Controller {
 			$parametros_pub_or['archivos.TITULO']=$busqueda;
 			$parametros_pub_or['archivos.DESCRIPCION']=$busqueda;
 			$parametros_pub_or['archivos.TEMA']=$busqueda;
+		}else{
+			$parametros_pub_and['categorias_objetos.ID_CATEGORIA']=$categoria;
 		}
 		if(!empty($busqueda_curso)){
 			$parametros_pub_or['archivos.TITULO_CURSO']=$busqueda_curso;

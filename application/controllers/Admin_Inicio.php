@@ -277,21 +277,21 @@ class Admin_Inicio extends CI_Controller {
 	}
 
 	public function nuevas_columnas(){
-		/*
+
 		$this->load->dbforge();
 		$fields = array(
-        'COMENTARIO_TEXTO' => array('type' => 'TEXT'),
-				'COMENTARIO_AREA' => array('type' => 'TEXT'),
+        'ARCHIVO_GUION' => array('type' => 'VARCHAR', 'constraint' => '256',),
 		);
-		$this->dbforge->add_column('comentarios', $fields);
-*/
+		$this->dbforge->add_column('archivos', $fields);
+		$this->dbforge->add_column('archivos_historial', $fields);
 
+/*
 		$comentarios = $this->GeneralModel->lista('comentarios','','','','','');
 
 		echo '<pre>';
 		var_dump($comentarios);
 		echo '</pre>';
-
+*/
 	}
 
 }

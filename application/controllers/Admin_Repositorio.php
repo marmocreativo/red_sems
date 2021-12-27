@@ -122,7 +122,7 @@ class Admin_Repositorio extends CI_Controller {
 
 	}
 
-	public function crear_archivo()
+	public function crear_archivo_BACK()
 	{
 
 		if(isset($_FILES['file']['name'])&&!empty($_FILES['file']['name'])&& $_FILES['file']['error'] == 0){
@@ -173,6 +173,7 @@ class Admin_Repositorio extends CI_Controller {
 						'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
 						'ARCHIVO' => $nombre_archivo.'.'.$ext,
 						'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+						'ARCHIVO_GUION' => $this->input->post('ArchivoGuion'),
 						'VERSION' => '1',
 						'IMAGEN' => $imagen,
 						'FECHA_CREACION' => date('Y-m-d H:i:s'),
@@ -195,6 +196,7 @@ class Admin_Repositorio extends CI_Controller {
 						'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
 						'ARCHIVO' => $nombre_archivo.'.'.$ext,
 						'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+						'ARCHIVO_GUION' => $this->input->post('ArchivoGuion'),
 						'VERSION' => '1',
 						'IMAGEN' => $imagen,
 						'FECHA_CREACION' => date('Y-m-d H:i:s'),
@@ -230,6 +232,149 @@ class Admin_Repositorio extends CI_Controller {
 			 redirect('admin/repositorio?categoria='.$_POST['categoria']);
 		 }
 
+	}
+
+	public function crear_archivo()
+	{
+		$imagen = 'default.jpg';
+		$archivo_url = '';
+		$ext = '';
+
+		if($_POST['TipoRecurso']=='Video'){
+			$archivo_url = $_POST['file'];
+			parse_str( parse_url( $archivo_url, PHP_URL_QUERY ), $my_array_of_vars );
+			$imagen = 'https://img.youtube.com/vi/'.$my_array_of_vars['v'].'/0.jpg';
+			$ext = 'Youtube';
+		}else{
+			// Subo el archivo
+			$nombre_archivo = 'archivo-'.uniqid();
+			$ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+			$config['upload_path']          = 'contenido/docs/';
+			$config['allowed_types']        = '*';
+			$config['file_name']						=	$nombre_archivo;
+
+			$this->load->library('upload', $config);
+
+			$archivo_url = $nombre_archivo.'.'.$ext;
+
+			if ( ! $this->upload->do_upload('file')){
+
+			}else{
+				// Reviso si es archivo imágen si es imágen proceso la misma imágen
+				if($_POST['TipoRecurso']=='Imagen'){
+					if(!empty($_FILES['file']['name'])){
+  					$archivo = $_FILES['file']['tmp_name'];
+  					$ancho = 306;
+  					$alto = 200;
+  					$corte = 'corte';
+  					$extension = '.jpg';
+  					$tipo_imagen = 'image/jpeg';
+  					$calidad = 80;
+  					$nombre = 'publicacion-'.uniqid();
+  					$destino = $this->data['op']['ruta_imagenes'].'publicaciones/';
+  					// Subo la imagen y obtengo el nombre Default si va vacía
+  					$imagen = subir_imagen($archivo,$ancho,$alto,$corte,$extension,$tipo_imagen,$calidad,$nombre,$destino);
+  				}else{
+  					$imagen = 'default.jpg';
+  				}
+				}else{
+					// Si no proceso el archivo de miniatura
+					if(!empty($_FILES['Imagen']['name'])){
+  					$archivo = $_FILES['Imagen']['tmp_name'];
+  					$ancho = 306;
+  					$alto = 200;
+  					$corte = 'corte';
+  					$extension = '.jpg';
+  					$tipo_imagen = 'image/jpeg';
+  					$calidad = 80;
+  					$nombre = 'publicacion-'.uniqid();
+  					$destino = $this->data['op']['ruta_imagenes'].'publicaciones/';
+  					// Subo la imagen y obtengo el nombre Default si va vacía
+  					$imagen = subir_imagen($archivo,$ancho,$alto,$corte,$extension,$tipo_imagen,$calidad,$nombre,$destino);
+  				}else{
+  					$imagen = 'default.jpg';
+  				}
+				}
+
+				// Genero el registro
+			}
+
+
+
+		}
+		if(!empty($archivo_url)){
+			$parametros = array(
+				'TITULO' => $this->input->post('Titulo'),
+				'CADIDO' => $this->input->post('Cadido'),
+				'NOMENCLATURA' => $this->input->post('Nomenclatura'),
+				'DESCRIPCION' => $this->input->post('Descripcion'),
+				'TEMA' =>  $this->input->post('Tema'),
+				'TIPO_RECURSO' =>  $this->input->post('TipoRecurso'),
+				'FORMATO' =>  $ext,
+				'COBERTURA' => $this->input->post('Cobertura'),
+				'DERECHOS' => $this->input->post('Derechos'),
+				'TITULO_CURSO' => $this->input->post('TituloCurso'),
+				'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
+				'ARCHIVO' => $archivo_url,
+				'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+				'ARCHIVO_GUION' => $this->input->post('ArchivoGuion'),
+				'VERSION' => '1',
+				'IMAGEN' => $imagen,
+				'FECHA_CREACION' => date('Y-m-d H:i:s'),
+				'ESTADO' => 'activo',
+			);
+			$archivo_id = $this->GeneralModel->crear('archivos',$parametros);
+			// Historial
+			$parametros_historial = array(
+				'ID_ARCHIVO'=>$archivo_id,
+				'TITULO' => $this->input->post('Titulo'),
+				'CADIDO' => $this->input->post('Cadido'),
+				'NOMENCLATURA' => $this->input->post('Nomenclatura'),
+				'DESCRIPCION' => $this->input->post('Descripcion'),
+				'TEMA' =>  $this->input->post('Tema'),
+				'TIPO_RECURSO' =>  $this->input->post('TipoRecurso'),
+				'FORMATO' =>  $ext,
+				'COBERTURA' => $this->input->post('Cobertura'),
+				'DERECHOS' => $this->input->post('Derechos'),
+				'TITULO_CURSO' => $this->input->post('TituloCurso'),
+				'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
+				'ARCHIVO' => $archivo_url,
+				'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+				'ARCHIVO_GUION' => $this->input->post('ArchivoGuion'),
+				'VERSION' => '1',
+				'IMAGEN' => $imagen,
+				'FECHA_CREACION' => date('Y-m-d H:i:s'),
+				'ESTADO' => 'activo',
+			);
+			$this->GeneralModel->crear('archivos_historial',$parametros_historial);
+			// Asigno a categoría
+			$parametros = array(
+				'ID_CATEGORIA' => $_POST['categoria'],
+				'ID_OBJETO' => $archivo_id,
+				'TIPO' => 'archivo',
+				'TIPO_OBJETO' => 'archivo',
+			);
+			// Creo la relación de categorías
+			$this->GeneralModel->crear('categorias_objetos',$parametros);
+
+			//Extra datos publicación
+			$parametros_meta = array(
+				'ID_OBJETO'=>$archivo_id,
+				'DATO_NOMBRE'=>'meta_autor',
+				'DATO_VALOR'=>$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'],
+				'TIPO_OBJETO'=>'archivo',
+			);
+
+			$this->GeneralModel->crear('extra_datos',$parametros_meta);
+
+			$this->session->set_flashdata('exito', 'Archivo subido correctamente');
+		redirect('admin/repositorio?categoria='.$_POST['categoria']);
+		}else{
+			// Mensaje de error
+
+			$this->session->set_flashdata('alerta', 'No se ha podido subir el archivo');
+		 redirect('admin/repositorio?categoria='.$_POST['categoria']);
+		}
 	}
 
 	public function actualizar_archivo()
@@ -302,6 +447,7 @@ class Admin_Repositorio extends CI_Controller {
 				'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
 				'ARCHIVO' => $nombre_archivo.'.'.$ext,
 				'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+				'ARCHIVO_GUION' => $this->input->post('ArchivoGuion'),
 				'VERSION' => $version,
 				'IMAGEN' => $imagen,
 				'ESTADO' => 'activo',
@@ -323,6 +469,7 @@ class Admin_Repositorio extends CI_Controller {
 				'PROPOSITO_DIDACTICO' => $this->input->post('PropositoDidactico'),
 				'ARCHIVO' => $nombre_archivo.'.'.$ext,
 				'ARCHIVO_EDITABLE' => $this->input->post('UrlEditable'),
+				'ARCHIVO_GUION' => $this->input->post('ArchivoGuion'),
 				'VERSION' => $version,
 				'IMAGEN' => $imagen,
 				'FECHA_CREACION' => date('Y-m-d H:i:s'),
@@ -364,4 +511,9 @@ class Admin_Repositorio extends CI_Controller {
 		redirect(base_url('admin/repositorio?categoria='.$_GET['categoria'].'&orden_cat='.$_GET['orden_cat'].'&busqueda='.$_GET['busqueda']));
 	}
 
+	public function borrar_todo(){
+		// Borro categorias
+		$this->GeneralModel->borrar('categorias_objetos',['TIPO_OBJETO'=>'publicacion']);
+		$this->GeneralModel->borrar('publicaciones',['ID_PUBLICACION !='=>'']);
+	}
 }

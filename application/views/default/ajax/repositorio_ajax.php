@@ -4,7 +4,7 @@
 		<h5>Carpetas</h5>
 	</div>
 	<?php foreach($categorias as $categoria){ ?>
-		<div class="col-12 col-sm-6 col-md-4 mb-3">
+		<div class="col-12 col-sm-4 col-md-3 mb-3">
 				<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 					<div class="card single-promo-card single-promo-hover text-center shadow-sm">
 						<div class="card-body d-flex justify-content-between">
@@ -59,7 +59,13 @@
 	<div class="col-12 col-sm-3 mb-4">
 			<div class="card">
 				<div class="card-body p-0 text-center">
-					<img src="<?php echo base_url('contenido/img/publicaciones/'.$archivo->IMAGEN); ?>" class="img-fluid" alt="">
+					<?php
+						$url_imagen = base_url('contenido/img/publicaciones/'.$archivo->IMAGEN);
+						if($archivo->TIPO_RECURSO=='Video'){
+							$url_imagen = $archivo->IMAGEN;
+						}
+					 ?>
+					<img src="<?php echo $url_imagen; ?>" class="img-fluid" alt="">
 					<div class="p-3 d-flex justify-content-between">
 						<p class="h6"> <?php echo character_limiter($archivo->TITULO,22); ?></p>
 

@@ -11,12 +11,12 @@
                 </div>
                 <div class="col-lg-2 form-cols">
                   <div class="default-select" id="default-selects">
-                    <select name="busqueda_curso">
+                    <select name="categoria">
                       <option value="">Curso</option>
                       <?php
-                        $cursos = $this->GeneralModel->lista('tipos','',['TIPO_OBJETO'=>'cursos'],'TIPO_NOMBRE ASC','','');
+                        $cursos = $this->GeneralModel->lista('categorias','',['TIPO_OBJETO'=>'archivo', 'CATEGORIA_PADRE'=>'0'],'','','');
                         foreach($cursos as $curso){
-                          echo '<option value="'.$curso->TIPO_NOMBRE.'" >'.$curso->TIPO_NOMBRE_PLURAL.'</option>';
+                          echo '<option value="'.$curso->ID_CATEGORIA.'" >'.$curso->CATEGORIA_NOMBRE.'</option>';
                         } ?>
                     </select>
                   </div>

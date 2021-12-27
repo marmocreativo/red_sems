@@ -58,15 +58,30 @@
                   <a class="btn-editable" target="_blank" href="<?php echo $archivo['ARCHIVO_EDITABLE'] ?>" style="width:100%"><i class="fas fa-vector-square"></i> Ver Editable</a>
                   <?php } ?>
                   <div class="Archivo">
-                    <?php if($archivo['FORMATO']=='pdf'){ ?>
-                      <hr>
-                      <embed src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" width="100%" height="500"
-                       type="application/pdf">
-                    <?php } ?>
-                    <?php if($archivo['FORMATO']=='jpg'||$archivo['FORMATO']=='jpeg'||$archivo['FORMATO']=='png'||$archivo['FORMATO']=='gif'||$archivo['FORMATO']=='svg'){ ?>
-                      <hr>
-                      <img src="<?php echo base_url('contenido/docs/'.$archivo['ARCHIVO']); ?>" class="img-fluid">
-                    <?php } ?>
+                    <hr>
+                    <?php switch ($archivo['TIPO_RECURSO']) {
+                      case 'Pdf':
+                         echo '<embed src="'.base_url('contenido/docs/'.$archivo['ARCHIVO']).'" width="100%" height="500"type="application/pdf">';
+                        break;
+                      case 'Imagen':
+                      case 'Infografia':
+                         echo '<img src="'.base_url('contenido/docs/'.$archivo['ARCHIVO']).'" class="img-fluid">';
+                        break;
+                      case 'Audio':
+                         echo '<audio src="'.base_url('contenido/docs/'.$archivo['ARCHIVO']).'" controls autoplay>
+                                Your browser does not support the <code>audio</code> element.
+                              </audio>';
+                        break;
+                      case 'Video':
+                      $datos_video = parse_str( parse_url( $archivo['ARCHIVO'], PHP_URL_QUERY ), $my_array_of_vars );
+                         echo '<iframe width="100%" height="315" src="https://www.youtube.com/embed/'.$my_array_of_vars['v'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                        break;
+
+                      default:
+                         echo '<h3>Vista previa no disponible</h3>';
+                        break;
+                    } ?>
+
                   </div>
 								</div>
 							</div>
@@ -99,19 +114,13 @@
       <div class="col">
         <?php $historiales = $this->GeneralModel->lista('archivos_historial','',['ID_ARCHIVO'=>$archivo['ID']],'FECHA_CREACION DESC','',''); ?>
         <h3>Historial de versiones</h3>
-        <table class="table table-stripped table-bordered">
+        <table class="table table-sm table-stripped table-bordered">
           <thead>
             <tr>
               <th>TITULO</th>
               <th>VERSION</th>
               <th>FECHA</th>
               <th>ARCHIVO</th>
-              <th>Fomento Aprendizaje</th>
-              <th>Comprensión del tema</th>
-              <th>Información organizada</th>
-              <th>Diseño creativo</th>
-              <th>Diseño intuitivo</th>
-              <th>Diseño de calidad</th>
             </tr>
           </thead>
           <tbody>
@@ -121,12 +130,6 @@
               <td><?php echo $historial->VERSION ?></td>
               <td><?php echo $historial->FECHA_CREACION ?></td>
               <td> <a href="<?php echo base_url('contenido/docs/'.$historial->ARCHIVO) ?>" download>Descargar</a> </td>
-              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
-              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
-              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
-              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
-              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
-              <td class="text-center"> 5 <i class="fa fa-star text-warning"></i> </td>
             </tr>
             <?php } ?>
           </tbody>
@@ -148,6 +151,7 @@
       <div class="modal-body">
         <span><?php echo $archivo['DERECHOS']; ?></span>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
